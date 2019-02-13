@@ -8,7 +8,6 @@ from django.http import HttpResponsePermanentRedirect
 from django.utils.translation import ugettext_lazy as _
 from social_django.urls import urlpatterns as social_auth_patterns
 
-from judge.feed import CommentFeed, AtomCommentFeed, BlogFeed, AtomBlogFeed, ProblemFeed, AtomProblemFeed
 from judge.forms import CustomAuthenticationForm
 from judge.sitemap import ProblemSitemap, UserSitemap, HomePageSitemap, UrlSitemap, ContestSitemap, OrganizationSitemap, \
     BlogPostSitemap, SolutionSitemap
@@ -271,15 +270,6 @@ urlpatterns = [
             url(r'^license$', preview.LicenseMarkdownPreviewView.as_view(), name='license_preview'),
             url(r'^ticket$', preview.TicketMarkdownPreviewView.as_view(), name='ticket_preview'),
         ])),
-    ])),
-
-    url(r'^feed/', include([
-        url(r'^problems/rss/$', ProblemFeed(), name='problem_rss'),
-        url(r'^problems/atom/$', AtomProblemFeed(), name='problem_atom'),
-        url(r'^comment/rss/$', CommentFeed(), name='comment_rss'),
-        url(r'^comment/atom/$', AtomCommentFeed(), name='comment_atom'),
-        url(r'^blog/rss/$', BlogFeed(), name='blog_rss'),
-        url(r'^blog/atom/$', AtomBlogFeed(), name='blog_atom'),
     ])),
 
     url(r'^stats/', include([
