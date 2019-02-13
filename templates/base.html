@@ -59,13 +59,6 @@
     {% endcompress %}
     <link rel="canonical"
           href="{{ DMOJ_SCHEME }}://{{ DMOJ_CANONICAL|default(site.domain) }}{{ request.get_full_path() }}">
-    {% if request.user.is_impersonate %}
-        <style>
-            #nav-container {
-                background: #893e89 !important;
-            }
-        </style>
-    {% endif %}
     {% block media %}{% endblock %}
     {% if not INLINE_JQUERY %}
         <script src="{{ JQUERY_JS }}"></script>
@@ -159,7 +152,7 @@
     {% endif %}
 
     {# Don't run userscript since it may be malicious #}
-    {% if request.user.is_authenticated and request.user.profile.user_script and not request.user.is_impersonate %}
+    {% if request.user.is_authenticated and request.user.profile.user_script %}
         <script type="text/javascript">{{ request.user.profile.user_script|safe }}</script>
     {% endif %}
 
@@ -217,9 +210,6 @@
                                 <li><a href="{{ url('admin:index') }}">{{ _('Admin') }}</a></li>
                             {% endif %}
                             <li><a href="{{ url('user_edit_profile') }}">{{ _('Edit profile') }}</a></li>
-                            {% if request.user.is_impersonate %}
-                                <li><a href="{{ url('impersonate-stop') }}">Stop impersonating</a></li>
-                            {% else %}
                                 <li>
                                     <form action="{{ url('auth_logout') }}" method="POST">
                                         {% csrf_token %}
