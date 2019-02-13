@@ -131,14 +131,11 @@ INSTALLED_APPS += (
     'registration',
     'mptt',
     'reversion',
-#    'django_social_share',
-#    'social_django',
     'compressor',
     'django_ace',
     'pagedown',
     'sortedm2m',
     'statici18n',
-    'impersonate',
     'django_jinja',
 )
 
@@ -153,17 +150,12 @@ MIDDLEWARE = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'judge.user_log.LogUserAccessMiddleware',
     'judge.timezone.TimezoneMiddleware',
-    'judge.middleware.DMOJImpersonationMiddleware',
     'judge.middleware.ContestMiddleware',
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
     'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
 )
 
-# IMPERSONATE_REQUIRE_SUPERUSER = True
-# IMPERSONATE_DISABLE_LOGGING = True
-
 ACCOUNT_ACTIVATION_DAYS = 7
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
