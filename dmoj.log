@@ -1,0 +1,11 @@
+INFO 2019-02-13 13:35:19,336 judgehandler Judge connected from: ('::1', 54724, 0, 0)
+INFO 2019-02-13 13:35:19,339 judgehandler Judge authenticated: ('::1', 54724, 0, 0) (korea)
+INFO 2019-02-13 13:43:11,158 judgelist Free judges: 1
+INFO 2019-02-13 13:43:11,159 judgelist Dispatched submission 1 to: korea
+INFO 2019-02-13 13:43:11,170 judgehandler Submission acknowledged: 1
+INFO 2019-02-13 13:43:11,181 judgehandler korea: Grading has begun on: 1
+INFO 2019-02-13 13:43:11,253 judgehandler korea: Test case completed on: 1
+INFO 2019-02-13 13:43:11,315 judgehandler korea: Test case completed on: 1
+INFO 2019-02-13 13:43:11,374 judgehandler korea: Test case completed on: 1
+INFO 2019-02-13 13:43:11,380 judgehandler korea: Grading has ended on: 1
+INFO 2019-02-13 13:43:11,380 judgelist Judge available after grading 1: korea
