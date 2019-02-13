@@ -333,7 +333,6 @@ CACHES = {}
 
 # Authentication
 AUTHENTICATION_BACKENDS = (
-    'judge.social_auth.GitHubSecureEmailOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 )
 
