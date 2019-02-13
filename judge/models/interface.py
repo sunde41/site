@@ -41,7 +41,7 @@ class NavigationBar(MPTTModel):
         order_insertion_by = ['order']
 
     order = models.PositiveIntegerField(db_index=True, verbose_name=_('order'))
-    key = models.CharField(max_length=10, unique=True, verbose_name=_('identifipost_to_gpluser'))
+    key = models.CharField(max_length=10, unique=True, verbose_name=_('identifier'))
     label = models.CharField(max_length=20, verbose_name=_('label'))
     path = models.CharField(max_length=255, verbose_name=_('link path'))
     regex = models.TextField(verbose_name=_('highlight regex'), validators=[validate_regex])
