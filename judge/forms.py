@@ -22,8 +22,6 @@ def fix_unicode(string, unsafe=tuple(u'\u202a\u202b\u202d\u202e')):
 
 
 class ProfileForm(ModelForm):
-    test_site = forms.BooleanField(label=_('Enable experimental features'), initial=False, required=False)
-
     class Meta:
         model = Profile
         fields = ['name', 'about', 'language', 'ace_theme']
