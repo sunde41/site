@@ -1,6 +1,5 @@
 from django.template.loader import get_template
 from django.utils.safestring import mark_safe
-from django_social_share.templatetags.social_share import post_to_gplus_url, post_to_twitter_url, post_to_facebook_url
 
 from . import registry
 
