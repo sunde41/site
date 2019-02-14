@@ -2,6 +2,10 @@ html, body {
     font-family: "Apple SD Gothic Neo", AppleSDGothicNeo, "Noto Sans KR", "Nanum Gothic", "Malgun Gothic", 맑은고딕, 굴림, 돋움, Dotum, sans-serif;;
 }
 
+.logo {
+    height: 44px;
+}
+
 #nav-container {
     background: #fff;
     height: 100%;
@@ -17,14 +21,16 @@ nav ul li a.active, nav ul li button.active {
     background: #940034;
 }
 
-.logo {
-    height: 44px;
-}
 
 nav ul li a:hover, nav ul li button:hover {
-    color: #82002e;
+    color: #fff;
+    background: #82002e;
 }
 
 nav ul li a:link, nav ul li button:link {
-    color: #82002e;
+    color: #940034;
+}
+
+nav ul li a, nav ul li button {
+    color: #940034;
 }
