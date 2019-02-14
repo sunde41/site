@@ -8,7 +8,7 @@ from judge.admin.runtime import JudgeAdmin, LanguageAdmin
 from judge.admin.submission import SubmissionAdmin
 from judge.admin.taxon import ProblemGroupAdmin, ProblemTypeAdmin
 from judge.admin.ticket import TicketAdmin
-from judge.models import BlogPost, Contest, ContestParticipation, \
+from judge.models import Contest, ContestParticipation, \
     ContestTag, Judge, Language, License, NavigationBar, Problem, ProblemGroup, ProblemType, Profile, Submission, Ticket
 
 admin.site.register(Contest, ContestAdmin)
