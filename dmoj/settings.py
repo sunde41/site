@@ -99,7 +99,6 @@ else:
                     'model': 'judge.NavigationBar',
                     'icon': 'fa-bars',
                     'children': [
-                        'judge.MiscConfig',
                         'judge.License',
                         'sites.Site',
                         'redirects.Redirect',

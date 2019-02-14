@@ -10,7 +10,7 @@ from django.db.models.signals import post_save, post_delete
 from django.dispatch import receiver
 
 from .caching import finished_submission
-from .models import Problem, Contest, Submission, Profile, MiscConfig, Language, Judge, \
+from .models import Problem, Contest, Submission, Profile, Language, Judge, \
     BlogPost, ContestSubmission, Comment, License, EFFECTIVE_MATH_ENGINES
 
 
@@ -102,14 +102,3 @@ def submission_delete(sender, instance, **kwargs):
 def contest_submission_delete(sender, instance, **kwargs):
     participation = instance.participation
     participation.recalculate_score()
-
-
-_misc_config_i18n = [code for code, _ in settings.LANGUAGES]
-_misc_config_i18n.append('')
-
-
-@receiver(post_save, sender=MiscConfig)
-def misc_config_update(sender, instance, **kwargs):
-    cache.delete_many(['misc_config:%s:%s:%s' % (domain, lang, instance.key.split('.')[0])
-                       for lang in _misc_config_i18n
-                       for domain in Site.objects.values_list('domain', flat=True)])
