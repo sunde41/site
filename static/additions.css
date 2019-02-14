@@ -30,7 +30,6 @@ nav ul li a, nav ul li button {
     line-height: 16px;
     height: 16px;
     padding: 22px 15px;
-    margin-right: 90px;
 }
 
 #nav-shadow {
@@ -143,4 +142,8 @@ h2.sub-title {
 .table th:last-child,
 .table thead th:last-child {
      border-top-right-radius: 0;
+}
+
+ul.right-menu {
+    display: inline-block;
 }
