@@ -24,6 +24,14 @@ nav ul li a, nav ul li button {
     line-height: 16px;
 }
 
+.student_number {
+    color: #940034;
+    padding: 22px 15px;
+    height: 16px;
+    font-size : 16px;
+    line-height: 16px;
+}
+
 #nav-shadow {
     height: 3px;
     background: linear-gradient(rgba(110, 0, 39, 0.5), transparent);

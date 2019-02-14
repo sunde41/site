@@ -166,12 +166,10 @@
                 <ul>
                     <li>
                         <a href="{{ url('user_page') }}">
-                            <span>
-                                <span>
+                            <span class="student_number">
                                     {%- trans username=request.user.username -%}
                                         <b>{{ username }}</b>.
                                     {%- endtrans %}
-                                </span>
                             </span>
                         </a>
                         <ul style="width: 150px">
