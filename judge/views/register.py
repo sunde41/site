@@ -13,7 +13,7 @@ from registration.backends.default.views import (RegistrationView as OldRegistra
 from registration.forms import RegistrationForm
 from sortedm2m.forms import SortedMultipleChoiceField
 
-from judge.models import Profile, Language, Organization, TIMEZONE
+from judge.models import Profile, Language, TIMEZONE
 from judge.widgets import Select2Widget, Select2MultipleWidget
 
 valid_id = re.compile(r'^\w+$')
@@ -29,9 +29,6 @@ class CustomRegistrationForm(RegistrationForm):
                            widget=Select2Widget(attrs={'style': 'width:100%'}))
     language = ModelChoiceField(queryset=Language.objects.all(), label=_('Preferred language'), empty_label=None,
                                 widget=Select2Widget(attrs={'style': 'width:100%'}))
-    organizations = SortedMultipleChoiceField(queryset=Organization.objects.filter(is_open=True),
-                                              label=_('Organizations'), required=False,
-                                              widget=Select2MultipleWidget(attrs={'style': 'width:100%'}))
 
     def clean_email(self):
         if User.objects.filter(email=self.cleaned_data['email']).exists():
@@ -71,7 +68,6 @@ class RegistrationView(OldRegistrationView):
         profile.name = cleaned_data['display_name']
         profile.timezone = cleaned_data['timezone']
         profile.language = cleaned_data['language']
-        profile.organizations.add(*cleaned_data['organizations'])
         profile.save()
 
         return user
