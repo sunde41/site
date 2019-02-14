@@ -9,7 +9,7 @@ from judge.models.problem import ProblemGroup, ProblemType, Problem, ProblemClar
     TranslatedProblemQuerySet, TranslatedProblemForeignKeyQuerySet, License, LanguageLimit, Solution
 from judge.models.problem_data import problem_data_storage, problem_directory_file, ProblemData, ProblemTestCase, \
     CHECKERS
-from judge.models.profile import Profile, Organization, OrganizationRequest
+from judge.models.profile import Profile
 from judge.models.runtime import Language, RuntimeVersion, Judge
 from judge.models.submission import SUBMISSION_RESULT, Submission, SubmissionTestCase
 from judge.models.ticket import Ticket, TicketMessage
@@ -19,7 +19,6 @@ revisions.register(Problem, follow=['language_limits'])
 revisions.register(LanguageLimit)
 revisions.register(Contest, follow=['contest_problems'])
 revisions.register(ContestProblem)
-revisions.register(Organization)
 revisions.register(BlogPost)
 revisions.register(Solution)
 revisions.register(Judge, fields=['name', 'created', 'auth_key', 'description'])

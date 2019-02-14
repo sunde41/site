@@ -51,7 +51,6 @@ select[id^=id_contest_problems] {
 }
 
 select#id_organizers.django-select2,
-select#id_organizations.django-select2,
 select#id_tags.django-select2 {
     width: 20em;
 }

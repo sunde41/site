@@ -190,30 +190,6 @@ urlpatterns = [
         url(r'^/$', lambda _, contest: HttpResponsePermanentRedirect(reverse('contest_view', args=[contest]))),
     ])),
 
-    url(r'^organizations/$', organization.OrganizationList.as_view(), name='organization_list'),
-    url(r'^organization/(?P<pk>\d+)-(?P<slug>[\w-]*)', include([
-        url(r'^$', organization.OrganizationHome.as_view(), name='organization_home'),
-        url(r'^/users$', organization.OrganizationUsers.as_view(), name='organization_users'),
-        url(r'^/join$', organization.JoinOrganization.as_view(), name='join_organization'),
-        url(r'^/leave$', organization.LeaveOrganization.as_view(), name='leave_organization'),
-        url(r'^/edit$', organization.EditOrganization.as_view(), name='edit_organization'),
-        url(r'^/kick$', organization.KickUserWidgetView.as_view(), name='organization_user_kick'),
-
-        url(r'^/request$', organization.RequestJoinOrganization.as_view(), name='request_organization'),
-        url(r'^/request/(?P<rpk>\d+)$', organization.OrganizationRequestDetail.as_view(),
-            name='request_organization_detail'),
-        url(r'^/requests/', include([
-            url(r'^pending$', organization.OrganizationRequestView.as_view(), name='organization_requests_pending'),
-            url(r'^log$', organization.OrganizationRequestLog.as_view(), name='organization_requests_log'),
-            url(r'^approved$', organization.OrganizationRequestLog.as_view(states=('A',), tab='approved'),
-                name='organization_requests_approved'),
-            url(r'^rejected$', organization.OrganizationRequestLog.as_view(states=('R',), tab='rejected'),
-                name='organization_requests_rejected'),
-        ])),
-
-        url(r'^/$', lambda _, pk, slug: HttpResponsePermanentRedirect(reverse('organization_home', args=[pk, slug]))),
-    ])),
-
     url(r'^runtimes/$', language.LanguageList.as_view(), name='runtime_list'),
     url(r'^runtimes/matrix/$', status.version_matrix, name='version_matrix'),
     url(r'^status/$', status.status_all, name='status_all'),

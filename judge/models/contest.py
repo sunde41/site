@@ -10,7 +10,7 @@ from django.utils.functional import cached_property
 from django.utils.translation import ugettext_lazy as _, ugettext
 
 from judge.models.problem import Problem
-from judge.models.profile import Profile, Organization
+from judge.models.profile import Profile
 from judge.models.submission import Submission
 
 __all__ = ['Contest', 'ContestTag', 'ContestParticipation', 'ContestProblem', 'ContestSubmission', 'Rating']
@@ -81,8 +81,6 @@ class Contest(models.Model):
                                                         'testcases. Commonly set during a contest, then unset '
                                                         'prior to rejudging user submissions when the contest ends.'),
                                             default=False)
-    organizations = models.ManyToManyField(Organization, blank=True, verbose_name=_('organizations'),
-                                           help_text=_('If private, only these organizations may see the contest'))
     logo_override_image = models.CharField(verbose_name=_('Logo override image'), default='', max_length=150, blank=True,
                                            help_text=_('This image will replace the default site logo for users inside the contest.'))
     tags = models.ManyToManyField(ContestTag, verbose_name=_('contest tags'), blank=True, related_name='contests')
@@ -170,10 +168,6 @@ class Contest(models.Model):
         if self.is_public:
             # Contest is not private to an organization
             if not self.is_private:
-                return True
-            # User is in the organizations
-            if user.is_authenticated and \
-                    self.organizations.filter(id__in=user.profile.organizations.all()):
                 return True
 
         # If the user can view all contests
