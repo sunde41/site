@@ -181,3 +181,25 @@ h2.sub-title {
 #runtime-info th {
     padding: 0;
 }
+
+footer {
+    height: auto;
+    background: #363a43;
+}
+
+footer div > ul {
+    float: left;
+    text-align: left;
+    list-style-type: none;
+}
+
+footer > div > a > p {
+    display: inline-block;
+    float: left;
+    width: 59px;
+    height: 90px;
+    margin-top: -5px;
+    margin-right: 20px;
+    font-size: 0;
+    background: url(https://witch.korea.ac.kr/ku_tiger.svg) no-repeat 0;
+}
