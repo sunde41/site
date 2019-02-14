@@ -64,8 +64,7 @@ class ProblemMixin(object, SingleObjectMixin):
 
     def get(self, request, *args, **kwargs):
         try:
-            self.object = self.get_object()
-            return self.render_to_response(self.get_context_data(object=self.object))
+            return super(ProblemMixin, self).get(request, *args, **kwargs)
         except Http404:
             code = kwargs.get(self.slug_url_kwarg, None)
             return generic_message(request, _('No such problem'),
