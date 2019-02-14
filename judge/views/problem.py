@@ -154,7 +154,7 @@ class ProblemRaw(ProblemMixin, TitleMixin, TemplateResponseMixin, SingleObjectMi
             ))
 
 
-class ProblemDetail(ProblemMixin, SolvedProblemMixin, View):
+class ProblemDetail(ProblemMixin, SolvedProblemMixin, DetailView):
     context_object_name = 'problem'
     template_name = 'problem/problem.html'
 
