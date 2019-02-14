@@ -3,8 +3,8 @@ html, body {
 }
 
 .logo {
-    height: 60px;
-    margin: 0;
+    height: 44px;
+    margin: 1px 0 0 50px;
 }
 
 #nav-container {
@@ -22,6 +22,11 @@ nav ul li a, nav ul li button {
     font-size : 16px;
     line-height: 16px;
 }
+
+nav ul li:first-child {
+    padding-left: 30px;
+}
+
 
 #nav-shadow {
     height: 3px;
