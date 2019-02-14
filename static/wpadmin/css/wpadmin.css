@@ -1866,7 +1866,7 @@ body.dashboard #content {
 
 body.dashboard #content #content-main {
     margin-right: 20px;
-    max-width: 500px;
+    max-width: 65%;
     clear: left
 }
 
@@ -1883,7 +1883,7 @@ body.dashboard #content #content-main table tr:last-child td {
 
 body.dashboard #content #content-related {
     float: left;
-    width: 284px;
+    width: 30%;
     margin-right: 0
 }
 
