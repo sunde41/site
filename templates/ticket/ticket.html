@@ -116,12 +116,6 @@
             text-align: center;
         }
 
-        .message .gravatar {
-            width: 80px;
-            display: block;
-            margin: 0 auto;
-        }
-
         .message .message-date, .message .message-time {
             display: inline-block;
         }
@@ -340,7 +334,6 @@
                     <section id="message-{{ message.id }}" class="message">
                         <div class="info">
                             <a href="{{ url('user_page', message.user.user.username) }}" class="user">
-                                <img src="{{ gravatar(message.user, 135) }}" class="gravatar">
                                 <div class="username {{ message.user.css_class }}">{{ message.user.user.username }}</div>
                             </a>
                         </div>
@@ -361,7 +354,6 @@
             <section class="message new-message">
                 <div class="info">
                     <a href="{{ url('user_page') }}" class="user">
-                        <img src="{{ gravatar(request.user) }}" class="gravatar">
                         <div class="username {{ request.user.profile.css_class }}">{{ request.user.username }}</div>
                     </a>
                 </div>

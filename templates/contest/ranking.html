@@ -210,7 +210,7 @@
                     return markup;
                 },
                 templateResult: function (data, container) {
-                    return ('<img class="user-search-image" src="' + data.gravatar_url + '" width="24" height="24">' +
+                    return (
                         '<span class="' + data.display_rank + ' user-search-name">' + data.text + '</span>');
                 }
             }).on('change', function () {

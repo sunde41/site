@@ -4,19 +4,6 @@
     {% block user_media %}{% endblock %}
 
     <style>
-        .user-gravatar {
-            display: block;
-            padding-right: 15px;
-            width: 135px;
-        }
-
-        .user-gravatar img {
-            width: 135px;
-            height: 135px;
-            display: block;
-            border-radius: 6px;
-        }
-
         .page-title {
             display: -webkit-box;
             display: -webkit-flex;
@@ -33,11 +20,6 @@
 {% block body %}
     <div class="user-info-page">
         <div class="user-sidebar">
-            <div class="user-gravatar">
-                <img src="{{ gravatar(user, 135) }}" width="135px" height="135px">
-            </div>
-            <br>
-
             <div><b>{{ _('%(count)d problems solved', count=user.problem_count) }}</b></div>
 
             <div><b class="semibold">{{ _('Rank by points:') }}</b> #{{ rank }}</div>
