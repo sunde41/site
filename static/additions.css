@@ -206,15 +206,14 @@ footer > div > a > p {
 footer div {
     max-width: 1180px;
     margin: 0 auto;
-    padding: 20px;
 }
 
 footer div > ul li a {
     font-weight: bold;
     color: #ccc;
-    margin-top: 5px;
 }
 
 em, address {
     font-style: normal;
+    display: inline-block;
 }
