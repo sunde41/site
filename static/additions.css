@@ -80,6 +80,12 @@ h2.sub-title {
   padding: 0 0 0 20px;
 }
 
+.button, button, input[type=submit] {
+    background: #940034 none repeat scroll 0 0/auto padding-box border-box;
+    background: linear-gradient(to bottom,#940034 0,#82002e 100%) repeat-x;
+    border: 1px solid #82002e;
+}
+
 .button:hover, button:hover, input[type=submit]:hover {
     background: #940034;
 }
