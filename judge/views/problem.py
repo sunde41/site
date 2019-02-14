@@ -99,7 +99,7 @@ class SolvedProblemMixin(object):
         return self.request.user.profile
 
 
-class ProblemSolution(SolvedProblemMixin, ProblemMixin, TitleMixin):
+class ProblemSolution(SolvedProblemMixin, ProblemMixin, TitleMixin, View):
     context_object_name = 'problem'
     template_name = 'problem/editorial.html'
 
