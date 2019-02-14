@@ -150,11 +150,13 @@ h2.sub-title {
 #nav-list {
     float:left;
     background-color: #fff;
+    width: 50%;
 }
 
 #right-menu {
     float: right;
     background-color: #fff;
+    width: 50%;
 }
 
 #nav-shadow {
