@@ -89,3 +89,8 @@ h2.sub-title {
 .button:hover, button:hover, input[type=submit]:hover {
     background: #940034;
 }
+
+.button.full, input[type=submit].full, button.full {
+    padding: 13px 0;
+    font-size: 18px;
+}
