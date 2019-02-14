@@ -148,5 +148,5 @@ h2.sub-title {
 }
 
 .table thead th:last-child {
-   border-top-left-radius: 0;
+   border-top-left-radius: 0 !important;
 }
