@@ -37,7 +37,7 @@ class PostList(ListView):
         context['first_page_href'] = reverse('home')
         context['page_prefix'] = reverse('blog_post_list')
         context['new_problems'] = Problem.objects.filter(is_public=True).order_by('-date', '-id')[:7]
-        context['page_titles'] = CacheDict(lambda page: Comment.get_page_title(page))
+        # context['page_titles'] = CacheDict(lambda page: Comment.get_page_title(page))
 
         context['has_clarifications'] = False
         if self.request.user.is_authenticated:

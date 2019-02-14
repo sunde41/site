@@ -27,7 +27,7 @@ from django.views.decorators.http import require_POST
 from django.views.generic import ListView, View
 from django.views.generic.base import TemplateResponseMixin
 from django.views.generic.detail import SingleObjectMixin
-
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django_ace.widgets import ACE_URL
 from judge.forms import ProblemSubmitForm
 from judge.models import ContestSubmission, ContestProblem, Judge, Language, Problem, ProblemGroup, ProblemTranslation, \
@@ -153,7 +153,7 @@ class ProblemRaw(ProblemMixin, TitleMixin, TemplateResponseMixin, SingleObjectMi
             ))
 
 
-class ProblemDetail(ProblemMixin, SolvedProblemMixin, DetailView):
+class ProblemDetail(LoginRequiredMixin, ProblemMixin, SolvedProblemMixin, DetailView):
     context_object_name = 'problem'
     template_name = 'problem/problem.html'
 
@@ -208,7 +208,7 @@ class LatexError(Exception):
     pass
 
 
-class ProblemList(QueryStringSortMixin, TitleMixin, SolvedProblemMixin, ListView):
+class ProblemList(LoginRequiredMixin, QueryStringSortMixin, TitleMixin, SolvedProblemMixin, ListView):
     model = Problem
     title = ugettext_lazy('Problems')
     context_object_name = 'problems'
