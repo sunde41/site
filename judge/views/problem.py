@@ -51,7 +51,15 @@ def get_contest_submission_count(problem, profile):
     return profile.current_contest.submissions.exclude(submission__status__in=['IE']).filter(problem__problem__code=problem).count()
 
 
-class ProblemMixin(SingleObjectMixin):
+class DetailView(TemplateResponseMixin, SingleObjectMixin, View):
+    def get(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        return self.render_to_response(self.get_context_data(
+            object=self.object,
+        ))
+
+
+class ProblemMixin(object):
     model = Problem
     slug_url_kwarg = 'problem'
     slug_field = 'code'
@@ -64,10 +72,7 @@ class ProblemMixin(SingleObjectMixin):
 
     def get(self, request, *args, **kwargs):
         try:
-            self.object = self.get_object()
-            return self.render_to_response(self.get_context_data(
-                object=self.object)
-            )
+            return super(ProblemMixin, self).get(request, *args, **kwargs)
         except Http404:
             code = kwargs.get(self.slug_url_kwarg, None)
             return generic_message(request, _('No such problem'),
@@ -102,7 +107,7 @@ class SolvedProblemMixin(object):
         return self.request.user.profile
 
 
-class ProblemSolution(SolvedProblemMixin, ProblemMixin, TitleMixin, View):
+class ProblemSolution(SolvedProblemMixin, ProblemMixin, TitleMixin, CommentedDetailView):
     context_object_name = 'problem'
     template_name = 'problem/editorial.html'
 
@@ -124,6 +129,9 @@ class ProblemSolution(SolvedProblemMixin, ProblemMixin, TitleMixin, View):
         context['solution'] = solution
         context['has_solved_problem'] = self.object.id in self.get_completed_problems()
         return context
+
+    def get_comment_page(self):
+        return 's:' + self.object.code
 
 
 class ProblemRaw(ProblemMixin, TitleMixin, TemplateResponseMixin, SingleObjectMixin, View):
@@ -148,9 +156,12 @@ class ProblemRaw(ProblemMixin, TitleMixin, TemplateResponseMixin, SingleObjectMi
             ))
 
 
-class ProblemDetail(ProblemMixin, TemplateResponseMixin, SolvedProblemMixin, View):
+class ProblemDetail(ProblemMixin, SolvedProblemMixin, DetailView):
     context_object_name = 'problem'
     template_name = 'problem/problem.html'
+
+    def get_comment_page(self):
+        return 'p:%s' % self.object.code
 
     def get_context_data(self, **kwargs):
         context = super(ProblemDetail, self).get_context_data(**kwargs)
