@@ -66,7 +66,7 @@ class BlogPost(models.Model):
         return reverse('blog_post', args=(self.id, self.slug))
 
     def can_see(self, user):
-        if self.visible and self.publish_on <= timezone.now():
+        if self.visible : # and self.publish_on <= timezone.now():
             return True
         if user.has_perm('judge.edit_all_post'):
             return True

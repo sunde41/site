@@ -1,5 +1,12 @@
 {% extends "base.html" %}
 
+{% block header %}
+    {% if perms.judge.change_blogpost %}
+        <div class="title-line-action">[<a href="{{ url('admin:judge_blogpost_change', post.id) }}">{{ _('Edit') }}</a>]
+        </div>
+    {% endif %}
+{% endblock %}
+
 {% block body %}
     <div class="post-full">
         <div class="time">
