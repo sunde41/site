@@ -135,4 +135,11 @@ h2.sub-title {
 
 .table th {
     background-color: #940034;
+    padding-top: 7px;
+    font-size: 14px;
+}
+
+.table th:first-child,
+.table th:last-child {
+     border-top-right-radius: 0;
 }
