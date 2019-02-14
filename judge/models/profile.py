@@ -12,7 +12,7 @@ from django.utils.translation import ugettext_lazy as _, pgettext
 from fernet_fields import EncryptedCharField
 from sortedm2m.fields import SortedManyToManyField
 
-from judge.models.choices import TIMEZONE, ACE_THEMES, MATH_ENGINES_CHOICES
+from judge.models.choices import TIMEZONE, ACE_THEMES
 from judge.ratings import rating_class
 
 __all__ = ['Profile']
@@ -29,8 +29,6 @@ class Profile(models.Model):
     user = models.OneToOneField(User, verbose_name=_('user associated'))
     name = models.CharField(max_length=50, verbose_name=_('display name'), null=True, blank=True)
     about = models.TextField(verbose_name=_('self-description'), null=True, blank=True)
-    timezone = models.CharField(max_length=50, verbose_name=_('location'), choices=TIMEZONE,
-                                default=getattr(settings, 'DEFAULT_USER_TIME_ZONE', 'America/Toronto'))
     language = models.ForeignKey('Language', verbose_name=_('preferred language'))
     points = models.FloatField(default=0, db_index=True)
     performance_points = models.FloatField(default=0, db_index=True)
@@ -41,13 +39,8 @@ class Profile(models.Model):
     display_rank = models.CharField(max_length=10, default='user', verbose_name=_('display rank'),
                                     choices=(('user', 'Normal User'), ('setter', 'Problem Setter'), ('admin', 'Admin')))
     rating = models.IntegerField(null=True, default=None)
-    user_script = models.TextField(verbose_name=_('user script'), default='', blank=True, max_length=65536,
-                                   help_text=_('User-defined JavaScript for site customization.'))
     current_contest = models.OneToOneField('ContestParticipation', verbose_name=_('current contest'),
                                            null=True, blank=True, related_name='+', on_delete=models.SET_NULL)
-    math_engine = models.CharField(verbose_name=_('math engine'), choices=MATH_ENGINES_CHOICES, max_length=4,
-                                   default=getattr(settings, 'MATHOID_DEFAULT_TYPE', 'auto'),
-                                   help_text=_('the rendering engine used to render math'))
     notes = models.TextField(verbose_name=_('internal notes'), help_text=_('Notes for administrators regarding this user.'),
                              null=True, blank=True)
 
@@ -118,7 +111,6 @@ class Profile(models.Model):
     class Meta:
         permissions = (
             ('test_site', 'Shows in-progress development stuff'),
-            ('totp', 'Edit TOTP settings')
         )
         verbose_name = _('user profile')
         verbose_name_plural = _('user profiles')
