@@ -223,7 +223,6 @@ header {
 
 #nav-container {
     background: $widget_black;
-
     // opacity: 0.77
     // filter: alpha(opacity=77)
     height: 100%;
@@ -307,7 +306,6 @@ nav {
                 color: #fff;
                 background: $widget_black;
                 margin: 0 !important;
-                box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 
                 li {
                     &:first-child {
