@@ -164,3 +164,7 @@ h2.sub-title {
 .home-nav-element {
     background-color: #fff;
 }
+
+.button, button, input[type=submit] {
+    color: #940034 !important;
+}
