@@ -14,7 +14,6 @@ from registration.forms import RegistrationForm
 from sortedm2m.forms import SortedMultipleChoiceField
 
 from judge.models import Profile, Language, Organization, TIMEZONE
-from judge.utils.subscription import Subscription, newsletter_id
 from judge.widgets import Select2Widget, Select2MultipleWidget
 
 valid_id = re.compile(r'^\w+$')
@@ -33,9 +32,6 @@ class CustomRegistrationForm(RegistrationForm):
     organizations = SortedMultipleChoiceField(queryset=Organization.objects.filter(is_open=True),
                                               label=_('Organizations'), required=False,
                                               widget=Select2MultipleWidget(attrs={'style': 'width:100%'}))
-
-    if newsletter_id is not None:
-        newsletter = forms.BooleanField(label=_('Subscribe to newsletter?'), initial=True, required=False)
 
     def clean_email(self):
         if User.objects.filter(email=self.cleaned_data['email']).exists():
@@ -78,8 +74,6 @@ class RegistrationView(OldRegistrationView):
         profile.organizations.add(*cleaned_data['organizations'])
         profile.save()
 
-        if newsletter_id is not None and cleaned_data['newsletter']:
-            Subscription(user=user, newsletter_id=newsletter_id, subscribed=True).save()
         return user
 
     def get_initial(self, *args, **kwargs):

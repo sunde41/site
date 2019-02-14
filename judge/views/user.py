@@ -22,13 +22,11 @@ from django.utils.translation import ugettext as _, ugettext_lazy
 from django.views.generic import DetailView, ListView, TemplateView
 from reversion import revisions
 
-from judge.forms import ProfileForm, newsletter_id
 from judge.models import Profile, Submission, Rating
 from judge.performance_points import get_pp_breakdown, PP_ENTRIES
 from judge.ratings import rating_class, rating_progress
 from judge.utils.problems import contest_completed_ids, user_completed_ids
 from judge.utils.ranker import ranker
-from judge.utils.subscription import Subscription
 from judge.utils.views import TitleMixin, generic_message, DiggPaginatorMixin, QueryStringSortMixin
 from .contests import contest_ranking_view
 
@@ -214,16 +212,6 @@ def edit_profile(request):
                 revisions.set_user(request.user)
                 revisions.set_comment(_('Updated on site'))
 
-            if newsletter_id is not None:
-                try:
-                    subscription = Subscription.objects.get(user=request.user, newsletter_id=newsletter_id)
-                except Subscription.DoesNotExist:
-                    if form.cleaned_data['newsletter']:
-                        Subscription(user=request.user, newsletter_id=newsletter_id, subscribed=True).save()
-                else:
-                    if subscription.subscribed != form.cleaned_data['newsletter']:
-                        subscription.update(('unsubscribe', 'subscribe')[form.cleaned_data['newsletter']])
-
             perm = Permission.objects.get(codename='test_site', content_type=ContentType.objects.get_for_model(Profile))
             if form.cleaned_data['test_site']:
                 request.user.user_permissions.add(perm)
@@ -233,13 +221,6 @@ def edit_profile(request):
             return HttpResponseRedirect(request.path)
     else:
         form = ProfileForm(instance=profile, user=request.user)
-        if newsletter_id is not None:
-            try:
-                subscription = Subscription.objects.get(user=request.user, newsletter_id=newsletter_id)
-            except Subscription.DoesNotExist:
-                form.fields['newsletter'].initial = False
-            else:
-                form.fields['newsletter'].initial = subscription.subscribed
         form.fields['test_site'].initial = request.user.has_perm('judge.test_site')
 
     tzmap = getattr(settings, 'TIMEZONE_MAP', None)

@@ -186,20 +186,6 @@
             <div class="block-header">{{ _('Affiliated organizations') }}</div>
             {{ form.organizations }}
 
-            {% if form.newsletter %}
-                <div style="padding-top: 0.5em;">{{ form.newsletter }}
-                    <label for="id_newsletter" style="float: unset;"
-                           class="inline-header grayed">{{ _('Notify me about upcoming contests') }}</label>
-                </div>
-            {% endif %}
-
-            {% if form.captcha %}
-                <div style="margin-top: 0.5em">{{ form.captcha }}</div>
-                {% if form.captcha.errors %}
-                    <div class="form-field-error">{{ form.captcha.errors }}</div>
-                {% endif %}
-            {% endif %}
-
             <hr>
             {% if tos_url %}
                 <span class="tos-section">
