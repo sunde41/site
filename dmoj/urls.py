@@ -288,7 +288,6 @@ urlpatterns = [
         url(r'^/close$', ticket.TicketStatusChangeView.as_view(open=False), name='ticket_close'),
         url(r'^/notes$', ticket.TicketNotesEditView.as_view(), name='ticket_notes'),
     ])),
-
     url(r'^sitemap\.xml$', sitemap, {'sitemaps': {
         'problem': ProblemSitemap,
         'user': UserSitemap,

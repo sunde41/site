@@ -58,7 +58,7 @@ class BlogPostForm(ModelForm):
 class BlogPostAdmin(VersionAdmin):
     fieldsets = (
         (None, {'fields': ('title', 'slug', 'authors', 'visible', 'sticky', 'publish_on')}),
-        (_('Content'), {'fields': ('content', 'og_image',)}),
+        (_('Content'), {'fields': ('content', )}),
         (_('Summary'), {'classes': ('collapse',), 'fields': ('summary',)}),
     )
     prepopulated_fields = {'slug': ('title',)}
