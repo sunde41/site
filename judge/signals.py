@@ -113,12 +113,6 @@ def contest_submission_delete(sender, instance, **kwargs):
     participation.recalculate_score()
 
 
-@receiver(post_save, sender=Organization)
-def organization_update(sender, instance, **kwargs):
-    cache.delete_many([make_template_fragment_key('organization_html', (instance.id, engine))
-                       for engine in EFFECTIVE_MATH_ENGINES])
-
-
 _misc_config_i18n = [code for code, _ in settings.LANGUAGES]
 _misc_config_i18n.append('')
 
