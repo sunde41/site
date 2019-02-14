@@ -70,7 +70,7 @@ def post_update(sender, instance, **kwargs):
     cache.delete_many([
         make_template_fragment_key(
         'blog_slug:%d' % instance.id,
-        'blog_feed:%d' % instance.id,
+        'blog_feed:%d' % instance.id,)
     ])
 
 
