@@ -193,16 +193,6 @@ footer div > ul {
     list-style-type: none;
 }
 
-footer > div > a > p {
-    display: inline-block;
-    float: left;
-    width: 59px;
-    height: 90px;
-    margin-top: -17px;
-    margin-right: 20px;
-    font-size: 0;
-}
-
 footer div {
     max-width: 1180px;
     margin: 0 auto;
