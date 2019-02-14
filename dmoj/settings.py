@@ -156,6 +156,7 @@ MIDDLEWARE = (
 )
 
 ACCOUNT_ACTIVATION_DAYS = 7
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -333,6 +334,10 @@ CACHES = {}
 
 # Authentication
 AUTHENTICATION_BACKENDS = (
+    'social_core.backends.google.GoogleOAuth2',
+    'social_core.backends.dropbox.DropboxOAuth2',
+    'social_core.backends.facebook.FacebookOAuth2',
+    'judge.social_auth.GitHubSecureEmailOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 )
 
