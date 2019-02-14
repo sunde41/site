@@ -3,12 +3,23 @@ html, body {
 }
 
 .logo {
-    height: 44px;
+    height: 60px;
 }
 
 #nav-container {
     background: #fff;
     height: 100%;
+}
+
+nav ul li a, nav ul li button {
+    display: inline-block;
+    text-decoration: none;
+    vertical-align: middle;
+    color: #FFF;
+    padding: 18px 15px;
+    height: 24px;
+    font-size : 24px;
+    line-height: 24px;
 }
 
 #nav-shadow {
@@ -30,6 +41,12 @@ nav ul li a:hover, nav ul li button:hover {
 nav ul li a:link, nav ul li button:link {
     color: #940034;
 }
+
+nav ul li a:link:hover, nav ul li button:link:hover {
+    color: #fff;
+    background: #82002e;
+}
+
 
 nav ul li a, nav ul li button {
     color: #940034;
