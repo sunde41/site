@@ -157,9 +157,8 @@
                 </li>
             {% endfor %}
         </ul>
-
+        <ul id='right-menu'>
         {% if request.user.is_authenticated %}
-            <ul id='right-menu'>
                 <li>
                     <a href="{{ url('user_page') }}">
                             {%- trans username=request.user.username -%}
