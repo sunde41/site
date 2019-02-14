@@ -13,7 +13,7 @@ from judge.views import language, status, blog, problem, license, register, user
 from judge.views.problem_data import ProblemDataView, ProblemSubmissionDiff, \
     problem_data_file, problem_init_view
 from judge.views.register import RegistrationView, ActivationView
-from judge.views.select2 import UserSelect2View, ProblemSelect2View, CommentSelect2View, \
+from judge.views.select2 import UserSelect2View, ProblemSelect2View, \
     ContestSelect2View, UserSearchSelect2View, ContestUserSearchSelect2View, TicketUserSelect2View, AssigneeSelect2View
 
 admin.autodiscover()
@@ -234,7 +234,6 @@ urlpatterns = [
         url(r'^profile/$', UserSelect2View.as_view(), name='profile_select2'),
         url(r'^problem/$', ProblemSelect2View.as_view(), name='problem_select2'),
         url(r'^contest/$', ContestSelect2View.as_view(), name='contest_select2'),
-        url(r'^comment/$', CommentSelect2View.as_view(), name='comment_select2'),
     ])),
 ]
 
