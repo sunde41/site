@@ -107,7 +107,7 @@ class SolvedProblemMixin(object):
         return self.request.user.profile
 
 
-class ProblemSolution(SolvedProblemMixin, ProblemMixin, TitleMixin, CommentedDetailView):
+class ProblemSolution(SolvedProblemMixin, ProblemMixin, TitleMixin, DetailView):
     context_object_name = 'problem'
     template_name = 'problem/editorial.html'
 
@@ -130,8 +130,6 @@ class ProblemSolution(SolvedProblemMixin, ProblemMixin, TitleMixin, CommentedDet
         context['has_solved_problem'] = self.object.id in self.get_completed_problems()
         return context
 
-    def get_comment_page(self):
-        return 's:' + self.object.code
 
 
 class ProblemRaw(ProblemMixin, TitleMixin, TemplateResponseMixin, SingleObjectMixin, View):
@@ -159,9 +157,6 @@ class ProblemRaw(ProblemMixin, TitleMixin, TemplateResponseMixin, SingleObjectMi
 class ProblemDetail(ProblemMixin, SolvedProblemMixin, DetailView):
     context_object_name = 'problem'
     template_name = 'problem/problem.html'
-
-    def get_comment_page(self):
-        return 'p:%s' % self.object.code
 
     def get_context_data(self, **kwargs):
         context = super(ProblemDetail, self).get_context_data(**kwargs)
