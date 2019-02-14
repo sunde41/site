@@ -24,12 +24,12 @@ nav ul li a, nav ul li button {
     line-height: 16px;
 }
 
-.student_number {
+#user-links>ul>li>a>span {
     color: #940034;
-    padding: 22px 15px;
-    height: 16px;
-    font-size : 16px;
+    font-size: 16px;
     line-height: 16px;
+    height: 16px;
+    padding: 22px 15px;
 }
 
 #nav-shadow {
