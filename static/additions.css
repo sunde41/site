@@ -23,7 +23,7 @@ nav ul li a, nav ul li button {
     line-height: 16px;
 }
 
-nav ul li:first-child {
+nav-list li:first-child {
     padding-left: 30px;
 }
 
