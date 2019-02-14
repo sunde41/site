@@ -94,3 +94,11 @@ h2.sub-title {
     padding: 13px 0;
     font-size: 18px;
 }
+
+.tabs .tab.active a, .tabs .tab.active span {
+    border-top-color: #940034!important;
+}
+
+.tabs>ul>li>a, .tabs>ul>li>span {
+     border-radius: 0;
+}
