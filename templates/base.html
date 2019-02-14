@@ -175,8 +175,9 @@
                     <li><a href="{{ url('admin:index') }}">{{ _('Admin') }}</a></li>
                 {% endif %}
                 <li>
-                    <form action="{{ url('auth_logout') }}" method="POST">
+                    <form action="{{ url('auth_logout') }}" method="POST" class="right-form">
                         {% csrf_token %}
+                        <i class="fa fa-sign-out"></i>&nbsp;
                         <button type="submit">{{ _('Log out') }}</button>
                     </form>
                 </li>

@@ -168,3 +168,7 @@ h2.sub-title {
 .button, button, input[type=submit] {
     color: #940034 !important;
 }
+
+.right-form {
+    margin: 0;
+}
