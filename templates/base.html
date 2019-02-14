@@ -162,18 +162,15 @@
             <ul id='right-menu'>
                 <li>
                     <a href="{{ url('user_page') }}">
-                        <i class="fa fa-address-card"></i>&nbsp;
-                        <span class="student_number">
                             {%- trans username=request.user.username -%}
-
-                                <b>{{ username }}</b>
+                            <i class="fa fa-address-card"></i>&nbsp;
+                                {{ username }}
                             {%- endtrans %}
-                        </span>
                     </a>
                 </li>
                 {% if request.user.is_staff or request.user.is_superuser %}
                     <li><a href="{{ url('admin:index') }}">
-                        <i class="fa sliders-h"></i>&nbsp;{{ _('Admin') }}</a>
+                        <i class="fa fa-sliders-h"></i>&nbsp;{{ _('Admin') }}</a>
                     </li>
                 {% endif %}
                 <li>
