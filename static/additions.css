@@ -44,6 +44,10 @@ nav ul li a:link, nav ul li button:link {
     color: #940034;
 }
 
+nav ul li a:link.active, nav ul li button:link.active {
+    color: #fff;
+}
+
 nav ul li a:link:hover, nav ul li button:link:hover {
     color: #fff;
     background: #82002e;
@@ -56,4 +60,9 @@ nav ul li a, nav ul li button {
 
 #page-container {
     margin: 20px auto;
+}
+
+h2.sub-title {
+    font-weight: 500;
+    color: #940034;
 }
