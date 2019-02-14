@@ -10,7 +10,7 @@ from mptt.models import MPTTModel
 
 from judge.models.profile import Profile
 
-__all__ = ['validate_regex', 'NavigationBar', 'BlogPost', 'Solution']
+__all__ = ['validate_regex', 'NavigationBar', 'BlogPost']
 
 
 def validate_regex(regex):
@@ -72,9 +72,9 @@ class BlogPost(models.Model):
             return True
         return user.is_authenticated and self.authors.filter(id=user.profile.id).exists()
 
-    class Meta:
-        permissions = (
-            ('edit_all_post', _('Edit all posts')),
-        )
-        verbose_name = _('blog post')
-        verbose_name_plural = _('blog posts')
+    # class Meta:
+    #     permissions = (
+    #         ('edit_all_post', _('Edit all posts')),
+    #     )
+    #     verbose_name = _('blog post')
+    #     verbose_name_plural = _('blog posts')
