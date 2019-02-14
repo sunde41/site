@@ -5,11 +5,10 @@ html, body {
 .logo {
     height: 44px;
     margin: 1px 30px 0 0;
-    padding-left: 90px;
 }
 
 #nav-container {
-    max-width: 1180px;
+    max-width: 1498px;
     margin: 0 auto;
     background: #fff;
     height: 100%;
@@ -156,7 +155,6 @@ h2.sub-title {
 #right-menu {
     float: right;
     background-color: #fff;
-    padding-right: 90px;
 }
 
 #nav-shadow {
