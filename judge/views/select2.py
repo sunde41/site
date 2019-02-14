@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404
 from django.utils.encoding import smart_text
 from django.views.generic.list import BaseListView
 
-from judge.models import Profile, Problem, Comment, Contest
+from judge.models import Profile, Problem, Contest
 from judge.jinja2.gravatar import gravatar
 
 

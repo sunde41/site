@@ -150,17 +150,6 @@ urlpatterns = [
         url(r'^/$', lambda _, user: HttpResponsePermanentRedirect(reverse('user_page', args=[user]))),
     ])),
 
-    url(r'^comments/upvote/$', comment.upvote_comment, name='comment_upvote'),
-    url(r'^comments/downvote/$', comment.downvote_comment, name='comment_downvote'),
-    url(r'^comments/hide/$', comment.comment_hide, name='comment_hide'),
-    url(r'^comments/(?P<id>\d+)/', include([
-        url(r'^edit$', comment.CommentEdit.as_view(), name='comment_edit'),
-        url(r'^history/ajax$', comment.CommentRevisionAjax.as_view(), name='comment_revision_ajax'),
-        url(r'^edit/ajax$', comment.CommentEditAjax.as_view(), name='comment_edit_ajax'),
-        url(r'^votes/ajax$', comment.CommentVotesAjax.as_view(), name='comment_votes_ajax'),
-        url(r'^render$', comment.CommentContent.as_view(), name='comment_content'),
-    ])),
-
     url(r'^contests/$', contests.ContestList.as_view(), name='contest_list'),
     url(r'^contests/(?P<year>\d+)/(?P<month>\d+)/$', contests.ContestCalendar.as_view(), name='contest_calendar'),
     url(r'^contests/tag/(?P<name>[a-z-]+)', include([
@@ -216,7 +205,6 @@ urlpatterns = [
             url(r'^problem$', preview.ProblemMarkdownPreviewView.as_view(), name='problem_preview'),
             url(r'^blog$', preview.BlogMarkdownPreviewView.as_view(), name='blog_preview'),
             url(r'^contest$', preview.ContestMarkdownPreviewView.as_view(), name='contest_preview'),
-            url(r'^comment$', preview.CommentMarkdownPreviewView.as_view(), name='comment_preview'),
             url(r'^profile$', preview.ProfileMarkdownPreviewView.as_view(), name='profile_preview'),
             url(r'^solution$', preview.SolutionMarkdownPreviewView.as_view(), name='solution_preview'),
             url(r'^license$', preview.LicenseMarkdownPreviewView.as_view(), name='license_preview'),

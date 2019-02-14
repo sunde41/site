@@ -25,7 +25,6 @@ from django.views.generic import ListView, TemplateView
 from django.views.generic.detail import BaseDetailView, DetailView
 
 from judge import event_poster as event
-from judge.comments import CommentedDetailView
 from judge.models import Contest, ContestParticipation, ContestTag, Profile
 from judge.models import Problem
 from judge.timezone import from_database_time
@@ -184,11 +183,8 @@ class ContestMixin(object):
             }, status=403)
 
 
-class ContestDetail(ContestMixin, TitleMixin, CommentedDetailView):
+class ContestDetail(ContestMixin, TitleMixin):
     template_name = 'contest/contest.html'
-
-    def get_comment_page(self):
-        return 'c:%s' % self.object.key
 
     def get_title(self):
         return self.object.name

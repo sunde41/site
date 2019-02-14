@@ -6,8 +6,7 @@ from django.utils.functional import lazy
 from django.utils.translation import ugettext as _
 from django.views.generic import ListView
 
-from judge.comments import CommentedDetailView
-from judge.models import BlogPost, Comment, Problem, Contest, Profile, Submission, Language, ProblemClarification
+from judge.models import BlogPost, Problem, Contest, Profile, Submission, Language, ProblemClarification
 from judge.models import Ticket
 from judge.utils.cachedict import CacheDict
 from judge.utils.diggpaginator import DiggPaginator
@@ -37,7 +36,6 @@ class PostList(ListView):
         context['title'] = self.title or _('Page %d of Posts') % context['page_obj'].number
         context['first_page_href'] = reverse('home')
         context['page_prefix'] = reverse('blog_post_list')
-        context['comments'] = Comment.most_recent(self.request.user, 10)
         context['new_problems'] = Problem.objects.filter(is_public=True).order_by('-date', '-id')[:7]
         context['page_titles'] = CacheDict(lambda page: Comment.get_page_title(page))
 
@@ -53,14 +51,6 @@ class PostList(ListView):
         context['problem_count'] = lazy(Problem.objects.filter(is_public=True).count, int, long)
         context['submission_count'] = lazy(Submission.objects.count, int, long)
         context['language_count'] = lazy(Language.objects.count, int, long)
-
-        context['post_comment_counts'] = {
-            int(page[2:]): count for page, count in
-            Comment.objects
-                .filter(page__in=['b:%d' % post.id for post in context['posts']], hidden=False)
-                .values_list('page').annotate(count=Count('page')).order_by()
-        }
-
         now = timezone.now()
 
         # Dashboard stuff
@@ -96,7 +86,7 @@ class PostList(ListView):
         return context
 
 
-class PostView(TitleMixin, CommentedDetailView):
+class PostView(TitleMixin):
     model = BlogPost
     pk_url_kwarg = 'id'
     context_object_name = 'post'
@@ -104,9 +94,6 @@ class PostView(TitleMixin, CommentedDetailView):
 
     def get_title(self):
         return self.object.title
-
-    def get_comment_page(self):
-        return 'b:%s' % self.object.id
 
     def get_context_data(self, **kwargs):
         context = super(PostView, self).get_context_data(**kwargs)

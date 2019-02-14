@@ -1,6 +1,5 @@
 from django.contrib import admin
 
-from judge.admin.comments import CommentAdmin
 from judge.admin.contest import ContestTagAdmin, ContestAdmin, ContestParticipationAdmin
 from judge.admin.interface import NavigationBarAdmin, BlogPostAdmin, LicenseAdmin
 from judge.admin.problem import ProblemAdmin
@@ -9,12 +8,10 @@ from judge.admin.runtime import JudgeAdmin, LanguageAdmin
 from judge.admin.submission import SubmissionAdmin
 from judge.admin.taxon import ProblemGroupAdmin, ProblemTypeAdmin
 from judge.admin.ticket import TicketAdmin
-from judge.models import BlogPost, Comment, CommentLock, Contest, ContestParticipation, \
+from judge.models import BlogPost, Contest, ContestParticipation, \
     ContestTag, Judge, Language, License, NavigationBar, Problem, ProblemGroup, ProblemType, Profile, Submission, Ticket
 
 admin.site.register(BlogPost, BlogPostAdmin)
-admin.site.register(Comment, CommentAdmin)
-admin.site.register(CommentLock)
 admin.site.register(Contest, ContestAdmin)
 admin.site.register(ContestParticipation, ContestParticipationAdmin)
 admin.site.register(ContestTag, ContestTagAdmin)

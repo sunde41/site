@@ -92,19 +92,3 @@ class NoAutoCompleteCharField(forms.CharField):
         attrs = super(NoAutoCompleteCharField, self).widget_attrs(widget)
         attrs['autocomplete'] = 'off'
         return attrs
-
-
-class TOTPForm(Form):
-    TOLERANCE = getattr(settings, 'DMOJ_TOTP_TOLERANCE_HALF_MINUTES', 1)
-
-    totp_token = NoAutoCompleteCharField(validators=[
-        RegexValidator('^[0-9]{6}$', _('Two Factor Authentication tokens must be 6 decimal digits.'))
-    ])
-
-    def __init__(self, *args, **kwargs):
-        self.totp_key = kwargs.pop('totp_key')
-        super(TOTPForm, self).__init__(*args, **kwargs)
-
-    def clean_totp_token(self):
-        if not pyotp.TOTP(self.totp_key).verify(self.cleaned_data['totp_token'], valid_window=self.TOLERANCE):
-            raise ValidationError(_('Invalid Two Factor Authentication token.'))

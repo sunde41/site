@@ -1,7 +1,6 @@
 from reversion import revisions
 
 from judge.models.choices import TIMEZONE, ACE_THEMES, MATH_ENGINES_CHOICES, EFFECTIVE_MATH_ENGINES
-from judge.models.comment import Comment, CommentLock, CommentVote
 from judge.models.contest import Contest, ContestTag, ContestParticipation, ContestProblem, ContestSubmission, Rating
 from judge.models.interface import validate_regex, NavigationBar, BlogPost
 from judge.models.message import PrivateMessage, PrivateMessageThread
@@ -23,5 +22,4 @@ revisions.register(BlogPost)
 revisions.register(Solution)
 revisions.register(Judge, fields=['name', 'created', 'auth_key', 'description'])
 revisions.register(Language)
-revisions.register(Comment, fields=['author', 'time', 'page', 'score', 'body', 'hidden', 'parent'])
 del revisions
