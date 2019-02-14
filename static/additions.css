@@ -4,8 +4,8 @@ html, body {
 
 .logo {
     height: 44px;
-    margin: 1px 0 0;
-    padding-left: 50px;
+    margin: 1px 30px 0 0;
+    padding-left: 90px;
 }
 
 #nav-container {
@@ -66,3 +66,8 @@ h2.sub-title {
     font-weight: 500;
     color: #940034;
 }
+
+#content-right.problems {
+  padding: 0 0 0 20px;
+}
+
