@@ -142,7 +142,7 @@
     <div id="nav-container">
         <a id="navicon" href="javascript:void(0)"><i class="fa fa-bars"></i></a>
         <ul id="nav-list">
-            <li class="home-nav-element"><a href="/"><img src="{{ static('logo.gif') }}"></a></li>
+            <li class="home-nav-element"><a href="/"><img class="logo" src="{{ static('logo.gif') }}"></a></li>
             <li class="home-nav-element"><span class="nav-divider"></span></li>
             <li class="home-menu-item"><a href="/" class="nav-home">{{ _('Home') }}</a></li>
             {% for node in mptt_tree(nav_bar) recursive %}
