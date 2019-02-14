@@ -144,6 +144,10 @@ h2.sub-title {
      border-top-right-radius: 0;
 }
 
+#navigation {
+    background-color: #fff;
+}
+
 #nav-list {
     float:left;
     background-color: #fff;
