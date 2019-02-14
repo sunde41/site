@@ -7,11 +7,6 @@ html, body {
     margin: 1px 30px 0 0;
 }
 
-#navigation {
-    margin: 52px auto auto;
-    width: 90%;
-}
-
 #nav-container {
     background: #fff;
     height: 100%;
@@ -153,7 +148,6 @@ h2.sub-title {
 #nav-list {
     float:left;
     background-color: #fff;
-    width: 50%;
 }
 
 #right-menu {
