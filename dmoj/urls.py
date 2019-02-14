@@ -8,15 +8,14 @@ from django.http import HttpResponsePermanentRedirect
 from django.utils.translation import ugettext_lazy as _
 
 from judge.forms import CustomAuthenticationForm
-from judge.sitemap import ProblemSitemap, UserSitemap, HomePageSitemap, UrlSitemap, ContestSitemap, OrganizationSitemap, \
-    BlogPostSitemap, SolutionSitemap
+from judge.sitemap import ProblemSitemap, UserSitemap, HomePageSitemap, UrlSitemap, ContestSitemap, BlogPostSitemap, SolutionSitemap
 from judge.views import TitledTemplateView
-from judge.views import organization, language, status, blog, problem, license, register, user, \
+from judge.views import language, status, blog, problem, license, register, user, \
     submission, widgets, comment, contests, ranked_submission, stats, preview, ticket
 from judge.views.problem_data import ProblemDataView, ProblemSubmissionDiff, \
     problem_data_file, problem_init_view
 from judge.views.register import RegistrationView, ActivationView
-from judge.views.select2 import UserSelect2View, OrganizationSelect2View, ProblemSelect2View, CommentSelect2View, \
+from judge.views.select2 import UserSelect2View, ProblemSelect2View, CommentSelect2View, \
     ContestSelect2View, UserSearchSelect2View, ContestUserSearchSelect2View, TicketUserSelect2View, AssigneeSelect2View
 
 admin.autodiscover()
@@ -221,7 +220,6 @@ urlpatterns = [
             url(r'^contest$', preview.ContestMarkdownPreviewView.as_view(), name='contest_preview'),
             url(r'^comment$', preview.CommentMarkdownPreviewView.as_view(), name='comment_preview'),
             url(r'^profile$', preview.ProfileMarkdownPreviewView.as_view(), name='profile_preview'),
-            url(r'^organization$', preview.OrganizationMarkdownPreviewView.as_view(), name='organization_preview'),
             url(r'^solution$', preview.SolutionMarkdownPreviewView.as_view(), name='solution_preview'),
             url(r'^license$', preview.LicenseMarkdownPreviewView.as_view(), name='license_preview'),
             url(r'^ticket$', preview.TicketMarkdownPreviewView.as_view(), name='ticket_preview'),
@@ -254,7 +252,6 @@ urlpatterns = [
         'user': UserSitemap,
         'home': HomePageSitemap,
         'contest': ContestSitemap,
-        'organization': OrganizationSitemap,
         'blog': BlogPostSitemap,
         'solutions': SolutionSitemap,
         'pages': UrlSitemap([
@@ -264,7 +261,6 @@ urlpatterns = [
 
     url(r'^judge-select2/', include([
         url(r'^profile/$', UserSelect2View.as_view(), name='profile_select2'),
-        url(r'^organization/$', OrganizationSelect2View.as_view(), name='organization_select2'),
         url(r'^problem/$', ProblemSelect2View.as_view(), name='problem_select2'),
         url(r'^contest/$', ContestSelect2View.as_view(), name='contest_select2'),
         url(r'^comment/$', CommentSelect2View.as_view(), name='comment_select2'),
