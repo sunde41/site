@@ -203,3 +203,9 @@ footer > div > a > p {
     font-size: 0;
     background: url(https://witch.korea.ac.kr/ku_tiger.svg) no-repeat 0;
 }
+
+footer div {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 30px;
+}
