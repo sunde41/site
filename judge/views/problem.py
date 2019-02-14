@@ -51,7 +51,7 @@ def get_contest_submission_count(problem, profile):
     return profile.current_contest.submissions.exclude(submission__status__in=['IE']).filter(problem__problem__code=problem).count()
 
 
-class ProblemMixin(object):
+class ProblemMixin(SingleObjectMixin):
     model = Problem
     slug_url_kwarg = 'problem'
     slug_field = 'code'
@@ -64,10 +64,7 @@ class ProblemMixin(object):
 
     def get(self, request, *args, **kwargs):
         try:
-            self.object = self.get_object()
-            return self.render_to_response(self.get_context_data(
-                object=self.object)
-            )
+            return super(ProblemMixin, self).get(self, request, *args, **kwargs)
         except Http404:
             code = kwargs.get(self.slug_url_kwarg, None)
             return generic_message(request, _('No such problem'),
