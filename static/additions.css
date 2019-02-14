@@ -159,6 +159,7 @@ h2.sub-title {
 #right-menu {
     float: right;
     background-color: #fff;
+    margin-left: -10px;
 }
 
 #nav-shadow {
