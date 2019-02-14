@@ -40,8 +40,6 @@ class Profile(models.Model):
     ip = models.GenericIPAddressField(verbose_name=_('last IP'), blank=True, null=True)
     display_rank = models.CharField(max_length=10, default='user', verbose_name=_('display rank'),
                                     choices=(('user', 'Normal User'), ('setter', 'Problem Setter'), ('admin', 'Admin')))
-    mute = models.BooleanField(verbose_name=_('comment mute'), help_text=_('Some users are at their best when silent.'),
-                               default=False)
     rating = models.IntegerField(null=True, default=None)
     user_script = models.TextField(verbose_name=_('user script'), default='', blank=True, max_length=65536,
                                    help_text=_('User-defined JavaScript for site customization.'))
