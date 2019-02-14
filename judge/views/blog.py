@@ -4,7 +4,7 @@ from django.http import Http404
 from django.utils import timezone
 from django.utils.functional import lazy
 from django.utils.translation import ugettext as _
-from django.views.generic import ListView
+from django.views.generic import ListView, View
 
 from judge.models import BlogPost, Problem, Contest, Profile, Submission, Language, ProblemClarification
 from judge.models import Ticket
@@ -86,7 +86,7 @@ class PostList(ListView):
         return context
 
 
-class PostView(TitleMixin):
+class PostView(TitleMixin, View):
     model = BlogPost
     pk_url_kwarg = 'id'
     context_object_name = 'post'
