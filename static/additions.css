@@ -18,12 +18,13 @@ nav ul {
     margin: 0 !important;
 }
 
-nav ul li a, nav ul li button {
+nav ul li a,
+nav ul li button {
     display: inline-block;
     text-decoration: none;
     vertical-align: middle;
     color: #FFF;
-    padding: 22px 15px;
+    padding: 24px 15px 20px;
     height: 16px;
     font-size : 16px;
     line-height: 16px;
@@ -34,7 +35,7 @@ nav ul li a, nav ul li button {
     font-size: 16px;
     line-height: 16px;
     height: 16px;
-    padding: 22px 15px;
+    padding: 24px 15px 20px;
 }
 
 #nav-shadow {
