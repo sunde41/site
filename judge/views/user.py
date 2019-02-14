@@ -28,6 +28,7 @@ from judge.ratings import rating_class, rating_progress
 from judge.utils.problems import contest_completed_ids, user_completed_ids
 from judge.utils.ranker import ranker
 from judge.utils.views import TitleMixin, generic_message, DiggPaginatorMixin, QueryStringSortMixin
+from judge.forms import ProfileForm
 from .contests import contest_ranking_view
 
 __all__ = ['UserPage', 'UserAboutPage', 'UserProblemsPage', 'users', 'edit_profile']
