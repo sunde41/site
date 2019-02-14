@@ -3784,10 +3784,6 @@ msgstr ""
 msgid "%(points)s / %(total)s"
 msgstr ""
 
-#: .\templates\user\user-tabs.html:7
-msgid "Impersonate"
-msgstr ""
-
 #: .\templates\user\user-tabs.html:13
 msgid "Admin User"
 msgstr ""

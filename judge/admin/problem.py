@@ -24,7 +24,6 @@ class ProblemForm(ModelForm):
         self.fields['authors'].widget.can_add_related = False
         self.fields['curators'].widget.can_add_related = False
         self.fields['testers'].widget.can_add_related = False
-        self.fields['banned_users'].widget.can_add_related = False
         self.fields['change_message'].widget.attrs.update({
             'placeholder': ugettext('Describe the changes you made (optional)')
         })
@@ -34,7 +33,6 @@ class ProblemForm(ModelForm):
             'authors': HeavySelect2MultipleWidget(data_view='profile_select2', attrs={'style': 'width: 100%'}),
             'curators': HeavySelect2MultipleWidget(data_view='profile_select2', attrs={'style': 'width: 100%'}),
             'testers': HeavySelect2MultipleWidget(data_view='profile_select2', attrs={'style': 'width: 100%'}),
-            'banned_users': HeavySelect2MultipleWidget(data_view='profile_select2', attrs={'style': 'width: 100%'}),
             'types': Select2MultipleWidget,
             'group': Select2Widget,
         }
@@ -125,7 +123,6 @@ class ProblemAdmin(VersionAdmin):
         (_('Points'), {'fields': (('points', 'partial'), 'short_circuit')}),
         (_('Limits'), {'fields': ('time_limit', 'memory_limit')}),
         (_('Language'), {'fields': ('allowed_languages',)}),
-        (_('Justice'), {'fields': ('banned_users',)}),
         (_('History'), {'fields': ('change_message',)})
     )
     list_display = ['code', 'name', 'show_authors', 'points', 'is_public', 'show_public']

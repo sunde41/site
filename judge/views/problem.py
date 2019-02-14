@@ -426,20 +426,6 @@ class LanguageTemplateAjax(View):
         return HttpResponse(language.template, content_type='text/plain')
 
 
-class RandomProblem(ProblemList):
-    def get(self, request, *args, **kwargs):
-        self.setup(request)
-        if self.in_contest:
-            raise Http404()
-
-        queryset = self.get_normal_queryset()
-        count = queryset.count()
-        if not count:
-            return HttpResponseRedirect('%s%s%s' % (reverse('problem_list'), request.META['QUERY_STRING'] and '?',
-                                                    request.META['QUERY_STRING']))
-        return HttpResponseRedirect(queryset[randrange(count)].get_absolute_url())
-
-
 user_logger = logging.getLogger('judge.user')
 
 
@@ -464,11 +450,6 @@ def problem_submit(request, problem=None, submission=None):
                 user_logger.info('Naughty user %s wants to submit to %s without permission',
                                  request.user.username, form.cleaned_data['problem'].code)
                 return HttpResponseForbidden('<h1>Do you want me to ban you?</h1>')
-            if not request.user.is_superuser and form.cleaned_data['problem'].banned_users.filter(
-                    id=profile.id).exists():
-                return generic_message(request, _('Banned from submitting'),
-                                       _('You have been declared persona non grata for this problem. '
-                                         'You are permanently barred from submitting this problem.'))
 
             if profile.current_contest is not None:
                 try:
