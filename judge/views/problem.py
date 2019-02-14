@@ -51,7 +51,7 @@ def get_contest_submission_count(problem, profile):
     return profile.current_contest.submissions.exclude(submission__status__in=['IE']).filter(problem__problem__code=problem).count()
 
 
-class ProblemMixin(object, SingleObjectMixin):
+class ProblemMixin(SingleObjectMixin):
     model = Problem
     slug_url_kwarg = 'problem'
     slug_field = 'code'
