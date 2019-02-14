@@ -72,7 +72,7 @@ class ContestList(TitleMixin, ContestListMixin, ListView):
 
     def get_queryset(self):
         return super(ContestList, self).get_queryset() \
-            .order_by('-start_time', 'key').prefetch_related('tags', 'organizations')
+            .order_by('-start_time', 'key').prefetch_related('tags')
 
     def get_context_data(self, **kwargs):
         context = super(ContestList, self).get_context_data(**kwargs)
@@ -163,9 +163,8 @@ class ContestMixin(object):
             raise Http404()
 
         if contest.is_private:
-            if profile is None or (not user.has_perm('judge.edit_all_contest') and
-                                       not contest.organizations.filter(id__in=profile.organizations.all()).exists()):
-                raise PrivateContestError(contest.name, contest.organizations.all())
+            if profile is None or (not user.has_perm('judge.edit_all_contest')):
+                raise PrivateContestError(contest.name)
         return contest
 
     def dispatch(self, request, *args, **kwargs):
@@ -484,7 +483,6 @@ def base_contest_ranking_list(contest, problems, queryset, for_user=None):
 
 def contest_ranking_list(contest, problems):
     return base_contest_ranking_list(contest, problems, contest.users.filter(virtual=0)
-                                                                     .prefetch_related('user__organizations')
                                                                      .order_by('-score', 'cumtime'))
 
 
