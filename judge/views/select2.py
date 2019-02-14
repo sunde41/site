@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404
 from django.utils.encoding import smart_text
 from django.views.generic.list import BaseListView
 
-from judge.models import Profile, Organization, Problem, Comment, Contest
+from judge.models import Profile, Problem, Comment, Contest
 from judge.jinja2.gravatar import gravatar
 
 
@@ -45,11 +45,6 @@ class UserSelect2View(Select2View):
 
     def get_name(self, obj):
         return obj.username
-
-
-class OrganizationSelect2View(Select2View):
-    def get_queryset(self):
-        return Organization.objects.filter(name__icontains=self.term)
 
 
 class ProblemSelect2View(Select2View):
