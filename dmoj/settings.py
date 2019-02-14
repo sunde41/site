@@ -26,12 +26,13 @@ SECRET_KEY = '5*9f5q57mqmlz2#f$x1h76&jxy#yortjl1v+l*6hd18$d*yx#0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['150.95.151.157','codingtest.everycoding.net']
 
 SITE_ID = 1
-SITE_NAME = 'DMOJ'
-SITE_LONG_NAME = 'DMOJ: Modern Online Judge'
+SITE_NAME = '고려대학교 코딩 능력 평가 시스템'
+SITE_LONG_NAME = '고려대학교 코딩 능력 평가 시스템'
+SITE_ADMIN_EMAIL = 'sunde41@gmail.com'
+TERMS_OF_SERVICE_URL = '//dmoj.ca/tos' # Use a flatpage.
 
 PYGMENT_THEME = 'pygment-github.css'
 
@@ -295,10 +296,8 @@ EVENT_DAEMON_SUBMISSION_KEY = '6Sdmkx^%pk@GsifDfXcwX*Y7LRF%RGT8vmFpSxFBT$fwS7trc
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
-# Whatever you do, this better be one of the entries in `LANGUAGES`.
-LANGUAGE_CODE = 'en'
-TIME_ZONE = 'UTC'
-DEFAULT_USER_TIME_ZONE = 'America/Toronto'
+LANGUAGE_CODE = 'ko-KR'
+DEFAULT_USER_TIME_ZONE = 'Asia/Seoul'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
