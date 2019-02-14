@@ -85,7 +85,6 @@ else:
                     'icon': 'fa-user',
                     'children': [
                         'auth.Group',
-                        'registration.RegistrationProfile',
                         'judge.Profile',
                     ],
                 },
