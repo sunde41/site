@@ -33,7 +33,6 @@ from judge.comments import CommentedDetailView
 from judge.forms import ProblemSubmitForm
 from judge.models import ContestSubmission, ContestProblem, Judge, Language, Problem, ProblemGroup, ProblemTranslation, \
     ProblemType, RuntimeVersion, Solution, Submission, TranslatedProblemForeignKeyQuerySet
-from judge.pdf_problems import HAS_PDF, DefaultPdfMaker
 from judge.utils.diggpaginator import DiggPaginator
 from judge.utils.opengraph import generate_opengraph
 from judge.utils.problems import contest_completed_ids, user_completed_ids, contest_attempted_ids, user_attempted_ids, \
@@ -176,7 +175,6 @@ class ProblemDetail(ProblemMixin, SolvedProblemMixin, CommentedDetailView):
 
         context['available_judges'] = Judge.objects.filter(online=True, problems=self.object)
         context['show_languages'] = self.object.allowed_languages.count() != Language.objects.count()
-        context['has_pdf_render'] = HAS_PDF
         context['completed_problem_ids'] = self.get_completed_problems()
         context['attempted_problems'] = self.get_attempted_problems()
         context['num_open_tickets'] = self.object.tickets.filter(is_open=True).count()
@@ -207,67 +205,6 @@ class ProblemDetail(ProblemMixin, SolvedProblemMixin, CommentedDetailView):
 
 class LatexError(Exception):
     pass
-
-
-class ProblemPdfView(ProblemMixin, SingleObjectMixin, View):
-    logger = logging.getLogger('judge.problem.pdf')
-    languages = set(map(itemgetter(0), settings.LANGUAGES))
-
-    def get(self, request, *args, **kwargs):
-        if not HAS_PDF:
-            raise Http404()
-
-        language = kwargs.get('language', self.request.LANGUAGE_CODE)
-        if language not in self.languages:
-            raise Http404()
-
-        problem = self.get_object()
-        try:
-            trans = problem.translations.get(language=language)
-        except ProblemTranslation.DoesNotExist:
-            trans = None
-
-        error_cache = os.path.join(settings.PROBLEM_PDF_CACHE, '%s.%s.log' % (problem.code, language))
-        cache = os.path.join(settings.PROBLEM_PDF_CACHE, '%s.%s.pdf' % (problem.code, language))
-
-        if os.path.exists(error_cache):
-            with open(error_cache) as f:
-                return HttpResponse(f.read(), status=500, content_type='text/plain')
-
-        if not os.path.exists(cache):
-            self.logger.info('Rendering: %s.%s.pdf', problem.code, language)
-            with DefaultPdfMaker() as maker, translation.override(language):
-                maker.html = get_template('problem/raw.html').render({
-                    'problem': problem,
-                    'problem_name': problem.name if trans is None else trans.name,
-                    'description': problem.description if trans is None else trans.description,
-                    'url': request.build_absolute_uri(),
-                    'math_engine': maker.math_engine,
-                }).replace('"//', '"https://').replace("'//", "'https://")
-
-                assets = ['style.css', 'pygment-github.css']
-                if maker.math_engine == 'jax':
-                    assets.append('mathjax_config.js')
-                for file in assets:
-                    maker.load(file, os.path.join(settings.DMOJ_RESOURCES, file))
-                maker.make()
-                if not maker.success:
-                    with open(error_cache, 'wb') as f:
-                        f.write(maker.log)
-                    self.logger.error('Failed to render PDF for %s', problem.code)
-                    return HttpResponse(maker.log, status=500, content_type='text/plain')
-                shutil.move(maker.pdffile, cache)
-
-        response = HttpResponse()
-        if hasattr(settings, 'PROBLEM_PDF_INTERNAL') and request.META.get('SERVER_SOFTWARE', '').startswith('nginx/'):
-            response['X-Accel-Redirect'] = '%s/%s.%s.pdf' % (settings.PROBLEM_PDF_INTERNAL, problem.code, language)
-        else:
-            with open(cache, 'rb') as f:
-                response.content = f.read()
-
-        response['Content-Type'] = 'application/pdf'
-        response['Content-Disposition'] = 'inline; filename=%s.%s.pdf' % (problem.code, language)
-        return response
 
 
 class ProblemList(QueryStringSortMixin, TitleMixin, SolvedProblemMixin, ListView):

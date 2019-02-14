@@ -14,10 +14,6 @@ from .models import Problem, Contest, Submission, Profile, MiscConfig, Language,
     BlogPost, ContestSubmission, Comment, License, EFFECTIVE_MATH_ENGINES
 
 
-def get_pdf_path(basename):
-    return os.path.join(settings.PROBLEM_PDF_CACHE, basename)
-
-
 def unlink_if_exists(file):
     try:
         os.unlink(file)
@@ -41,11 +37,6 @@ def problem_update(sender, instance, **kwargs):
     cache.delete_many([make_template_fragment_key('problem_authors', (instance.id, lang))
                        for lang, _ in settings.LANGUAGES])
     cache.delete_many(['generated-meta-problem:%s:%d' % (lang, instance.id) for lang, _ in settings.LANGUAGES])
-
-    if hasattr(settings, 'PROBLEM_PDF_CACHE'):
-        for lang, _ in settings.LANGUAGES:
-            unlink_if_exists(get_pdf_path('%s.%s.pdf' % (instance.code, lang)))
-            unlink_if_exists(get_pdf_path('%s.%s.log' % (instance.code, lang)))
 
 
 @receiver(post_save, sender=Profile)
