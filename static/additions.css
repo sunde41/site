@@ -129,24 +129,18 @@ h2.sub-title {
     font-style: normal;
 }
 
-.table thead th:first-child {
-    border-top-left-radius: 0;
-}
-
 .table th {
     background-color: #940034;
     padding-top: 7px;
     font-size: 14px;
 }
 
-.table th:first-child {
-     border-top-right-radius: 0;
+.table th:first-child,
+.table thead th:first-child{
+     border-top-left-radius: 0;
 }
 
-.table th:last-child {
-     border-top-right-radius: 0;
-}
-
+.table th:last-child,
 .table thead th:last-child {
-   border-top-right-radius: 0 !important;
+     border-top-right-radius: 0;
 }

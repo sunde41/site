@@ -164,7 +164,7 @@
         <span id="user-links">
             {% if request.user.is_authenticated %}
                 <ul>
-                    <li>
+                    <li> <i class="fa fa-address-card" style="color: #00aee0;"></i>&nbsp;
                         <a href="{{ url('user_page') }}">
                             <span class="student_number">
                                 {%- trans username=request.user.username -%}
