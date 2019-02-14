@@ -1,4 +1,18 @@
+html, body {
+    font-family: "Apple SD Gothic Neo", AppleSDGothicNeo, "Noto Sans KR", "Nanum Gothic", "Malgun Gothic", 맑은고딕, 굴림, 돋움, Dotum, sans-serif;;
+}
+
 #nav-container {
     background: #940034;
     height: 100%;
+}
+
+#nav-shadow {
+    height: 3px;
+    background: linear-gradient(rgba(110, 0, 39, 0.5), transparent);
+}
+
+nav ul li a.active, nav ul li button.active {
+    color: #FFF;
+    background: #82002e;
 }
