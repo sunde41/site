@@ -10,7 +10,6 @@ from lxml.etree import XMLSyntaxError, ParserError
 from jinja2 import Markup
 
 from judge.highlight_code import highlight_code
-from judge.utils.camo import client as camo_client
 from judge.jinja2.markdown.lazy_load import lazy_load as lazy_load_processor
 from judge.jinja2.markdown.math import MathRenderer, MathInlineLexer, MathInlineGrammar
 from judge.utils.texoid import TEXOID_ENABLED, TexoidRenderer
@@ -116,8 +115,6 @@ def markdown(value, style, math_engine=None, lazy_load=False):
     math = hasattr(settings, 'MATHOID_URL') and styles.get('math', False)
 
     post_processors = []
-    if styles.get('use_camo', False) and camo_client is not None:
-        post_processors.append(camo_client.update_tree)
     if lazy_load:
         post_processors.append(lazy_load_processor)
 

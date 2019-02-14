@@ -238,7 +238,6 @@ LANGUAGES = [
 
 MARKDOWN_ADMIN_EDITABLE_STYLE = {
     'safe_mode': False,
-    'use_camo': True,
     'texoid': True,
     'math': True,
 }
@@ -246,14 +245,12 @@ MARKDOWN_ADMIN_EDITABLE_STYLE = {
 MARKDOWN_DEFAULT_STYLE = {
     'safe_mode': True,
     'nofollow': True,
-    'use_camo': True,
     'math': True,
 }
 
 MARKDOWN_USER_LARGE_STYLE = {
     'safe_mode': True,
     'nofollow': True,
-    'use_camo': True,
     'math': True,
 }
 
@@ -268,7 +265,6 @@ MARKDOWN_STYLES = {
     'blog': MARKDOWN_ADMIN_EDITABLE_STYLE,
     'solution': MARKDOWN_ADMIN_EDITABLE_STYLE,
     'contest_tag': MARKDOWN_ADMIN_EDITABLE_STYLE,
-    'organization-about': MARKDOWN_USER_LARGE_STYLE,
     'ticket': MARKDOWN_USER_LARGE_STYLE,
 }
 
