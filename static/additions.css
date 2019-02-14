@@ -42,6 +42,11 @@ nav ul li a.active, nav ul li button.active {
     background: #940034;
 }
 
+
+nav ul li a:hover, nav ul li button:hover {
+    color: #82002e;
+}
+
 nav ul li a:link, nav ul li button:link {
     color: #940034;
 }
@@ -49,6 +54,11 @@ nav ul li a:link, nav ul li button:link {
 nav ul li a:link.active, nav ul li button:link.active {
     color: #fff;
 }
+
+nav ul li a:link:hover, nav ul li button:link:hover {
+    color: #82002e;
+}
+
 
 nav ul li a, nav ul li button {
     color: #940034;
@@ -144,6 +154,7 @@ h2.sub-title {
 #right-menu {
     float: right;
     background-color: #fff;
+    padding-right: 90px;
 }
 
 #nav-shadow {
