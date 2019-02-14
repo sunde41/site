@@ -158,13 +158,13 @@
             {% endfor %}
         </ul>
         <ul id='right-menu'>
-        {% if request.user.is_authenticated %}
+            {% if request.user.is_authenticated %}
                 <li>
                     <a href="{{ url('user_page') }}">
-                            {%- trans username=request.user.username -%}
+                        {%- trans username=request.user.username -%}
                             <i class="fa fa-address-card"></i>&nbsp;
-                                {{ username }}
-                            {%- endtrans %}
+                            {{ username }}
+                        {%- endtrans %}
                     </a>
                 </li>
                 {% if request.user.is_staff or request.user.is_superuser %}
@@ -175,19 +175,21 @@
                 <li>
                     <form action="{{ url('auth_logout') }}" method="POST" class="right-form">
                         {% csrf_token %}
-                        <button type="submit" id="right-top-button"><i class="fa fa-sign-out-alt"></i>&nbsp;{{ _('Log out') }}</button>
+                        <button type="submit" id="right-top-button"><i
+                                class="fa fa-sign-out-alt"></i>&nbsp;{{ _('Log out') }}</button>
                     </form>
                 </li>
-        {% else %}
+            {% else %}
                 <li>
                     <a href="{{ url('auth_login') }}?next={{ LOGIN_RETURN_PATH|urlencode }}">
-                       <i class="fa fa-sign-in-alt"></i>&nbsp;{{ _('Login') }}
+                        <i class="fa fa-sign-in-alt"></i>&nbsp;{{ _('Login') }}
                     </a>
                 </li>
                 <li>
-                    <a href="{{ url('registration_register') }}"><i class="fa fa-user-alt"></i>&nbsp;{{ _('Register') }}</a>
+                    <a href="{{ url('registration_register') }}"><i class="fa fa-user-alt"></i>&nbsp;{{ _('Register') }}
+                    </a>
                 </li>
-        {% endif %}
+            {% endif %}
         </ul>
     </div>
     <div id="nav-shadow"></div>
@@ -228,23 +230,23 @@
         <div id="content-body">{% block body %}{% endblock %}</div>
     </main>
     {% block bodyend %}{% endblock %}
-
-    <footer>
-        <div>
-  <a href="https://info.korea.ac.kr"><p>고려대학교 정보대학</p></a>
-    <ul>
-      <li><address>[02841] 서울특별시 성북구 안암로 145 고려대학교 자연계캠퍼스
-            우정정보관 105호</address></li>
-                    <li>02-3290-4930~4932</li>
-                    <li>E-Mail : cscoi@korea.ac.kr</li>
-
-
-
-                  <li style="margin-top:20px;"><a href="http://www.korea.ac.kr/mbshome/mbs/university/subview.do?id=university_090300000000">개인정보처리방침</a>  </li>
-                    <li>Copyright (C)2019 Korea University. All Rights Reserved</li>
-                </ul>
-            </div>
-    </footer>
 </div>
+<footer>
+    <div>
+        <a href="https://info.korea.ac.kr"><p>고려대학교 정보대학</p></a>
+        <ul>
+            <li>
+                <address>[02841] 서울특별시 성북구 안암로 145 고려대학교 자연계캠퍼스
+                    우정정보관 105호
+                </address>
+            </li>
+            <li>02-3290-4930~4932</li>
+            <li>E-Mail : cscoi@korea.ac.kr</li>
+            <li><a href="http://www.korea.ac.kr/mbshome/mbs/university/subview.do?id=university_090300000000">개인정보처리방침</a>
+            </li>
+            <li>Copyright (C)2019 Korea University. All Rights Reserved</li>
+        </ul>
+    </div>
+</footer>
 </body>
 </html>
