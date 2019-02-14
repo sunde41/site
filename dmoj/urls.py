@@ -83,6 +83,7 @@ def paged_list_view(view, name):
 
 
 urlpatterns = [
+    url(r'^pages/', include('django.contrib.flatpages.urls')),
     url(r'^500/$', exception),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^i18n/', include('django.conf.urls.i18n')),
