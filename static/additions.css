@@ -165,10 +165,16 @@ h2.sub-title {
     background-color: #fff;
 }
 
-.button, button, input[type=submit] {
+#right-top-button {
     color: #940034 !important;
+    padding: 0;
 }
 
 .right-form {
     margin: 0;
+}
+
+.student_number {
+    margin-left: 0;
+    padding-left: 0;
 }
