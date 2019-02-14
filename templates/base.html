@@ -177,8 +177,7 @@
                 <li>
                     <form action="{{ url('auth_logout') }}" method="POST" class="right-form">
                         {% csrf_token %}
-                        <i class="fa fa-sign-out"></i>&nbsp;
-                        <button type="submit">{{ _('Log out') }}</button>
+                        <button type="submit"><i class="fa fa-sign-out"></i>&nbsp;{{ _('Log out') }}</button>
                     </form>
                 </li>
             </ul>
