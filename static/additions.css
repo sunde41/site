@@ -4,7 +4,7 @@ html, body {
 
 .logo {
     height: 44px;
-    margin: 1px 30px 0 0;
+    margin: 0 30px 0 0;
 }
 
 #nav-container {
@@ -51,18 +51,22 @@ nav ul li a.active, nav ul li button.active {
 
 nav ul li a:hover, nav ul li button:hover {
     color: #82002e;
+    background: #fff;
 }
 
 nav ul li a:link, nav ul li button:link {
     color: #940034;
+    background: #fff;
 }
 
 nav ul li a:link.active, nav ul li button:link.active {
     color: #fff;
+    background: #940034;
 }
 
 nav ul li a:link:hover, nav ul li button:link:hover {
     color: #82002e;
+    background: #fff;
 }
 
 
@@ -173,7 +177,7 @@ h2.sub-title {
 
 #right-top-button {
     color: #940034 !important;
-    padding: 0;
+    padding: 2px 0 0 1px;
 }
 
 .right-form {
