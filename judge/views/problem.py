@@ -131,7 +131,6 @@ class ProblemSolution(SolvedProblemMixin, ProblemMixin, TitleMixin, DetailView):
         return context
 
 
-
 class ProblemRaw(ProblemMixin, TitleMixin, TemplateResponseMixin, SingleObjectMixin, View):
     context_object_name = 'problem'
     template_name = 'problem/raw.html'
