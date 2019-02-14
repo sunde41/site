@@ -8,7 +8,7 @@ from statici18n.templatetags.statici18n import inlinei18n
 
 from judge.highlight_code import highlight_code
 from judge.user_translations import ugettext
-from . import (datetime, filesize, gravatar, language, markdown, rating, reference, render,
+from . import (datetime, filesize, language, markdown, rating, reference, render,
                spaceless, submission, timedelta)
 from . import registry
 
