@@ -181,3 +181,12 @@ h2.sub-title {
 #runtime-info th {
     padding: 0;
 }
+
+
+body.dashboard #content #content-main {
+    max-width: 70%;
+}
+
+body.dashboard #content #content-related {
+    width: 25%;
+}
