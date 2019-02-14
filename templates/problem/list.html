@@ -199,7 +199,7 @@
                         <th class="problem">{{ _('Problem') }}</th>
                         <th class="category">{{ _('Category') }}</th>
                         {% if show_types %}
-                            <th>{{ _('Types') }}</th>
+                            <th>{{ _('유형') }}</th>
                         {% endif %}
                         <th class="points">{{ _('Points') }}</th>
                         <th class="users">{{ _('Users') }}</th>
@@ -218,14 +218,14 @@
                         </th>
                         {% if show_types %}
                             <th>
-                                <a href="{{ sort_links.type }}">{{ _('Types') }}{{ sort_order.type }}</a>
+                                <a href="{{ sort_links.type }}">{{ _('유형') }}{{ sort_order.type }}</a>
                             </th>
                         {% endif %}
                         <th class="points">
-                            <a href="{{ sort_links.points }}">{{ _('Points') }}{{ sort_order.points }}</a>
+                            <a href="{{ sort_links.points }}">{{ _('점수') }}{{ sort_order.points }}</a>
                         </th>
                         <th class="ac-rate">
-                            <a href="{{ sort_links.ac_rate }}">{{ _('AC %%') }}{{ sort_order.ac_rate }}</a>
+                            <a href="{{ sort_links.ac_rate }}">{{ _('정답률 %%') }}{{ sort_order.ac_rate }}</a>
                         </th>
                         <th class="users">
                             <a href="{{ sort_links.user_count }}">{{ _('Users') }}{{ sort_order.user_count }}</a>

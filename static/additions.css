@@ -106,7 +106,7 @@ h2.sub-title {
 
 .sidebox h3 {
     margin: 0 -5px;
-    background: rgba(110, 0, 39, 0.5);
+    background: #940034;
     border-radius: 0;
     padding-top: 7px;
     font-size: 14px;
@@ -121,11 +121,12 @@ h2.sub-title {
 
 #filter-form .filter-form-group {
     margin-top: 20px;
+    font-style: normal;
 }
 
 #filter-form .form-label {
     margin-top: 20px;
-    font-style: italic;
+    font-style: normal;
 }
 
 .table thead th:first-child {
@@ -133,7 +134,7 @@ h2.sub-title {
 }
 
 .table th {
-    background-color: rgba(110, 0, 39, 0.5);
+    background-color: #940034;
     padding-top: 7px;
     font-size: 14px;
 }
