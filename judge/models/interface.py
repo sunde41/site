@@ -10,7 +10,7 @@ from mptt.models import MPTTModel
 
 from judge.models.profile import Profile
 
-__all__ = ['validate_regex', 'NavigationBar', 'BlogPost']
+__all__ = ['validate_regex', 'NavigationBar', 'BlogPost', 'Solution']
 
 
 def validate_regex(regex):
@@ -57,7 +57,6 @@ class BlogPost(models.Model):
     sticky = models.BooleanField(verbose_name=_('sticky'), default=False)
     publish_on = models.DateTimeField(verbose_name=_('publish after'))
     content = models.TextField(verbose_name=_('post content'))
-    summary = models.TextField(verbose_name=_('post summary'), blank=True)
 
     def __unicode__(self):
         return self.title
@@ -66,15 +65,15 @@ class BlogPost(models.Model):
         return reverse('blog_post', args=(self.id, self.slug))
 
     def can_see(self, user):
-        if self.visible : # and self.publish_on <= timezone.now():
+        if self.visible and self.publish_on <= timezone.now():
             return True
         if user.has_perm('judge.edit_all_post'):
             return True
         return user.is_authenticated and self.authors.filter(id=user.profile.id).exists()
 
-    # class Meta:
-    #     permissions = (
-    #         ('edit_all_post', _('Edit all posts')),
-    #     )
-    #     verbose_name = _('blog post')
-    #     verbose_name_plural = _('blog posts')
+    class Meta:
+        permissions = (
+            ('edit_all_post', _('Edit all posts')),
+        )
+        verbose_name = _('blog post')
+        verbose_name_plural = _('blog posts')

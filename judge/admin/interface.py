@@ -52,14 +52,12 @@ class BlogPostForm(ModelForm):
 
         if HeavyPreviewAdminPageDownWidget is not None:
             widgets['content'] = HeavyPreviewAdminPageDownWidget(preview=reverse_lazy('blog_preview'))
-            widgets['summary'] = HeavyPreviewAdminPageDownWidget(preview=reverse_lazy('blog_preview'))
 
 
 class BlogPostAdmin(VersionAdmin):
     fieldsets = (
         (None, {'fields': ('title', 'slug', 'authors', 'visible', 'sticky', 'publish_on')}),
         (_('Content'), {'fields': ('content', )}),
-        (_('Summary'), {'classes': ('collapse',), 'fields': ('summary',)}),
     )
     prepopulated_fields = {'slug': ('title',)}
     list_display = ('id', 'title', 'visible', 'sticky', 'publish_on')
