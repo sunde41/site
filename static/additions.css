@@ -80,3 +80,6 @@ h2.sub-title {
   padding: 0 0 0 20px;
 }
 
+.button:hover, button:hover, input[type=submit]:hover {
+    background: #940034;
+}
