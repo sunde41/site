@@ -8,7 +8,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from judge.forms import CustomAuthenticationForm
 from judge.views import TitledTemplateView
-from judge.views import language, status, blog, problem, license, register, user, \
+from judge.views import language, status, problem, license, register, user, \
     submission, widgets, contests, ranked_submission, stats, preview, ticket
 from judge.views.problem_data import ProblemDataView, ProblemSubmissionDiff, \
     problem_data_file, problem_init_view
@@ -83,7 +83,7 @@ def paged_list_view(view, name):
 
 
 urlpatterns = [
-    url(r'^$', blog.PostList.as_view(template_name='home.html', title=_('Home')), kwargs={'page': 1}, name='home'),
+    url(r'^$', problem.ProblemList.as_view(), name='problem_list'),
     url(r'^500/$', exception),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^i18n/', include('django.conf.urls.i18n')),
@@ -175,9 +175,6 @@ urlpatterns = [
     url(r'^runtimes/matrix/$', status.version_matrix, name='version_matrix'),
     url(r'^status/$', status.status_all, name='status_all'),
 
-    url(r'^blog/', paged_list_view(blog.PostList, 'blog_post_list')),
-    url(r'^post/(?P<id>\d+)-(?P<slug>.*)$', blog.PostView.as_view(), name='blog_post'),
-
     url(r'^license/(?P<key>[-\w.]+)$', license.LicenseDetail.as_view(), name='license'),
     url(r'^widgets/', include([
         url(r'^rejudge$', widgets.rejudge_submission, name='submission_rejudge'),
@@ -198,7 +195,6 @@ urlpatterns = [
 
         url(r'^preview/', include([
             url(r'^problem$', preview.ProblemMarkdownPreviewView.as_view(), name='problem_preview'),
-            url(r'^blog$', preview.BlogMarkdownPreviewView.as_view(), name='blog_preview'),
             url(r'^contest$', preview.ContestMarkdownPreviewView.as_view(), name='contest_preview'),
             url(r'^comment$', preview.CommentMarkdownPreviewView.as_view(), name='comment_preview'),
             url(r'^profile$', preview.ProfileMarkdownPreviewView.as_view(), name='profile_preview'),

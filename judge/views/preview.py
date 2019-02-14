@@ -17,11 +17,6 @@ class MarkdownPreviewView(TemplateResponseMixin, ContextMixin, View):
 class ProblemMarkdownPreviewView(MarkdownPreviewView):
     template_name = 'problem/preview.html'
 
-
-class BlogMarkdownPreviewView(MarkdownPreviewView):
-    template_name = 'blog/preview.html'
-
-
 class ContestMarkdownPreviewView(MarkdownPreviewView):
     template_name = 'contest/preview.html'
 

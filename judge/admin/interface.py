@@ -40,39 +40,6 @@ class NavigationBarAdmin(DraggableMPTTAdmin):
         return result
 
 
-class BlogPostForm(ModelForm):
-    def __init__(self, *args, **kwargs):
-        super(BlogPostForm, self).__init__(*args, **kwargs)
-        self.fields['authors'].widget.can_add_related = False
-
-    class Meta:
-        widgets = {
-            'authors': HeavySelect2MultipleWidget(data_view='profile_select2', attrs={'style': 'width: 100%'}),
-        }
-
-        if HeavyPreviewAdminPageDownWidget is not None:
-            widgets['content'] = HeavyPreviewAdminPageDownWidget(preview=reverse_lazy('blog_preview'))
-
-
-class BlogPostAdmin(VersionAdmin):
-    fieldsets = (
-        (None, {'fields': ('title', 'slug', 'authors', 'visible', 'sticky', 'publish_on')}),
-        (_('Content'), {'fields': ('content', )}),
-    )
-    prepopulated_fields = {'slug': ('title',)}
-    list_display = ('id', 'title', 'visible', 'sticky', 'publish_on')
-    list_display_links = ('id', 'title')
-    ordering = ('-publish_on',)
-    form = BlogPostForm
-    date_hierarchy = 'publish_on'
-
-    def has_change_permission(self, request, obj=None):
-        return (request.user.has_perm('judge.edit_all_post') or
-                request.user.has_perm('judge.change_blogpost') and (
-                    obj is None or
-                    obj.authors.filter(id=request.user.profile.id).exists()))
-
-
 class SolutionForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super(SolutionForm, self).__init__(*args, **kwargs)
