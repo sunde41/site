@@ -39,7 +39,7 @@
 </head>
 
 <body>
-<h2 style="color:#393630; display: inline-block">{{ problem_name }}</h2>
+<h2 class='sub-title' style="display: inline-block">{{ problem_name }}</h2>
 <hr>
 <div class="content-description printing">
     {{ description|markdown('problem', 'tex' if math_engine == 'jax' else math_engine)|reference|absolutify(url)|str|safe }}

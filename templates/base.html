@@ -154,7 +154,8 @@
                         {% endif %}
                     </a>
                     {% with children=node.get_children() %}
-                        {% if children %}<ul>{{ loop(children) }}</ul>{% endif %}
+                        {% if children %}
+                            <ul>{{ loop(children) }}</ul>{% endif %}
                     {% endwith %}
                 </li>
             {% endfor %}
