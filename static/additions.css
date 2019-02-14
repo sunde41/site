@@ -144,6 +144,6 @@ h2.sub-title {
      border-top-right-radius: 0;
 }
 
-ul.right-menu {
+ul.right-menu li {
     display: inline-block;
 }
