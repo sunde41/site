@@ -4,10 +4,10 @@
     {% if tab == 'calendar' %}
         <div style="font-size: 1.6em; margin-top: 0.3em">
             {% if prev_month %}
-                <a href="{{ url('contest_calendar', prev_month.year, prev_month.month) }}">&laquo; {{ _('Prev') }}</a>
+                <a href="{{ url('contest_calendar', prev_month.year, prev_month.month) }}">&laquo; {{ _('이전') }}</a>
             {% endif %}
             {% if next_month %}
-                <a href="{{ url('contest_calendar', next_month.year, next_month.month) }}">{{ _('Next') }} &raquo;</a>
+                <a href="{{ url('contest_calendar', next_month.year, next_month.month) }}">{{ _('다음') }} &raquo;</a>
             {% endif %}
         </div>
         <span class="spacer"></span>
@@ -15,8 +15,8 @@
 {% endblock %}
 
 {% block tabs %}
-    {{ make_tab('list', 'fa-list', url('contest_list'), _('List')) }}
-    {{ make_tab('calendar', 'fa-calendar', url('contest_calendar', now.year, now.month), _('Calendar')) }}
+    {{ make_tab('list', 'fa-list', url('contest_list'), _('전체 목록')) }}
+    {{ make_tab('calendar', 'fa-calendar', url('contest_calendar', now.year, now.month), _('일정')) }}
     {% if perms.judge.change_contest %}
         {{ make_tab('admin', 'fa-edit', url('admin:judge_contest_changelist'), _('Admin')) }}
     {% endif %}
