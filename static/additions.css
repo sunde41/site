@@ -172,5 +172,9 @@ h2.sub-title {
 
 .right-form {
     margin: 0;
-    padding: 0 10px;
+    padding-left: 13px;
+}
+
+.contest-list th {
+    padding: 0;
 }

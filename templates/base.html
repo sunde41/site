@@ -170,7 +170,7 @@
                 </li>
                 {% if request.user.is_staff or request.user.is_superuser %}
                     <li><a href="{{ url('admin:index') }}">
-                        <i class="fa fa-sliders-h"></i>&nbsp;{{ _('Admin') }}</a>
+                        <i class="fa fa-sliders-h"></i>&nbsp;{{ _('관리') }}</a>
                     </li>
                 {% endif %}
                 <li>
@@ -179,14 +179,14 @@
                         <button type="submit" id="right-top-button"><i class="fa fa-sign-out-alt"></i>&nbsp;{{ _('Log out') }}</button>
                     </form>
                 </li>
-            </ul>
         {% else %}
-            <span class="anon">
+            <li>
                 <a href="{{ url('auth_login') }}?next={{ LOGIN_RETURN_PATH|urlencode }}">
-                    <b>{{ _('Login') }}</b>
+                   <i class="fa fa-sign-out-alt"></i>&nbsp;{{ _('Login') }}
                 </a>&nbsp;|&nbsp;<a href="{{ url('registration_register') }}">{{ _('Register') }}</a>
-            </span>
+            </li>
         {% endif %}
+        </ul>
     </div>
     <div id="nav-shadow"></div>
 </nav>
