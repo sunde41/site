@@ -11,7 +11,7 @@ from judge.forms import CustomAuthenticationForm
 from judge.sitemap import ProblemSitemap, UserSitemap, HomePageSitemap, UrlSitemap, ContestSitemap, BlogPostSitemap, SolutionSitemap
 from judge.views import TitledTemplateView
 from judge.views import language, status, blog, problem, license, register, user, \
-    submission, widgets, comment, contests, ranked_submission, stats, preview, ticket
+    submission, widgets, contests, ranked_submission, stats, preview, ticket
 from judge.views.problem_data import ProblemDataView, ProblemSubmissionDiff, \
     problem_data_file, problem_init_view
 from judge.views.register import RegistrationView, ActivationView
