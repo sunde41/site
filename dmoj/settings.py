@@ -35,7 +35,7 @@ SITE_ADMIN_EMAIL = 'sunde41@gmail.com'
 TERMS_OF_SERVICE_URL = '//dmoj.ca/tos' # Use a flatpage.
 
 PYGMENT_THEME = 'pygment-github.css'
-
+PROBLEM_DATA_ROOT = '/root/problems'
 # Application definition
 
 INSTALLED_APPS = ()
