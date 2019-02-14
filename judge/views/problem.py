@@ -196,11 +196,6 @@ class ProblemDetail(LoginRequiredMixin, ProblemMixin, SolvedProblemMixin, Detail
             context['language'] = self.request.LANGUAGE_CODE
             context['description'] = translation.description
             context['translated'] = True
-
-        if not self.object.summary:
-            metadata = generate_opengraph('generated-meta-problem:%s:%d' % (context['language'], self.object.id),
-                                          context['description'], 'problem')
-        context['meta_description'] = self.object.summary or metadata[0]
         return context
 
 

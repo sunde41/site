@@ -118,8 +118,6 @@ class Problem(models.Model):
     date = models.DateTimeField(verbose_name=_('date of publishing'), null=True, blank=True, db_index=True,
                                 help_text=_("Doesn't have magic ability to auto-publish due to backward compatibility"))
     license = models.ForeignKey(License, null=True, blank=True, on_delete=models.SET_NULL)
-    summary = models.TextField(blank=True, verbose_name=_('problem summary'),
-                               help_text=_('Plain-text, shown in meta description tag, e.g. for social media.'))
     user_count = models.IntegerField(verbose_name=_('number of users'), default=0,
                                      help_text=_('The number of users who solved the problem.'))
     ac_rate = models.FloatField(verbose_name=_('solve rate'), default=0)
