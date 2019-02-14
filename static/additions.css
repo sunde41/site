@@ -30,6 +30,7 @@ nav ul li a, nav ul li button {
     line-height: 16px;
     height: 16px;
     padding: 22px 15px;
+    margin-right: 90px;
 }
 
 #nav-shadow {
