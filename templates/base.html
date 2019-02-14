@@ -16,15 +16,13 @@
     <script>window.bad_browser = true</script>
     <![endif]-->
     {% block meta %}{% endblock %}
-    {% if not INLINE_FONTAWESOME %}
-        <link rel="stylesheet" href="{{ static('libs/fontawesome/css/fontawesome.min.css') }}">
-    {% endif %}
     {% compress css %}
         <link rel="stylesheet" href="{{ static('style.css') }}">
         <link rel="stylesheet" href="{{ static('additions.css') }}">
         {% if PYGMENT_THEME %}
             <link rel="stylesheet" href="{{ static(PYGMENT_THEME) }}">
         {% endif %}
+        <link rel="stylesheet" href="{{ static('libs/fontawesome/css/fontawesome.min.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ static('libs/featherlight/featherlight.min.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ static('libs/clipboard/tooltip.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ static('libs/select2/select2.css') }}">
