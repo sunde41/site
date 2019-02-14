@@ -6,7 +6,6 @@ from django.contrib.sitemaps.views import sitemap
 from django.core.urlresolvers import reverse
 from django.http import HttpResponsePermanentRedirect
 from django.utils.translation import ugettext_lazy as _
-from social_django.urls import urlpatterns as social_auth_patterns
 
 from judge.forms import CustomAuthenticationForm
 from judge.sitemap import ProblemSitemap, UserSitemap, HomePageSitemap, UrlSitemap, ContestSitemap, OrganizationSitemap, \
@@ -72,8 +71,6 @@ register_patterns = [
     url(r'^password/reset/done/$', auth_views.PasswordResetDoneView.as_view(
         template_name='registration/password_reset_done.html',
     ), name='password_reset_done'),
-    url(r'^social/error/$', register.social_auth_error, name='social_auth_error'),
-
     url(r'^2fa/$', totp.TOTPLoginView.as_view(), name='login_2fa'),
     url(r'^2fa/enable/$', totp.TOTPEnableView.as_view(), name='enable_2fa'),
     url(r'^2fa/disable/$', totp.TOTPDisableView.as_view(), name='disable_2fa'),
@@ -97,8 +94,6 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^i18n/', include('django.conf.urls.i18n')),
     url(r'^accounts/', include(register_patterns)),
-    url(r'^', include(social_auth_patterns, namespace='social')),
-
     url(r'^problems/$', problem.ProblemList.as_view(), name='problem_list'),
     url(r'^problems/random/$', problem.RandomProblem.as_view(), name='problem_random'),
 
