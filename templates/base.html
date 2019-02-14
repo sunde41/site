@@ -180,11 +180,14 @@
                     </form>
                 </li>
         {% else %}
-            <li>
-                <a href="{{ url('auth_login') }}?next={{ LOGIN_RETURN_PATH|urlencode }}">
-                   <i class="fa fa-sign-out-alt"></i>&nbsp;{{ _('Login') }}
-                </a>&nbsp;|&nbsp;<a href="{{ url('registration_register') }}">{{ _('Register') }}</a>
-            </li>
+                <li>
+                    <a href="{{ url('auth_login') }}?next={{ LOGIN_RETURN_PATH|urlencode }}">
+                       <i class="fa fa-sign-in-alt"></i>&nbsp;{{ _('Login') }}
+                    </a>
+                </li>
+
+                <li>&nbsp;|&nbsp;<i class="fa fa-user-alt"></i>&nbsp;<a href="{{ url('registration_register') }}">{{ _('Register') }}</a>
+                </li>
         {% endif %}
         </ul>
     </div>

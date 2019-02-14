@@ -175,7 +175,7 @@ h2.sub-title {
     padding-left: 13px;
 }
 
-.contest-list th
+.contest-list th,
 #judge-status th,
 #judge-versions th,
 #runtime-info th {
