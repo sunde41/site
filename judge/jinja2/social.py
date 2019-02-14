@@ -15,11 +15,6 @@ def make_func(name, template, url_func):
     func.__name__ = name
     registry.function(name, func)
 
-
-for name, template, url_func in SHARES:
-    make_func(name, template, url_func)
-
-
 @registry.function
 def recaptcha_init(language=None):
     return get_template('snowpenguin/recaptcha/recaptcha_init.html').render({'explicit': False, 'language': language})
