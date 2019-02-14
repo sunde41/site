@@ -167,9 +167,9 @@
                     <li>
                         <a href="{{ url('user_page') }}">
                             <span class="student_number">
-                                    {%- trans username=request.user.username -%}
-                                        <b>{{ username }}</b>.
-                                    {%- endtrans %}
+                                {%- trans username=request.user.username -%}
+                                    <i class="fa fa-address-card"></i>&nbsp;<b>{{ username }}</b>
+                                {%- endtrans %}
                             </span>
                         </a>
                         <ul style="width: 150px">
