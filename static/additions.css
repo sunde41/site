@@ -207,5 +207,14 @@ footer > div > a > p {
 footer div {
     max-width: 1180px;
     margin: 0 auto;
-    padding: 30px;
+    padding: 20px;
+}
+
+footer div > ul li a {
+    font-weight: bold;
+    color: #ccc;
+}
+
+em, address {
+    font-style: normal;
 }
