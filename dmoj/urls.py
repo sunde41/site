@@ -2,13 +2,11 @@ from django.conf import settings
 from django.conf.urls import include, url
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
-from django.contrib.sitemaps.views import sitemap
 from django.core.urlresolvers import reverse
 from django.http import HttpResponsePermanentRedirect
 from django.utils.translation import ugettext_lazy as _
 
 from judge.forms import CustomAuthenticationForm
-from judge.sitemap import ProblemSitemap, UserSitemap, HomePageSitemap, UrlSitemap, ContestSitemap, BlogPostSitemap, SolutionSitemap
 from judge.views import TitledTemplateView
 from judge.views import language, status, blog, problem, license, register, user, \
     submission, widgets, contests, ranked_submission, stats, preview, ticket
@@ -233,17 +231,6 @@ urlpatterns = [
         url(r'^/close$', ticket.TicketStatusChangeView.as_view(open=False), name='ticket_close'),
         url(r'^/notes$', ticket.TicketNotesEditView.as_view(), name='ticket_notes'),
     ])),
-    url(r'^sitemap\.xml$', sitemap, {'sitemaps': {
-        'problem': ProblemSitemap,
-        'user': UserSitemap,
-        'home': HomePageSitemap,
-        'contest': ContestSitemap,
-        'blog': BlogPostSitemap,
-        'solutions': SolutionSitemap,
-        'pages': UrlSitemap([
-            {'location': '/about/', 'priority': 0.9},
-        ]),
-    }}),
 
     url(r'^judge-select2/', include([
         url(r'^profile/$', UserSelect2View.as_view(), name='profile_select2'),

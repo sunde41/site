@@ -126,7 +126,6 @@ INSTALLED_APPS += (
     'django.contrib.redirects',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    'django.contrib.sitemaps',
     'registration',
     'mptt',
     'reversion',
