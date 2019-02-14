@@ -86,14 +86,7 @@ else:
                     'children': [
                         'auth.Group',
                         'registration.RegistrationProfile',
-                    ],
-                },
-                {
-                    'model': 'judge.Profile',
-                    'icon': 'fa-user-plus',
-                    'children': [
-                        'judge.Organization',
-                        'judge.OrganizationRequest',
+                        'judge.Profile',
                     ],
                 },
                 {
