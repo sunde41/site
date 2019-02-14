@@ -11,7 +11,7 @@ from judge.forms import CustomAuthenticationForm
 from judge.sitemap import ProblemSitemap, UserSitemap, HomePageSitemap, UrlSitemap, ContestSitemap, OrganizationSitemap, \
     BlogPostSitemap, SolutionSitemap
 from judge.views import TitledTemplateView
-from judge.views import organization, language, status, blog, problem, mailgun, license, register, user, \
+from judge.views import organization, language, status, blog, problem, license, register, user, \
     submission, widgets, comment, contests, ranked_submission, stats, preview, ticket
 from judge.views.problem_data import ProblemDataView, ProblemSubmissionDiff, \
     problem_data_file, problem_init_view
@@ -222,9 +222,6 @@ urlpatterns = [
     url(r'^post/(?P<id>\d+)-(?P<slug>.*)$', blog.PostView.as_view(), name='blog_post'),
 
     url(r'^license/(?P<key>[-\w.]+)$', license.LicenseDetail.as_view(), name='license'),
-
-    url(r'^mailgun/mail_activate/$', mailgun.MailgunActivationView.as_view(), name='mailgun_activate'),
-
     url(r'^widgets/', include([
         url(r'^rejudge$', widgets.rejudge_submission, name='submission_rejudge'),
         url(r'^single_submission$', submission.single_submission_query, name='submission_single_query'),
