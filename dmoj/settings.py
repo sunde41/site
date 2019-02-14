@@ -93,7 +93,6 @@ else:
                     'icon': 'fa-bars',
                     'children': [
                         'judge.License',
-                        'sites.Site',
                     ],
                 },
                 ('flatpages.FlatPage', 'fa-file-text-o'),
@@ -114,7 +113,6 @@ INSTALLED_APPS += (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites',
     'registration',
     'mptt',
     'reversion',
