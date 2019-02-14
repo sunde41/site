@@ -25,8 +25,6 @@ class CustomRegistrationForm(RegistrationForm):
                                 error_messages={'invalid': _('A username must contain letters, '
                                                              'numbers, or underscores')})
     display_name = CharField(max_length=50, required=False, label=_('Real name (optional)'))
-    timezone = ChoiceField(label=_('Timezone'), choices=TIMEZONE,
-                           widget=Select2Widget(attrs={'style': 'width:100%'}))
     language = ModelChoiceField(queryset=Language.objects.all(), label=_('Preferred language'), empty_label=None,
                                 widget=Select2Widget(attrs={'style': 'width:100%'}))
 
@@ -51,9 +49,6 @@ class RegistrationView(OldRegistrationView):
     def get_context_data(self, **kwargs):
         if 'title' not in kwargs:
             kwargs['title'] = self.title
-        tzmap = getattr(settings, 'TIMEZONE_MAP', None)
-        kwargs['TIMEZONE_MAP'] = tzmap or 'http://momentjs.com/static/img/world.png'
-        kwargs['TIMEZONE_BG'] = getattr(settings, 'TIMEZONE_BG', None if tzmap else '#4E7CAD')
         kwargs['password_validators'] = get_default_password_validators()
         kwargs['tos_url'] = getattr(settings, 'TERMS_OF_SERVICE_URL', None)
         return super(RegistrationView, self).get_context_data(**kwargs)
@@ -66,7 +61,6 @@ class RegistrationView(OldRegistrationView):
 
         cleaned_data = form.cleaned_data
         profile.name = cleaned_data['display_name']
-        profile.timezone = cleaned_data['timezone']
         profile.language = cleaned_data['language']
         profile.save()
 

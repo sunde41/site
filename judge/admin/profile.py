@@ -17,7 +17,6 @@ class ProfileForm(ModelForm):
 
     class Meta:
         widgets = {
-            'timezone': Select2Widget,
             'language': Select2Widget,
             'ace_theme': Select2Widget,
             'current_contest': Select2Widget,
