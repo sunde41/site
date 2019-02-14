@@ -161,3 +161,7 @@ h2.sub-title {
 #nav-shadow {
     clear: both;
 }
+
+.home-nav-element {
+    background-color: #fff;
+}

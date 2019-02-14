@@ -49,7 +49,7 @@
         {% include "extra_js.html" %}
         <script src="{{ static('common.js') }}"></script>
         <script>
-            moment.locale('{{ LANGUAGE_CODE }}');
+            moment.locale('ko');
             $(function () {
                 $('img.unveil').unveil(200);
             });
@@ -164,7 +164,7 @@
             <ul id='right-menu'>
                 <li>
                     <a href="{{ url('user_page') }}">
-                        <i class="fa fa-user fa-fw"></i>&nbsp;
+                        <i class="fa fa-address-card"></i>&nbsp;
                         <span class="student_number">
                             {%- trans username=request.user.username -%}
 
