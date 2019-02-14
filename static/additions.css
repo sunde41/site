@@ -8,8 +8,7 @@ html, body {
 }
 
 #nav-container {
-    max-width: 1498px;
-    margin: 0 auto;
+    margin: 52px auto auto;
     background: #fff;
     height: 100%;
 }
@@ -156,7 +155,6 @@ h2.sub-title {
 #right-menu {
     float: right;
     background-color: #fff;
-    width: 50%;
 }
 
 #nav-shadow {
