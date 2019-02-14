@@ -21,9 +21,8 @@ from django.utils.functional import cached_property
 from django.utils.html import escape, format_html
 from django.utils.timezone import make_aware
 from django.utils.translation import ugettext as _, ugettext_lazy
-from django.views.generic import ListView, TemplateView
+from django.views.generic import ListView, TemplateView,  View
 from django.views.generic.detail import BaseDetailView, DetailView
-
 from judge import event_poster as event
 from judge.models import Contest, ContestParticipation, ContestTag, Profile
 from judge.models import Problem
