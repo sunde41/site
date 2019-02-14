@@ -94,7 +94,6 @@ else:
                     'children': [
                         'judge.License',
                         'sites.Site',
-                        'redirects.Redirect',
                     ],
                 },
                 ('flatpages.FlatPage', 'fa-file-text-o'),
@@ -114,7 +113,6 @@ INSTALLED_APPS += (
     'django.contrib.flatpages',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.redirects',
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'registration',
@@ -141,7 +139,6 @@ MIDDLEWARE = (
     'judge.timezone.TimezoneMiddleware',
     'judge.middleware.ContestMiddleware',
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
-    'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
 )
 
 ACCOUNT_ACTIVATION_DAYS = 7
