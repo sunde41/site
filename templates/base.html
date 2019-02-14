@@ -172,7 +172,9 @@
                     </a>
                 </li>
                 {% if request.user.is_staff or request.user.is_superuser %}
-                    <li><a href="{{ url('admin:index') }}">{{ _('Admin') }}</a></li>
+                    <li><a href="{{ url('admin:index') }}">
+                        <i class="fa sliders-h"></i>&nbsp;{{ _('Admin') }}</a>
+                    </li>
                 {% endif %}
                 <li>
                     <form action="{{ url('auth_logout') }}" method="POST" class="right-form">
