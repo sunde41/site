@@ -46,8 +46,6 @@ class TicketForm(forms.Form):
     def clean(self):
         if self.request is not None and self.request.user.is_authenticated:
             profile = self.request.user.profile
-            if profile.mute:
-                raise ValidationError(_('Your part is silent, little toad.'))
         return super(TicketForm, self).clean()
 
 

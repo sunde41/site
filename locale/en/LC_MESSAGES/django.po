@@ -1459,10 +1459,6 @@ msgid "display rank"
 msgstr ""
 
 #: .\judge\models\profile.py:84
-msgid "comment mute"
-msgstr ""
-
-#: .\judge\models\profile.py:84
 msgid "Some users are at their best when silent."
 msgstr ""
 

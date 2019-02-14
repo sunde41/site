@@ -1425,10 +1425,6 @@ msgid "display rank"
 msgstr "순위 표시"
 
 #: .\judge\models\profile.py:84
-msgid "comment mute"
-msgstr "코멘트 음소거"
-
-#: .\judge\models\profile.py:84
 msgid "Some users are at their best when silent."
 msgstr ""
 
