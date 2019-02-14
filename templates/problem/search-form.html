@@ -27,7 +27,7 @@
                 <label for="show_types">{{ _('문제 유형 보기') }}</label>
             </div>
             <div class="filter-form-group">
-                <label for="category"><i>{{ _('Category') }}</i></label>
+                <label for="category">{{ _('Category') }}</label>
                 <select id="category" name="category">
                     {% if category %}
                         <option value="" selected="selected">{{ _('All') }}</option>
@@ -43,7 +43,7 @@
             </div>
             {% if show_types %}
                 <div class="filter-form-group">
-                    <label for="type"><i>{{ _('문제 유형') }}</i></label>
+                    <label for="type">{{ _('문제 유형') }}</label>
                     <select id="types" name="type" multiple>
                         {% for type in problem_types %}
                             <option value="{{ type.id }}"{% if type.id in selected_types %} selected{% endif %}>
