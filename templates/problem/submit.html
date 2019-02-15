@@ -219,6 +219,7 @@
     <form id="problem_submit" action="" method="post" class="form-area">
         {% csrf_token %}
         {{ form.non_field_errors() }}
+        <div>
         <div id="submit-wrapper" style="width: 65%;">
             <div id="problem-id">
                 {{ form.problem.errors }}
@@ -248,6 +249,7 @@
             {% cache 86400 'problem_html' problem.id MATH_ENGINE LANGUAGE_CODE %}
                 {{ problem.description|markdown("problem", MATH_ENGINE)|reference|str|safe }}
             {% endcache %}
+        </div>
         </div>
         <hr>
         {% if no_judges %}
