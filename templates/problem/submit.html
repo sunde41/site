@@ -180,8 +180,8 @@
                 padding-left: 1.5em;
                 padding-top: 0.5em;
             }
-            .submit-wrapper {flex: 30%;}
-            .problem-wrapper{flex: 70%;}
+            #submit-wrapper {flex: 70%;}
+            #problem-wrapper{flex: 30%;}
         </style>
     {% endcompress %}
 {% endblock %}
@@ -247,7 +247,7 @@
                     </div>
                 {% endif %}
             </div>
-            <div class="problem-wrapper">
+            <div id="problem-wrapper">
                 {% cache 86400 'problem_html' problem.id MATH_ENGINE LANGUAGE_CODE %}
                     {{ problem.description|markdown("problem", MATH_ENGINE)|reference|str|safe }}
                 {% endcache %}
