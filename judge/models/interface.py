@@ -63,7 +63,7 @@ class NoticePost(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('blog_post', args=(self.id, self.slug))
+        return reverse('notice_post', args=(self.id, self.slug))
 
     def can_see(self, user):
         if self.visible and self.publish_on <= timezone.now():

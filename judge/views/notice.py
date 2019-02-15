@@ -20,7 +20,7 @@ class PostList(ListView):
     model = NoticePost
     paginate_by = 10
     context_object_name = 'posts'
-    template_name = 'blog/list.html'
+    template_name = 'notice/list.html'
     title = None
 
     def get_paginator(self, queryset, per_page, orphans=0,
