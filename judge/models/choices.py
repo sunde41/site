@@ -4,6 +4,8 @@ from operator import itemgetter
 import pytz
 from django.utils.translation import ugettext_lazy as _
 
+import operator
+
 
 def make_timezones():
     data = defaultdict(list)
@@ -15,7 +17,7 @@ def make_timezones():
         if not loc.startswith('GMT'):
             data[area].append((tz, loc))
     data = data.items()
-    data.sort(key=itemgetter(0))
+    data = data.sorted(data,key=operator.itemgetter(0))
     return data
 
 TIMEZONE = make_timezones()
