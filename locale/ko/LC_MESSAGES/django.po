@@ -2177,7 +2177,7 @@ msgstr ""
 #: .\judge\views\problem.py:595 .\judge\views\problem.py:598
 #, python-format
 msgid "Submit to %(problem)s"
-msgstr ""
+msgstr "%(problem)s 풀이 제출"
 
 #: .\judge\views\problem_data.py:36
 msgid "Checker arguments must be a JSON object"
@@ -3801,7 +3801,3 @@ msgstr "공지"
 
 msgid "notice post"
 msgstr "공지"
-
-
-msgid "Submit to %(problem)s"
-msgstr "%(problem)s 풀이 제출"
