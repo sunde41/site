@@ -10,7 +10,7 @@ from mptt.models import MPTTModel
 
 from judge.models.profile import Profile
 
-__all__ = ['validate_regex', 'NavigationBar', 'Solution']
+__all__ = ['validate_regex', 'NavigationBar', 'NoticePost']
 
 
 def validate_regex(regex):
@@ -47,3 +47,34 @@ class NavigationBar(MPTTModel):
         else:
             pattern = cache[self.regex] = re.compile(self.regex, re.VERBOSE)
             return pattern
+
+
+class NoticePost(models.Model):
+    title = models.CharField(verbose_name=_('post title'), max_length=100)
+    authors = models.ManyToManyField(Profile, verbose_name=_('authors'), blank=True)
+    slug = models.SlugField(verbose_name=_('slug'))
+    visible = models.BooleanField(verbose_name=_('public visibility'), default=False)
+    sticky = models.BooleanField(verbose_name=_('sticky'), default=False)
+    publish_on = models.DateTimeField(verbose_name=_('publish after'))
+    content = models.TextField(verbose_name=_('post content'))
+
+
+    def __unicode__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return reverse('blog_post', args=(self.id, self.slug))
+
+    def can_see(self, user):
+        if self.visible and self.publish_on <= timezone.now():
+            return True
+        if user.has_perm('judge.edit_all_post'):
+            return True
+        return user.is_authenticated and self.authors.filter(id=user.profile.id).exists()
+
+    class Meta:
+        permissions = (
+            ('edit_all_post', _('Edit all posts')),
+        )
+        verbose_name = _('notice post')
+        verbose_name_plural = _('notice posts')

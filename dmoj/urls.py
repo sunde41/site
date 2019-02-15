@@ -8,7 +8,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from judge.forms import CustomAuthenticationForm
 from judge.views import TitledTemplateView
-from judge.views import language, status, problem, license, register, user, \
+from judge.views import language, status, problem, license, register, user, notice, \
     submission, widgets, contests, ranked_submission, stats, preview, ticket
 from judge.views.problem_data import ProblemDataView, ProblemSubmissionDiff, \
     problem_data_file, problem_init_view
@@ -83,6 +83,7 @@ def paged_list_view(view, name):
 
 
 urlpatterns = [
+    url(r'^$', notice.PostList.as_view(template_name='home.html', title=_('Home')), kwargs={'page': 1}, name='home'),
     url(r'^500/$', exception),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^i18n/', include('django.conf.urls.i18n')),
@@ -173,7 +174,8 @@ urlpatterns = [
     url(r'^runtimes/$', language.LanguageList.as_view(), name='runtime_list'),
     url(r'^runtimes/matrix/$', status.version_matrix, name='version_matrix'),
     url(r'^status/$', status.status_all, name='status_all'),
-
+    url(r'^notice/', paged_list_view(notice.PostList, 'notice_post_list')),
+    url(r'^post/(?P<id>\d+)-(?P<slug>.*)$', notice.PostView.as_view(), name='notice_post'),
     url(r'^license/(?P<key>[-\w.]+)$', license.LicenseDetail.as_view(), name='license'),
     url(r'^widgets/', include([
         url(r'^rejudge$', widgets.rejudge_submission, name='submission_rejudge'),
@@ -196,6 +198,7 @@ urlpatterns = [
             url(r'^problem$', preview.ProblemMarkdownPreviewView.as_view(), name='problem_preview'),
             url(r'^contest$', preview.ContestMarkdownPreviewView.as_view(), name='contest_preview'),
             url(r'^comment$', preview.CommentMarkdownPreviewView.as_view(), name='comment_preview'),
+            url(r'^notice$', preview.NoticeMarkdownPreviewView.as_view(), name='notice_preview'),
             url(r'^profile$', preview.ProfileMarkdownPreviewView.as_view(), name='profile_preview'),
             url(r'^solution$', preview.SolutionMarkdownPreviewView.as_view(), name='solution_preview'),
             url(r'^license$', preview.LicenseMarkdownPreviewView.as_view(), name='license_preview'),
