@@ -748,15 +748,15 @@ msgstr ""
 #: .\judge\models\contest.py:175 .\judge\models\contest.py:263
 #: .\judge\models\contest.py:298
 msgid "contest"
-msgstr "대회"
+msgstr "코딩 능력 평가"
 
 #: .\judge\models\contest.py:176
 msgid "contests"
-msgstr "대회"
+msgstr "코딩 능력 평가"
 
 #: .\judge\models\contest.py:180
 msgid "associated contest"
-msgstr "관련된 대회"
+msgstr "관련된 코딩 능력 평가"
 
 #: .\judge\models\contest.py:181 .\judge\models\contest.py:297
 #: .\judge\models\profile.py:173
@@ -796,11 +796,11 @@ msgstr "%s에서 %s"
 
 #: .\judge\models\contest.py:255
 msgid "contest participation"
-msgstr "대회 참가"
+msgstr "코딩 능력 평가 참가"
 
 #: .\judge\models\contest.py:256
 msgid "contest participations"
-msgstr "대회 참가자"
+msgstr "코딩 능력 평가 참가자"
 
 #: .\judge\models\contest.py:262 .\judge\models\contest.py:282
 #: .\judge\models\problem.py:303 .\judge\models\problem.py:308
@@ -839,11 +839,11 @@ msgstr ""
 
 #: .\judge\models\contest.py:276
 msgid "contest problem"
-msgstr "대회 문제"
+msgstr "코딩 능력 평가 문제"
 
 #: .\judge\models\contest.py:277
 msgid "contest problems"
-msgstr "대회 문제"
+msgstr "코딩 능력 평가 문제"
 
 #: .\judge\models\contest.py:281 .\judge\models\submission.py:149
 msgid "submission"
@@ -859,11 +859,11 @@ msgstr "Pretests에서만 이 제출이 실행되었는지 여부"
 
 #: .\judge\models\contest.py:292
 msgid "contest submission"
-msgstr "대회 제출"
+msgstr "코딩 능력 평가 제출"
 
 #: .\judge\models\contest.py:293
 msgid "contest submissions"
-msgstr "대회 제출"
+msgstr "코딩 능력 평가 제출"
 
 #: .\judge\models\contest.py:300
 msgid "rank"
@@ -883,11 +883,11 @@ msgstr "최근 순위"
 
 #: .\judge\models\contest.py:307
 msgid "contest rating"
-msgstr "대회 순위"
+msgstr "코딩 능력 평가 순위"
 
 #: .\judge\models\contest.py:308
 msgid "contest ratings"
-msgstr "대회 순위"
+msgstr "코딩 능력 평가 순위"
 
 #: .\judge\models\interface.py:24
 msgid "configuration item"
@@ -1341,7 +1341,7 @@ msgstr ""
 
 #: .\judge\models\profile.py:27
 msgid "Displayed beside user name during contests"
-msgstr "대회 동안 사용자 이름 옆에 표시됩니다."
+msgstr "코딩 능력 평가 동안 사용자 이름 옆에 표시됩니다."
 
 #: .\judge\models\profile.py:28
 msgid "organization description"
@@ -1438,7 +1438,7 @@ msgstr "사이트 수정을 위한 사용자 자바스크립트입니다."
 
 #: .\judge\models\profile.py:89
 msgid "current contest"
-msgstr "현재 대회"
+msgstr "현재 코딩 능력 평가"
 
 #: .\judge\models\profile.py:91
 msgid "math engine"
@@ -1921,29 +1921,29 @@ msgstr ""
 #: .\judge\views\contests.py:48 .\judge\views\contests.py:178
 #: .\judge\views\contests.py:181 .\judge\views\contests.py:308
 msgid "No such contest"
-msgstr "그런 대회는 존재하지 않습니다."
+msgstr "그런 코딩 능력 평가는 존재하지 않습니다."
 
 #: .\judge\views\contests.py:49 .\judge\views\contests.py:179
 #, python-format
 msgid "Could not find a contest with the key \"%s\"."
-msgstr "키 %s로는 대회를 찾을 수 없습니다."
+msgstr "키 %s로는 코딩 능력 평가를 찾을 수 없습니다."
 
 #: .\judge\views\contests.py:72 .\judge\views\contests.py:322
 msgid "Contests"
-msgstr "대회"
+msgstr "코딩 능력 평가"
 
 #: .\judge\views\contests.py:182
 msgid "Could not find such contest."
-msgstr "그런 대회를 찾을 수 있습니다."
+msgstr "그런 코딩 능력 평가를 찾을 수 있습니다."
 
 #: .\judge\views\contests.py:185
 #, python-format
 msgid "Access to contest \"%s\" denied"
-msgstr "%s 대회 접근이 거부되었습니다."
+msgstr "%s 코딩 능력 평가 접근이 거부되었습니다."
 
 #: .\judge\views\contests.py:236
 msgid "Contest not ongoing"
-msgstr "현재 진행중인 대회가 아닙니다."
+msgstr "현재 진행중인 코딩 능력 평가가 아닙니다."
 
 #: .\judge\views\contests.py:237
 #, python-format
@@ -1952,12 +1952,12 @@ msgstr "%s는 현재 진행중이 아닙니다."
 
 #: .\judge\views\contests.py:241
 msgid "Already in contest"
-msgstr "대회에 이미 있습니다."
+msgstr "코딩 능력 평가에 이미 있습니다."
 
 #: .\judge\views\contests.py:242
 #, python-format
 msgid "You are already in a contest: \"%s\"."
-msgstr "현재 대회 %s에 이미 참가해 있습니다."
+msgstr "현재 코딩 능력 평가 %s에 이미 참가해 있습니다."
 
 #: .\judge\views\contests.py:298
 #, python-format
@@ -1967,11 +1967,11 @@ msgstr ""
 #: .\judge\views\contests.py:309
 #, python-format
 msgid "You are not in contest \"%s\"."
-msgstr "현재 대회 %s에 참가중이 아닙니다."
+msgstr "현재 코딩 능력 평가 %s에 참가중이 아닙니다."
 
 #: .\judge\views\contests.py:329
 msgid "ContestCalender requires integer year and month"
-msgstr "대회 달력은 정수형의 연도와 월을 필요로 합니다."
+msgstr "코딩 능력 평가 달력은 정수형의 연도와 월을 필요로 합니다."
 
 #: .\judge\views\contests.py:504
 msgid "???"
@@ -2003,7 +2003,7 @@ msgstr "참여"
 #: .\judge\views\contests.py:635
 #, python-format
 msgid "Contest tag: %s"
-msgstr "대회 태그: %s"
+msgstr "코딩 능력 평가 태그: %s"
 
 #: .\judge\views\error.py:14
 msgid "404 error"
