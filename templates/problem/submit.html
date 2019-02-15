@@ -253,7 +253,5 @@
                    {% if request.in_contest and submission_limit and not submissions_left %}disabled{% endif %}>
         {% endif %}
     </form>
-    {% cache 86400 'problem_html' problem.id MATH_ENGINE LANGUAGE_CODE %}
         {{ description|markdown("problem", MATH_ENGINE)|reference|str|safe }}
-        {% endcache %}
 {% endblock %}
