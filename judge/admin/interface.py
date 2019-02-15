@@ -58,7 +58,6 @@ class NoticePostAdmin(VersionAdmin):
     fieldsets = (
         (None, {'fields': ('title', 'slug', 'authors', 'visible', 'sticky', 'publish_on')}),
         (_('Content'), {'fields': ('content', )}),
-        ({'classes': ('collapse',), }),
     )
     prepopulated_fields = {'slug': ('title',)}
     list_display = ('id', 'title', 'visible', 'sticky', 'publish_on')
