@@ -510,10 +510,10 @@ def problem_submit(request, problem=None, submission=None):
                 submissions_left = submission_limit - get_contest_submission_count(problem, profile)
     return render(request, 'problem/submit.html', {
         'form': form,
-        'title': _('Submit to %(problem)s') % {
+        'title': _('%(problem)s 풀이 제출') % {
             'problem': problem_object.translated_name(request.LANGUAGE_CODE),
         },
-        'content_title': mark_safe(escape(_('Submit to %(problem)s')) % {
+        'content_title': mark_safe(escape(_('%(problem)s 풀이 제출')) % {
             'problem': format_html(u'<a href="{0}">{1}</a>',
                                    reverse('problem_detail', args=[problem_object.code]),
                                    problem_object.translated_name(request.LANGUAGE_CODE))
