@@ -77,4 +77,4 @@ class NoticePost(models.Model):
             ('edit_all_post', _('Edit all posts')),
         )
         verbose_name = _('공지')
-        verbose_name_plural = _('공지(들)')
+        verbose_name_plural = _('notice posts')
