@@ -100,7 +100,7 @@
     <div class="content-description">
         {% if current_contests %}
             <h4>{{ _('현재 진행중') }}</h4>
-            <table class="contest-list table striped">
+            <table class="contest-list table striped" id="contest-now-table">
                 <thead>
                 <tr>
                     <th style="width:90%">{{ _('Contest') }}</th>
@@ -159,7 +159,7 @@
         {%  else %}
             {% if future_contests %}
                 <h4>{{ _('다음 코딩 능력 평가') }}</h4>
-                <table class="contest-list table striped">
+                <table id="contest-future-table" class="contest-list table striped">
                     <thead>
                     <tr>
                         <th>{{ _('Contest') }}</th>
