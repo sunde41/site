@@ -255,7 +255,7 @@
     {% if request.user.is_authenticated %}
         <hr style="padding-top: 0.7em">
         <div>
-        <a href="{{ url('new_problem_ticket', problem.code) }}" class="button clarify">
+        <a href="{{ url('new_problem_ticket', problem.code) }}" class="button clarify full">
             {%- if contest_problem and contest_problem.contest.use_clarifications and request.profile.current_contest.live -%}
                 {{ _('오류 확인 요청') }}
             {%- else -%}
