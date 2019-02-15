@@ -1,16 +1,18 @@
 from django.contrib import admin
 
 from judge.admin.contest import ContestTagAdmin, ContestAdmin, ContestParticipationAdmin
-from judge.admin.interface import NavigationBarAdmin, LicenseAdmin
+from judge.admin.interface import NavigationBarAdmin, LicenseAdmin, NoticePostAdmin
 from judge.admin.problem import ProblemAdmin
 from judge.admin.profile import ProfileAdmin
 from judge.admin.runtime import JudgeAdmin, LanguageAdmin
 from judge.admin.submission import SubmissionAdmin
 from judge.admin.taxon import ProblemGroupAdmin, ProblemTypeAdmin
 from judge.admin.ticket import TicketAdmin
-from judge.models import Contest, ContestParticipation, \
+from judge.models import NoticePost, Contest, ContestParticipation, \
     ContestTag, Judge, Language, License, NavigationBar, Problem, ProblemGroup, ProblemType, Profile, Submission, Ticket
 
+
+admin.site.register(NoticePost, NoticePostAdmin)
 admin.site.register(Contest, ContestAdmin)
 admin.site.register(ContestParticipation, ContestParticipationAdmin)
 admin.site.register(ContestTag, ContestTagAdmin)
