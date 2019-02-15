@@ -76,5 +76,5 @@ class NoticePost(models.Model):
         permissions = (
             ('edit_all_post', _('Edit all posts')),
         )
-        verbose_name = _('공지')
+        verbose_name = _('notice post')
         verbose_name_plural = _('notice posts')
