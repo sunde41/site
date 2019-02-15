@@ -183,7 +183,7 @@
             #submit-wrapper {flex: 70%;}
             #problem-wrapper{
                 flex: 30%;
-                padding: 15px;
+                padding: 20px;
             }
         </style>
     {% endcompress %}
@@ -265,4 +265,10 @@
         {% endif %}
     </form>
 
+{% endblock %}
+
+{% block bodyend %}
+    {% if REQUIRE_JAX %}
+        {% include "mathjax-load.html" %}
+    {% endif %}
 {% endblock %}
