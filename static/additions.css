@@ -50,8 +50,8 @@ nav ul li a.active, nav ul li button.active {
 
 
 nav ul li a:hover, nav ul li button:hover {
-    color: #82002e;
-    background: #fff;
+    color: #fff;
+    background: #82002e;
 }
 
 nav ul li a:link, nav ul li button:link {
