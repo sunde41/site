@@ -156,37 +156,37 @@
                 </tbody>
             </table>
             <br>
-        {% endif %}
-
-        {% if future_contests %}
-            <h4>{{ _('다음 코딩 능력 평가') }}</h4>
-            <table class="contest-list table striped">
-                <thead>
-                <tr>
-                    <th>{{ _('Contest') }}</th>
-                </tr>
-                </thead>
-                <tbody>{% for contest in future_contests %}
+        {%  else %}
+            {% if future_contests %}
+                <h4>{{ _('다음 코딩 능력 평가') }}</h4>
+                <table class="contest-list table striped">
+                    <thead>
                     <tr>
-                        <td>
-                            <div class="contest-block">
-                                {{ contest_head(contest) }}
-                                {% if contest.start_time %}
-                                    <br>
-                                    {% if contest.time_before_start %}
-                                        <span class="time">{{ _('Starting in %(countdown)s.', countdown=contest.time_before_start|as_countdown) }}</span>
-                                    {% endif %}
-                                    {{ time_left(contest) }}
-                                {% endif %}
-                            </div>
-                        </td>
+                        <th>{{ _('Contest') }}</th>
                     </tr>
-                {% endfor %}
-                </tbody>
-            </table>
-        {% else %}
-            <i>{{ _('현재, 코딩 능력 평가 계획이 잡혀있지 않습니다.') }}</i>
-            <br>
+                    </thead>
+                    <tbody>{% for contest in future_contests %}
+                        <tr>
+                            <td>
+                                <div class="contest-block">
+                                    {{ contest_head(contest) }}
+                                    {% if contest.start_time %}
+                                        <br>
+                                        {% if contest.time_before_start %}
+                                            <span class="time">{{ _('Starting in %(countdown)s.', countdown=contest.time_before_start|as_countdown) }}</span>
+                                        {% endif %}
+                                        {{ time_left(contest) }}
+                                    {% endif %}
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <i>{{ _('현재, 다음 코딩 능력 평가 계획이 잡혀있지 않습니다.') }}</i>
+                <br>
+            {% endif %}
         {% endif %}
     </div>
 {% endblock %}
