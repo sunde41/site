@@ -56,11 +56,6 @@ class ContestListMixin(object):
             if self.request.user.is_authenticated:
                 q |= Q(organizers=self.request.user.profile)
             queryset = queryset.filter(q)
-        if not self.request.user.has_perm('judge.edit_all_contest'):
-            q = Q(is_private=False)
-            if self.request.user.is_authenticated:
-                q |= Q(organizations__in=self.request.user.profile.organizations.all())
-            queryset = queryset.filter(q)
         return queryset.distinct()
 
 
@@ -422,7 +417,6 @@ def make_contest_ranking_profile(participation, problems):
         long_display_name=user.long_display_name,
         points=participation.score,
         cumtime=participation.cumtime,
-        organization=user.organization,
         rating=user.rating,
         participation_rating=participation.rating.rating if hasattr(participation, 'rating') else None,
         problems=problems,
