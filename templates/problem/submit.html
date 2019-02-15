@@ -253,5 +253,5 @@
                    {% if request.in_contest and submission_limit and not submissions_left %}disabled{% endif %}>
         {% endif %}
     </form>
-        {{ description|reference|str|safe }}
+        {{ description|reference|safe }}
 {% endblock %}
