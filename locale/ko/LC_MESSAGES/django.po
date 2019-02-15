@@ -2318,7 +2318,7 @@ msgstr ""
 #: .\judge\views\submission.py:318
 #, python-format
 msgid "All submissions for %s"
-msgstr ""
+msgstr "%s에 대한 제출"
 
 #: .\judge\views\submission.py:339
 msgid "Must pass a problem"
