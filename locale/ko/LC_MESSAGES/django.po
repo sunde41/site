@@ -3801,3 +3801,7 @@ msgstr "공지"
 
 msgid "notice post"
 msgstr "공지"
+
+
+msgid "Submit to %(problem)s"
+msgstr "%(problem)s 풀이 제출"
