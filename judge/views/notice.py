@@ -36,7 +36,7 @@ class PostList(ListView):
         context = super(PostList, self).get_context_data(**kwargs)
         context['title'] = self.title or _('Page %d of Posts') % context['page_obj'].number
         context['first_page_href'] = reverse('home')
-        context['page_prefix'] = reverse('blog_post_list')
+        context['page_prefix'] = reverse('notice_post_list')
         context['new_problems'] = Problem.objects.filter(is_public=True, is_organization_private=False).order_by('-date', '-id')[:7]
 
         context['has_clarifications'] = False
