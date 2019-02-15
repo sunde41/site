@@ -251,21 +251,7 @@
             </div>
         </div>
     {% endif %}
-{% endblock %}
-
-{% block description %}
-    {% cache 86400 'problem_html' problem.id LANGUAGE_CODE %}
-        {{ description|markdown("problem")|reference|str|safe }}
-    {% endcache %}
-
-    {% with license=problem.license %}
-        {% if license %}
-            <span class="license">
-                <a href="{{ url('license', license.key) }}">{{ license.display or license.name }}</a>
-            </span>
-        {% endif %}
-    {% endwith %}
-        {% if request.user.is_authenticated %}
+    {% if request.user.is_authenticated %}
         <a href="{{ url('new_problem_ticket', problem.code) }}" class="button clarify">
             {%- if contest_problem and contest_problem.contest.use_clarifications and request.profile.current_contest.live -%}
                 {{ _('오류 확인 요청') }}
@@ -277,7 +263,16 @@
     {% endif %}
 {% endblock %}
 
+{% block description %}
+    {% cache 86400 'problem_html' problem.id MATH_ENGINE LANGUAGE_CODE %}
+        {{ description|markdown("problem", MATH_ENGINE)|reference|str|safe }}
+    {% endcache %}
 
-{% block bodyend %}
-    {{ super() }}
+    {% with license=problem.license %}
+        {% if license %}
+            <span class="license">
+                <a href="{{ url('license', license.key) }}">{{ license.display or license.name }}</a>
+            </span>
+        {% endif %}
+    {% endwith %}
 {% endblock %}
