@@ -8,7 +8,7 @@
                 {% for code, name, problem_points, user_points, s_date in recently_attempted_problems %}
                     <li>
                         <a href="{{ url('problem_detail', code) }}">{{ name }}</a>
-                        [<a href="{{ url('user_submissions', code, request.user.username }}">
+                        [<a href="{{ url('user_submissions', code, request.user.username) }}">
                         {{- user_points }}/{{ problem_points|floatformat }}</a>]
 
                         <span class="time">
