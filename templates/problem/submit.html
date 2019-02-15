@@ -219,7 +219,7 @@
     <form id="problem_submit" action="" method="post" class="form-area">
         {% csrf_token %}
         {{ form.non_field_errors() }}
-        <div>
+        <div style="display: inline-block;">
         <div id="submit-wrapper" style="width: 65%;">
             <div id="problem-id">
                 {{ form.problem.errors }}
