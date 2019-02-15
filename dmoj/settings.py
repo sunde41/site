@@ -110,7 +110,6 @@ INSTALLED_APPS += (
     'judge',
     'django.contrib.auth',
     'django.contrib.contenttypes',
-    'django.contrib.flatpages',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
@@ -138,7 +137,6 @@ MIDDLEWARE = (
     'judge.user_log.LogUserAccessMiddleware',
     'judge.timezone.TimezoneMiddleware',
     'judge.middleware.ContestMiddleware',
-    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 )
 
 ACCOUNT_ACTIVATION_DAYS = 7
