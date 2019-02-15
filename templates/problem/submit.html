@@ -246,7 +246,7 @@
         </div>
 
         <hr>
-
+        {{ problem.description|safe }}
         {% if no_judges %}
             <span style="color: red">{{ _('No judge is available for this problem.') }}</span>
         {% else %}

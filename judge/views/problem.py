@@ -523,7 +523,7 @@ def problem_submit(request, problem=None, submission=None):
         'submission_limit': submission_limit,
         'submissions_left': submissions_left,
         'ACE_URL': ACE_URL,
-
+        'problem' : problem_object,
         'default_lang': default_lang,
     })
 
