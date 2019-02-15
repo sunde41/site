@@ -17,7 +17,7 @@ def make_timezones():
         if not loc.startswith('GMT'):
             data[area].append((tz, loc))
     data = data.items()
-    data = data.sorted(data,key=operator.itemgetter(0))
+    data = sorted(data,key=itemgetter(0))
     return data
 
 TIMEZONE = make_timezones()
