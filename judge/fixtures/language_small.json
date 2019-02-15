@@ -16,36 +16,6 @@
     },
     {
         "fields": {
-            "ace": "assembly_x86",
-            "common_name": "Assembly",
-            "description": "",
-            "extension": "",
-            "info": "binutils 2.25",
-            "key": "GAS64",
-            "name": "Assembly (x64)",
-            "pygments": "gas",
-            "short_name": ""
-        },
-        "model": "judge.language",
-        "pk": 2
-    },
-    {
-        "fields": {
-            "ace": "AWK",
-            "common_name": "Awk",
-            "description": "",
-            "extension": "",
-            "info": "mawk 1.3.3",
-            "key": "AWK",
-            "name": "AWK",
-            "pygments": "awk",
-            "short_name": "AWK"
-        },
-        "model": "judge.language",
-        "pk": 3
-    },
-    {
-        "fields": {
             "ace": "c_cpp",
             "common_name": "C",
             "description": "Compile options: `gcc -std=c99 -Wall -O2 -lm -march=native -s`\r\n",
@@ -88,21 +58,6 @@
         },
         "model": "judge.language",
         "pk": 6
-    },
-    {
-        "fields": {
-            "ace": "perl",
-            "common_name": "Perl",
-            "description": "",
-            "extension": "",
-            "info": "perl 5.10.1",
-            "key": "PERL",
-            "name": "Perl",
-            "pygments": "perl",
-            "short_name": ""
-        },
-        "model": "judge.language",
-        "pk": 7
     },
     {
         "fields": {
