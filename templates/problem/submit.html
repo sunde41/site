@@ -180,6 +180,15 @@
                 padding-left: 1.5em;
                 padding-top: 0.5em;
             }
+        .submit-wrapper, .problem-wrapper{
+    margin:0; padding: 0;
+    outline: 0;
+    border:none;
+    background:#CCC;
+    float: left;
+}
+.submit-wrapper{width: 70%}
+.problem-wrapper{width: 30%}
         </style>
     {% endcompress %}
 {% endblock %}
@@ -219,37 +228,37 @@
     <form id="problem_submit" action="" method="post" class="form-area">
         {% csrf_token %}
         {{ form.non_field_errors() }}
-        <div style="display: inline-block;">
-        <div id="submit-wrapper" style="width: 65%;">
-            <div id="problem-id">
-                {{ form.problem.errors }}
-                {{ form.problem }}
-            </div>
-            <div id="editor">
-                {{ form.source.errors }}
-                {{ form.source }}
-            </div>
-            {% if not no_judges %}
-                <div id="language">
-                    {{ form.language.errors }}
-                    <div id="language-select">
-                        <select id="id_language" name="language">
-                            {% for lang in form.fields.language.queryset %}
-                                <option value="{{ lang.id }}" data-id="{{ lang.id }}" data-name="{{ lang.name }}"
-                                        data-info="{{ lang.info }}" data-ace="{{ lang.ace }}"
-                                        data-judge-info="{{ runtime_versions(lang.runtime_versions()) }}"
-                                        {% if lang.id == default_lang.id %}selected{% endif %}>{{ lang.name }}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
+        <div>
+            <div id="submit-wrapper">
+                <div id="problem-id">
+                    {{ form.problem.errors }}
+                    {{ form.problem }}
                 </div>
-            {% endif %}
-        </div>
-        <div id="" style="width: 33%;">
-            {% cache 86400 'problem_html' problem.id MATH_ENGINE LANGUAGE_CODE %}
-                {{ problem.description|markdown("problem", MATH_ENGINE)|reference|str|safe }}
-            {% endcache %}
-        </div>
+                <div id="editor">
+                    {{ form.source.errors }}
+                    {{ form.source }}
+                </div>
+                {% if not no_judges %}
+                    <div id="language">
+                        {{ form.language.errors }}
+                        <div id="language-select">
+                            <select id="id_language" name="language">
+                                {% for lang in form.fields.language.queryset %}
+                                    <option value="{{ lang.id }}" data-id="{{ lang.id }}" data-name="{{ lang.name }}"
+                                            data-info="{{ lang.info }}" data-ace="{{ lang.ace }}"
+                                            data-judge-info="{{ runtime_versions(lang.runtime_versions()) }}"
+                                            {% if lang.id == default_lang.id %}selected{% endif %}>{{ lang.name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="problem-wrapper">
+                {% cache 86400 'problem_html' problem.id MATH_ENGINE LANGUAGE_CODE %}
+                    {{ problem.description|markdown("problem", MATH_ENGINE)|reference|str|safe }}
+                {% endcache %}
+            </div>
         </div>
         <hr>
         {% if no_judges %}
