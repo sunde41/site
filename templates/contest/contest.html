@@ -25,17 +25,17 @@
                 {{- contest.start_time|utc|date('Y-m-d\TH:i:s') }}" class="date">
             {%- if participating and participation.virtual and not participation.ended -%}
                 {% if participation.spectate %}
-                    {{- _('Spectating, contest ends in %(countdown)s.', countdown=contest.time_before_end|as_countdown) -}}
+                    {{- _('참관중, contest ends in %(countdown)s.', countdown=contest.time_before_end|as_countdown) -}}
                 {% elif participation.end_time %}
-                    {{- _('Participating virtually, %(countdown)s remaining.', countdown=participation.time_remaining|as_countdown) -}}
+                    {{- _('가상 참여, %(countdown)s 남았습니다..', countdown=participation.time_remaining|as_countdown) -}}
                 {% else %}
-                    {{- _('Participating virtually.') -}}
+                    {{- _('가상 참여.') -}}
                 {% endif %}
             {%- else -%}
                 {% if contest.start_time > now %}
                     {{- _('Starting in %(countdown)s', countdown=contest.time_before_start|as_countdown) -}}
                 {% elif contest.end_time < now %}
-                    {{- _('Contest is over.') -}}
+                    {{- _('코딩 능력 평가가 종료되었습니다.') -}}
                 {% else %}
                     {%- if participating -%}
                         {% if participation.ended %}
@@ -44,7 +44,7 @@
                             {{- _('You have %(countdown)s remaining.', countdown=participation.time_remaining|as_countdown) -}}
                         {% endif %}
                     {%- else -%}
-                        {{ _('Contest ends in %(countdown)s.', countdown=contest.time_before_end|as_countdown) }}
+                        {{ _('코딩 능력 평가 종료 in %(countdown)s.', countdown=contest.time_before_end|as_countdown) }}
                     {%- endif -%}
                 {% endif %}
             {%- endif -%}
