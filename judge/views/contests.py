@@ -462,7 +462,7 @@ def base_contest_ranking_list(contest, problems, queryset, for_user=None):
             for prob, points, is_pretested in problems])
 
     return map(make_ranking_profile, queryset.select_related('user__user', 'rating')
-               .defer('user__about', 'user__organizations__about'))
+               .defer('user__about'))
 
 
 def contest_ranking_list(contest, problems):
