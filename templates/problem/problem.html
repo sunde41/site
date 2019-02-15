@@ -230,10 +230,10 @@
         <div id="available-judges">
             <i class="fa fa-database fa-fw"></i><span
                 class="pi-name">{% trans trimmed count=available_judges|length %}
-                Judge:
-                {% pluralize count %}
-                Judges:
-            {% endtrans %}
+            Judge:
+            {% pluralize count %}
+            Judges:
+        {% endtrans %}
             </span>
             <div class="pi-value judges-value">
                 {% if available_judges %}
@@ -261,8 +261,8 @@
     {% with license=problem.license %}
         {% if license %}
             <span class="license">
-            <a href="{{ url('license', license.key) }}">{{ license.display or license.name }}</a>
-        </span>
+                <a href="{{ url('license', license.key) }}">{{ license.display or license.name }}</a>
+            </span>
         {% endif %}
     {% endwith %}
 {% endblock %}

@@ -3798,3 +3798,6 @@ msgstr ""
 
 msgid "notice posts"
 msgstr "공지"
+
+msgid "notice post"
+msgstr "공지"

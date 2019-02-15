@@ -318,6 +318,6 @@ JUDGE_AMQP_PATH = None
 
 try:
     with open(os.path.join(os.path.dirname(__file__), 'local_settings.py')) as f:
-        exec f in globals()
+        exec(f in globals())
 except IOError:
     pass
