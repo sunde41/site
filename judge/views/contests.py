@@ -420,7 +420,6 @@ def make_contest_ranking_profile(participation, problems):
         rating=user.rating,
         participation_rating=participation.rating.rating if hasattr(participation, 'rating') else None,
         problems=problems,
-        participation=participation,
     )
 
 
