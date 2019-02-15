@@ -4,7 +4,9 @@ Django-ace originally from https://github.com/bradleyayers/django-ace.
 
 from __future__ import unicode_literals
 
-from urlparse import urljoin
+# from urlparse import urljoin # python2
+from urllib.parse import urljoin
+
 
 from django import forms
 from django.conf import settings
