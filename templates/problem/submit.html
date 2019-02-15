@@ -180,8 +180,8 @@
                 padding-left: 1.5em;
                 padding-top: 0.5em;
             }
-            .submit-wrapper {width: 30%}
-            .problem-wrapper{width: 70%}
+            .submit-wrapper {width: 70%; display: inline-block}
+            .problem-wrapper{width: 30%; display: inline-block}
         </style>
     {% endcompress %}
 {% endblock %}
@@ -221,7 +221,7 @@
     <form id="problem_submit" action="" method="post" class="form-area">
         {% csrf_token %}
         {{ form.non_field_errors() }}
-        <div style="display: flex;width: 100%;">
+        <div style="width: 100%;">
             <div id="submit-wrapper">
                 <div id="problem-id">
                     {{ form.problem.errors }}
