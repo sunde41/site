@@ -398,7 +398,7 @@ class CachedContestCalendar(ContestCalendar):
 
 
 class ContestRankingProfile(namedtuple(
-    'ContestRankingProfile', 'id user display_rank long_display_name points cumtime problems rating organization '
+    'ContestRankingProfile', 'id user display_rank long_display_name points cumtime problems rating '
                              'participation participation_rating')):
     @cached_property
     def css_class(self):
@@ -418,7 +418,9 @@ def make_contest_ranking_profile(participation, problems):
         points=participation.score,
         cumtime=participation.cumtime,
         rating=user.rating,
+        participation_rating=participation.rating.rating if hasattr(participation, 'rating') else None,
         problems=problems,
+        participation=participation,
     )
 
 
