@@ -64,7 +64,7 @@ nav ul li a:link.active, nav ul li button:link.active {
     background: #940034;
 }
 
-nav ul li a:link.active:hover, nav ul li button:link.active:hover {
+nav ul li a.active:hover, nav ul li button:link.active:hover {
     color: #82002e;
     background: #fff;
 }
