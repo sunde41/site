@@ -11,8 +11,7 @@ from django.dispatch import receiver
 
 from .caching import finished_submission
 from .models import Problem, Contest, Submission, Profile, Language, Judge, \
-    ContestSubmission, License
-
+    ContestSubmission, License, NoticePost
 
 def unlink_if_exists(file):
     try:
@@ -63,6 +62,15 @@ def language_update(sender, instance, **kwargs):
 @receiver(post_save, sender=Judge)
 def judge_update(sender, instance, **kwargs):
     cache.delete(make_template_fragment_key('judge_html', (instance.id,)))
+
+
+@receiver(post_save, sender=NoticePost)
+def post_update(sender, instance, **kwargs):
+    cache.delete_many([
+        make_template_fragment_key('post_summary', (instance.id,)),
+        'blog_slug:%d' % instance.id,
+        'blog_feed:%d' % instance.id,
+    ])
 
 
 @receiver(post_delete, sender=Submission)
