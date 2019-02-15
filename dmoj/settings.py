@@ -316,8 +316,14 @@ AUTHENTICATION_BACKENDS = (
 
 JUDGE_AMQP_PATH = None
 
+# try:
+#     with open(os.path.join(os.path.dirname(__file__), 'local_settings.py')) as f:
+#         exec f in globals()
+# except IOError:
+#     pass
+
+
 try:
-    with open(os.path.join(os.path.dirname(__file__), 'local_settings.py')) as f:
-        exec(f in globals())
-except IOError:
+    from settings.local_settings import *
+except ImportError:
     pass
