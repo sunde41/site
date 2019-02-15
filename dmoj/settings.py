@@ -95,6 +95,7 @@ else:
                         'judge.License',
                     ],
                 },
+                ('judge.NoticePost', 'fa-rss-square'),
                 ('flatpages.FlatPage', 'fa-file-text-o'),
                 ('judge.Solution', 'fa-pencil'),
             ],
