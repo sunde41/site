@@ -3796,5 +3796,5 @@ msgstr ""
 msgid "Check all"
 msgstr ""
 
-msgid "notice post"
+msgid "notice posts"
 msgstr "공지"
