@@ -99,7 +99,7 @@
 {% block body %}
     <div class="content-description">
         {% if current_contests %}
-            <h4>{{ _('Ongoing Contests') }}</h4>
+            <h4>{{ _('현재 진행중') }}</h4>
             <table class="contest-list table striped">
                 <thead>
                 <tr>
@@ -185,7 +185,7 @@
                 </tbody>
             </table>
         {% else %}
-            <i>{{ _('There are no scheduled contests at this time.') }}</i>
+            <i>{{ _('현재, 다음 코딩 능력 평가 계획이 잡혀있지 않습니다.') }}</i>
             <br>
         {% endif %}
         <br>
