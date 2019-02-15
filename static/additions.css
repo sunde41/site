@@ -217,3 +217,7 @@ em, address {
     font-style: normal;
     display: inline-block;
 }
+
+#content-right.submission {
+    padding-top: 0;
+}
