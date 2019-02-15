@@ -68,8 +68,7 @@ def judge_update(sender, instance, **kwargs):
 def post_update(sender, instance, **kwargs):
     cache.delete_many([
         make_template_fragment_key('post_summary', (instance.id,)),
-        'blog_slug:%d' % instance.id,
-        'blog_feed:%d' % instance.id,
+        'notice_slug:%d' % instance.id,
     ])
 
 
