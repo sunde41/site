@@ -94,7 +94,7 @@ INSTALLED_APPS += (
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'registration',
-    'mptt',
+    # 'mptt',
     'reversion',
     'compressor',
     'django_ace',
