@@ -87,7 +87,7 @@ class ContestForm(ModelForm):
 class ContestAdmin(VersionAdmin):
     fieldsets = (
         (None, {'fields': ('key', 'name', 'organizers', 'is_public',
-                           'hide_problem_tags', 'hide_scoreboard')}),
+                            'hide_scoreboard')}),
         (_('Scheduling'), {'fields': ('start_time', 'end_time', 'time_limit')}),
         (_('Details'), {'fields': ('description', 'tags')}),
         (_('Rating'), {'fields': ('is_rated', 'rate_all', 'rate_exclude')}),

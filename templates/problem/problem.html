@@ -181,7 +181,7 @@
         {% endwith %}
     {% endcache %}
 
-    {% if not contest_problem or not contest_problem.contest.hide_problem_tags %}
+    {% if not contest_problem %}
         <div id="problem-types">
             {% with types=problem.types_list %}
                 <div class="toggle closed unselectable">
