@@ -397,7 +397,7 @@ msgstr "이 문제들은 이러한 문제 유형에 포함되어 있습니다."
 
 #: .\judge\apps.py:8
 msgid "Online Judge"
-msgstr "고려대학교 코딩 능력 평가"
+msgstr "고려대학교 코딩 능력 평가 시스템"
 
 #: .\judge\comments.py:40
 msgid "Comment title"
