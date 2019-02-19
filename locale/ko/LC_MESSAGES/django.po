@@ -131,21 +131,21 @@ msgstr "그룹"
 #, python-format
 msgid "%d contest successfully marked as public."
 msgid_plural "%d contests successfully marked as public."
-msgstr[0] "%d개의 대회가 공개로 전환되었습니다."
+msgstr[0] "%d개의 코딩 능력 평가가 공개로 전환되었습니다."
 
 #: .\judge\admin\contest.py:133
 msgid "Mark contests as public"
-msgstr "공개 대회로 전환"
+msgstr "공개 코딩 능력 평가로 전환"
 
 #: .\judge\admin\contest.py:137
 #, python-format
 msgid "%d contest successfully marked as private."
 msgid_plural "%d contests successfully marked as private."
-msgstr[0] "%d개의 대회가 비공개로 전환되었습니다."
+msgstr[0] "%d개의 코딩 능력 평가가 비공개로 전환되었습니다."
 
 #: .\judge\admin\contest.py:140
 msgid "Mark contests as private"
-msgstr "비공개 대회로 전환"
+msgstr "비공개 코딩 능력 평가로 전환"
 
 #: .\judge\admin\contest.py:211
 #, python-format
@@ -325,7 +325,7 @@ msgstr "틀림"
 #, python-format
 msgctxt "contest problem"
 msgid "%(problem)s in %(contest)s"
-msgstr "%(problem)s 대회의 문제 %(contest)s"
+msgstr "%(problem)s 코딩 능력 평가의 문제 %(contest)s"
 
 #: .\judge\admin\submission.py:127 .\judge\admin\submission.py:148
 msgid "You do not have the permission to rejudge submissions."
@@ -421,7 +421,7 @@ msgstr "게시된 코멘트"
 
 #: .\judge\forms.py:25
 msgid "Subscribe to contest updates"
-msgstr "대회 업데이트를 구독하세요."
+msgstr "코딩 능력 평가 업데이트를 구독하세요."
 
 #: .\judge\forms.py:26
 msgid "Enable experimental features"
@@ -585,15 +585,15 @@ msgstr "태그 설명"
 
 #: .\judge\models\contest.py:44
 msgid "contest tag"
-msgstr "대회 태그"
+msgstr "코딩 능력 평가 태그"
 
 #: .\judge\models\contest.py:45 .\judge\models\contest.py:87
 msgid "contest tags"
-msgstr "대회 태그"
+msgstr "코딩 능력 평가 태그"
 
 #: .\judge\models\contest.py:49
 msgid "contest id"
-msgstr "대회 id"
+msgstr "코딩 능력 평가 id"
 
 #: .\judge\models\contest.py:50
 msgid "Contest id must be ^[a-z0-9]+$"
@@ -601,11 +601,11 @@ msgstr "Contest id must be ^[a-z0-9]+$"
 
 #: .\judge\models\contest.py:51
 msgid "contest name"
-msgstr "대회 이름"
+msgstr "코딩 능력 평가 이름"
 
 #: .\judge\models\contest.py:52
 msgid "These people will be able to edit the contest."
-msgstr "이 사람들은 대회를 편집할 권한이 있습니다."
+msgstr "이 사람들은 코딩 능력 평가를 편집할 권한이 있습니다."
 
 #: .\judge\models\contest.py:54 .\judge\models\runtime.py:118
 msgid "description"
@@ -639,11 +639,11 @@ msgstr ""
 
 #: .\judge\models\contest.py:63
 msgid "contest rated"
-msgstr "대회 순위"
+msgstr "코딩 능력 평가 순위"
 
 #: .\judge\models\contest.py:63
 msgid "Whether this contest can be rated."
-msgstr "대회 순위 표시 여부"
+msgstr "코딩 능력 평가 순위 표시 여부"
 
 #: .\judge\models\contest.py:65
 msgid "hide scoreboard"
@@ -691,7 +691,7 @@ msgstr "pretests만 실행"
 
 #: .\judge\models\contest.py:80
 msgid "Whether judges should grade pretests only, versus all testcases. Commonly set during a contest, then unset prior to rejudging user submissions when the contest ends."
-msgstr "judge가 pretests만 채점할지, 모든 테스트 데이터를 채점할지 여부. 일반적으로 대회 종료전까지 설정 후 대회 종료 후 해제하여 모든 테스트 케이스 채점 진행"
+msgstr "judge가 pretests만 채점할지, 모든 테스트 데이터를 채점할지 여부. 일반적으로 코딩 능력 평가 종료전까지 설정 후 코딩 능력 평가 종료 후 해제하여 모든 테스트 케이스 채점 진행"
 
 #: .\judge\models\contest.py:84 .\judge\models\profile.py:64
 msgid "organizations"
@@ -699,7 +699,7 @@ msgstr "조직"
 
 #: .\judge\models\contest.py:85
 msgid "If private, only these organizations may see the contest"
-msgstr "비공개로 설정 시, 이 조직만 대회를 볼 수 있습니다."
+msgstr "비공개로 설정 시, 이 조직만 코딩 능력 평가를 볼 수 있습니다."
 
 #: .\judge\models\contest.py:86 .\judge\models\problem.py:123
 msgid "OpenGraph image"
@@ -711,7 +711,7 @@ msgstr "현재 접속되어 있는 참가자 수"
 
 #: .\judge\models\contest.py:89
 msgid "contest summary"
-msgstr "대회 요약"
+msgstr "코딩 능력 평가 요약"
 
 #: .\judge\models\contest.py:90 .\judge\models\problem.py:125
 msgid "Plain-text, shown in meta description tag, e.g. for social media."
@@ -931,7 +931,7 @@ msgstr "저자"
 
 #: .\judge\models\interface.py:67
 msgid "slug"
-msgstr "slug"
+msgstr "키워드"
 
 #: .\judge\models\interface.py:68 .\judge\models\problem.py:340
 msgid "public visibility"
@@ -939,7 +939,7 @@ msgstr "공개 여부"
 
 #: .\judge\models\interface.py:69
 msgid "sticky"
-msgstr "sticky"
+msgstr "상단 고정"
 
 #: .\judge\models\interface.py:70
 msgid "publish after"
@@ -2336,7 +2336,7 @@ msgstr "%(problem)s에 대한 %(user)s의 제출"
 
 #: .\judge\views\submission.py:445
 msgid "Must pass a contest"
-msgstr "대회를 통화해야한다"
+msgstr "코딩 능력 평가를 통화해야한다"
 
 #: .\judge\views\submission.py:464
 #, python-brace-format
