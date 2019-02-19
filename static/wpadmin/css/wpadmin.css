@@ -116,7 +116,7 @@ body {
 
 .wp-menu .wp-submenu {
     display: none;
-    width: 160px;
+    width: 180px;
     padding: 0 8px 8px 0;
     margin: 0;
     position: absolute;
@@ -131,7 +131,7 @@ body {
     -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
     position: relative;
-    width: 160px
+    width: 180px
 }
 
 .wp-menu .wp-submenu .wp-submenu-wrap .wp-submenu-head {
@@ -203,7 +203,7 @@ body {
 }
 
 .wp-menu .wp-submenu .wp-submenu {
-    left: 160px !important;
+    left: 180px !important;
     top: -7px !important
 }
 
@@ -242,13 +242,13 @@ body {
 
 body.wp-with-left-menu #container {
     width: auto;
-    margin-left: 160px;
+    margin-left: 180px;
     overflow: hidden
 }
 
 #adminmenuback,
 #adminmenuwrap {
-    width: 160px
+    width: 180px
 }
 
 #adminmenuback {
@@ -265,7 +265,7 @@ body.wp-with-left-menu #container {
 
 #adminmenu {
     clear: left;
-    width: 160px
+    width: 180px
 }
 
 #adminmenu li {
@@ -1981,7 +1981,7 @@ input[type="submit"] {
 }
 
 #content {
-    margin: 0 20px;
+    margin: 0 40px;
     padding: 10px 0 50px
 }
 
