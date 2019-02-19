@@ -55,15 +55,3 @@ class SolutionForm(ModelForm):
 
         if HeavyPreviewAdminPageDownWidget is not None:
             widgets['content'] = HeavyPreviewAdminPageDownWidget(preview=reverse_lazy('solution_preview'))
-
-
-class LicenseForm(ModelForm):
-    class Meta:
-        if HeavyPreviewAdminPageDownWidget is not None:
-            widgets = {'text': HeavyPreviewAdminPageDownWidget(preview=reverse_lazy('license_preview'))}
-
-
-class LicenseAdmin(admin.ModelAdmin):
-    fields = ('key', 'link', 'name', 'display', 'icon', 'text')
-    list_display = ('name', 'key')
-    form = LicenseForm

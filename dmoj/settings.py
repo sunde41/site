@@ -47,7 +47,6 @@ else:
                     'children': [
                         'judge.ProblemGroup',
                         'judge.ProblemType',
-                        'judge.License',
                     ],
                 },
                 {
@@ -226,7 +225,6 @@ MARKDOWN_STYLES = {
     'problem': MARKDOWN_ADMIN_EDITABLE_STYLE,
     'contest': MARKDOWN_ADMIN_EDITABLE_STYLE,
     'language': MARKDOWN_ADMIN_EDITABLE_STYLE,
-    'license': MARKDOWN_ADMIN_EDITABLE_STYLE,
     'judge': MARKDOWN_ADMIN_EDITABLE_STYLE,
     'solution': MARKDOWN_ADMIN_EDITABLE_STYLE,
     'contest_tag': MARKDOWN_ADMIN_EDITABLE_STYLE,

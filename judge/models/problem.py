@@ -19,7 +19,7 @@ from judge.user_translations import ugettext as user_ugettext
 from judge.utils.raw_sql import unique_together_left_join, RawSQLColumn
 
 __all__ = ['ProblemGroup', 'ProblemType', 'Problem', 'ProblemClarification',
-           'TranslatedProblemQuerySet', 'TranslatedProblemForeignKeyQuerySet', 'License']
+           'TranslatedProblemQuerySet', 'TranslatedProblemForeignKeyQuerySet']
 
 
 class ProblemType(models.Model):
@@ -47,26 +47,6 @@ class ProblemGroup(models.Model):
         verbose_name = _('problem group')
         verbose_name_plural = _('problem groups')
 
-
-class License(models.Model):
-    key = models.CharField(max_length=20, unique=True, verbose_name=_('key'),
-                           validators=[RegexValidator(r'^[-\w.]+$', r'License key must be ^[-\w.]+$')])
-    link = models.CharField(max_length=256, verbose_name=_('link'))
-    name = models.CharField(max_length=256, verbose_name=_('full name'))
-    display = models.CharField(max_length=256, blank=True, verbose_name=_('short name'),
-                               help_text=_('Displayed on pages under this license'))
-    icon = models.CharField(max_length=256, blank=True, verbose_name=_('icon'), help_text=_('URL to the icon'))
-    text = models.TextField(verbose_name=_('license text'))
-
-    def __unicode__(self):
-        return self.name
-
-    def get_absolute_url(self):
-        return reverse('license', args=(self.key,))
-
-    class Meta:
-        verbose_name = _('license')
-        verbose_name_plural = _('licenses')
 
 
 class TranslatedProblemQuerySet(SearchQuerySet):
@@ -117,7 +97,6 @@ class Problem(models.Model):
                                               help_text=_('Whether judges should be allowed to manage data or not'))
     date = models.DateTimeField(verbose_name=_('date of publishing'), null=True, blank=True, db_index=True,
                                 help_text=_("Doesn't have magic ability to auto-publish due to backward compatibility"))
-    license = models.ForeignKey(License, null=True, blank=True, on_delete=models.SET_NULL)
     user_count = models.IntegerField(verbose_name=_('number of users'), default=0,
                                      help_text=_('The number of users who solved the problem.'))
     ac_rate = models.FloatField(verbose_name=_('solve rate'), default=0)

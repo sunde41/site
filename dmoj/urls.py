@@ -8,7 +8,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from judge.forms import CustomAuthenticationForm
 from judge.views import TitledTemplateView
-from judge.views import language, status, problem, license, register, user, notice, \
+from judge.views import language, status, problem, register, user, notice, \
     submission, widgets, contests, ranked_submission, stats, preview
 from judge.views.problem_data import ProblemDataView, ProblemSubmissionDiff, \
     problem_data_file, problem_init_view
@@ -181,7 +181,6 @@ urlpatterns = [
     url(r'^status/$', status.status_all, name='status_all'),
     url(r'^notice/', paged_list_view(notice.PostList, 'notice_post_list')),
     url(r'^post/(?P<id>\d+)-(?P<slug>.*)$', notice.PostView.as_view(), name='notice_post'),
-    url(r'^license/(?P<key>[-\w.]+)$', license.LicenseDetail.as_view(), name='license'),
     url(r'^widgets/', include([
         url(r'^rejudge$', widgets.rejudge_submission, name='submission_rejudge'),
         url(r'^single_submission$', submission.single_submission_query, name='submission_single_query'),
@@ -203,7 +202,6 @@ urlpatterns = [
             url(r'^comment$', preview.CommentMarkdownPreviewView.as_view(), name='comment_preview'),
             url(r'^profile$', preview.ProfileMarkdownPreviewView.as_view(), name='profile_preview'),
             url(r'^solution$', preview.SolutionMarkdownPreviewView.as_view(), name='solution_preview'),
-            url(r'^license$', preview.LicenseMarkdownPreviewView.as_view(), name='license_preview'),
         ])),
     ])),
 

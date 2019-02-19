@@ -11,7 +11,7 @@ from django.dispatch import receiver
 
 from .caching import finished_submission
 from .models import Problem, Contest, Submission, Profile, Language, Judge, \
-    ContestSubmission, License, NoticePost
+    ContestSubmission, NoticePost
 
 def unlink_if_exists(file):
     try:
@@ -46,11 +46,6 @@ def profile_update(sender, instance, **kwargs):
 def contest_update(sender, instance, **kwargs):
     if hasattr(instance, '_updating_stats_only'):
         return
-
-
-@receiver(post_save, sender=License)
-def license_update(sender, instance, **kwargs):
-    cache.delete(make_template_fragment_key('license_html', (instance.id,)))
 
 
 @receiver(post_save, sender=Language)
