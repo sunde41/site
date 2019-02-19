@@ -297,14 +297,14 @@ SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-DMOJ_RESOURCES = os.path.join(BASE_DIR, 'resources')
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'resources'),
-]
+# DMOJ_RESOURCES = os.path.join(BASE_DIR, 'resources')
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'resources'),
+# ]
 STATIC_URL = '/static/'
 
 # Define a cache
