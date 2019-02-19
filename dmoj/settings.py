@@ -124,6 +124,7 @@ INSTALLED_APPS += (
     'sortedm2m',
     'statici18n',
     'django_jinja',
+    'ckeditor',
 )
 
 MIDDLEWARE = (

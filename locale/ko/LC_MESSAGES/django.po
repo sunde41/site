@@ -927,7 +927,7 @@ msgstr "공지 제목"
 
 #: .\judge\models\interface.py:66 .\judge\models\problem.py:342
 msgid "authors"
-msgstr "저자"
+msgstr "작성자"
 
 #: .\judge\models\interface.py:67
 msgid "slug"

@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.core.urlresolvers import reverse_lazy
-from django.forms import ModelForm
+from django.forms import ModelForm, CharField
 from django.utils.html import format_html
 from django.utils.translation import ugettext_lazy as _
 from mptt.admin import DraggableMPTTAdmin
@@ -9,6 +9,7 @@ from reversion.admin import VersionAdmin
 from judge.dblock import LockModel
 from judge.models import NavigationBar
 from judge.widgets import HeavySelect2MultipleWidget, HeavyPreviewAdminPageDownWidget, HeavySelect2Widget
+from ckeditor.widgets import CKEditorWidget
 
 
 class NavigationBarAdmin(DraggableMPTTAdmin):
@@ -49,9 +50,9 @@ class NoticePostForm(ModelForm):
         widgets = {
             'authors': HeavySelect2MultipleWidget(data_view='profile_select2', attrs={'style': 'width: 100%'}),
         }
-
-        if HeavyPreviewAdminPageDownWidget is not None:
-            widgets['content'] = HeavyPreviewAdminPageDownWidget(preview=reverse_lazy('notice_preview'))
+        content = CharField(widget=CKEditorWidget())
+        # if HeavyPreviewAdminPageDownWidget is not None:
+        #     widgets['content'] = HeavyPreviewAdminPageDownWidget(preview=reverse_lazy('notice_preview'))
 
 
 class NoticePostAdmin(VersionAdmin):
