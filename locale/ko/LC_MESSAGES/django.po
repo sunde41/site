@@ -16,57 +16,14 @@ msgstr ""
 "X-Crowdin-Language: ko\n"
 "X-Crowdin-File: django.po\n"
 
-#: .\dmoj\settings.py:247
-msgid "German"
-msgstr "독일어"
 
 #: .\dmoj\settings.py:248
 msgid "English"
 msgstr "영어"
 
-#: .\dmoj\settings.py:249
-msgid "Spanish"
-msgstr ""
-
-#: .\dmoj\settings.py:250
-msgid "French"
-msgstr "프랑스어"
-
-#: .\dmoj\settings.py:251
-msgid "Croatian"
-msgstr ""
-
-#: .\dmoj\settings.py:252
-msgid "Hungarian"
-msgstr ""
-
 #: .\dmoj\settings.py:253
 msgid "Korean"
-msgstr ""
-
-#: .\dmoj\settings.py:254
-msgid "Romanian"
-msgstr "루마니아어"
-
-#: .\dmoj\settings.py:255
-msgid "Russian"
-msgstr "러시아어"
-
-#: .\dmoj\settings.py:256
-msgid "Serbian (Latin)"
-msgstr "세르비아어(라틴문자)"
-
-#: .\dmoj\settings.py:257
-msgid "Turkish"
-msgstr ""
-
-#: .\dmoj\settings.py:258
-msgid "Vietnamese"
-msgstr "베트남어"
-
-#: .\dmoj\settings.py:259
-msgid "Simplified Chinese"
-msgstr "중국어(간체)"
+msgstr "한국어"
 
 #: .\dmoj\urls.py:51 .\templates\base.html:234
 msgid "Login"
@@ -76,33 +33,10 @@ msgstr "로그인"
 msgid "Home"
 msgstr "메인"
 
-#: .\judge\admin\comments.py:40
-#, python-format
-msgid "%d comment successfully hidden."
-msgid_plural "%d comments successfully hidden."
-msgstr[0] "%d개의 코멘트가 숨겨졌습니다."
-
-#: .\judge\admin\comments.py:43
-msgid "Hide comments"
-msgstr "코멘트 숨기기"
-
-#: .\judge\admin\comments.py:47
-#, python-format
-msgid "%d comment successfully unhidden."
-msgid_plural "%d comments successfully unhidden."
-msgstr[0] "%d개의 코멘트가 숨겨졌습니다."
-
-#: .\judge\admin\comments.py:50
-msgid "Unhide comments"
-msgstr "코멘트 보이기"
-
-#: .\judge\admin\comments.py:58
-msgid "Associated page"
-msgstr "관련 페이지"
 
 #: .\judge\admin\contest.py:27
 msgid "Included contests"
-msgstr "포함된 대회"
+msgstr "관련 코딩 능력 평가"
 
 #: .\judge\admin\contest.py:63 .\templates\contest\contest.html:83
 #: .\templates\problem\list.html:206 .\templates\problem\list.html:221
@@ -113,7 +47,7 @@ msgstr "문제"
 
 #: .\judge\admin\contest.py:91
 msgid "Scheduling"
-msgstr "Scheduling"
+msgstr "일정"
 
 #: .\judge\admin\contest.py:92
 msgid "Details"
@@ -122,10 +56,6 @@ msgstr "세부사항"
 #: .\judge\admin\contest.py:93 .\templates\contest\ranking-table.html:5
 msgid "Rating"
 msgstr "순위"
-
-#: .\judge\admin\contest.py:94 .\templates\contest\ranking-table.html:7
-msgid "Organization"
-msgstr "그룹"
 
 #: .\judge\admin\contest.py:130
 #, python-format
