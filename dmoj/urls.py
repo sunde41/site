@@ -16,9 +16,9 @@ from judge.views.register import RegistrationView, ActivationView
 from judge.views.select2 import UserSelect2View, ProblemSelect2View, \
     ContestSelect2View, UserSearchSelect2View, ContestUserSearchSelect2View, TicketUserSelect2View, AssigneeSelect2View
 
-admin.autodiscover()
-from django.contrib.sites.models import Site
-admin.site.unregister(Site)
+# admin.autodiscover()
+# from django.contrib.sites.models import Site
+# admin.site.unregister(Site)
 
 register_patterns = [
     url(r'^activate/complete/$',
