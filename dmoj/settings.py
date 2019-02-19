@@ -26,13 +26,13 @@ SECRET_KEY = '5*9f5q57mqmlz2#f$x1h76&jxy#yortjl1v+l*6hd18$d*yx#0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-ALLOWED_HOSTS = ['150.95.151.157','codingtest.everycoding.net']
+ALLOWED_HOSTS = ['150.95.151.157', 'codingtest.everycoding.net']
 
 SITE_ID = 1
 SITE_NAME = 'KCCT'
 SITE_LONG_NAME = 'Korea Coding Competence Test'
 SITE_ADMIN_EMAIL = 'sunde41@gmail.com'
-TERMS_OF_SERVICE_URL = '//dmoj.ca/tos' # Use a flatpage.
+TERMS_OF_SERVICE_URL = '//dmoj.ca/tos'  # Use a flatpage.
 
 PYGMENT_THEME = 'pygment-github.css'
 PROBLEM_DATA_ROOT = '/root/problems'
@@ -317,9 +317,26 @@ AUTHENTICATION_BACKENDS = (
 
 JUDGE_AMQP_PATH = None
 CKEDITOR_BASEPATH = "/static/ckeditor/"
+CKEDITOR_CONFIGS = {
+    'default': {
+        'language': 'ko',
+        'toolbar': [
+            {'name': 'MAX', 'items': ['Maximize']},
+            {'name': 'insert',
+             'items': ['CodeSnippet', 'addImage', 'Table', 'Link', 'Unlink', 'Blockquote', 'HorizontalRule']},
+            {'name': 'basicstyles',
+             'items': ['Bold', 'Italic', 'Underline', 'Strike', 'TextColor', 'BGColor', '-', 'RemoveFormat']},
+            {'name': 'paragraph',
+             'items': ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter',
+                       'JustifyRight', 'JustifyBlock']}
+        ],
+        'height': 300,
+    },
+}
 
 try:
     with open(os.path.join(os.path.dirname(__file__), 'local_settings.py')) as f:
-        exec f in globals()
+        exec
+        f in globals()
 except IOError:
     pass
