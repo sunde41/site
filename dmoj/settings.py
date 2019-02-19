@@ -305,6 +305,7 @@ STATICFILES_FINDERS = (
 # STATICFILES_DIRS = [
 #     os.path.join(BASE_DIR, 'resources'),
 # ]
+STATIC_ROOT = 'static'
 STATIC_URL = '/static/'
 
 # Define a cache
@@ -314,6 +315,13 @@ CACHES = {}
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
 )
+
+ACE_URL = '//cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/'
+JQUERY_JS = '//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js'
+SELECT2_JS_URL = '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js'
+SELECT2_CSS_URL = '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css'
+TIMEZONE_MAP = 'http://naturalearth.springercarto.com/ne3_data/8192/textures/3_no_ice_clouds_8k.jpg'
+
 
 JUDGE_AMQP_PATH = None
 CKEDITOR_BASEPATH = "/static/ckeditor/"
@@ -334,6 +342,15 @@ CKEDITOR_CONFIGS = {
     },
 }
 
+
+COMPRESS_OUTPUT_DIR = 'cache'
+COMPRESS_CSS_FILTERS = [
+    'compressor.filters.css_default.CssAbsoluteFilter',
+    'compressor.filters.cssmin.CSSMinFilter',
+]
+COMPRESS_JS_FILTERS = ['compressor.filters.jsmin.JSMinFilter']
+COMPRESS_STORAGE = 'compressor.storage.GzipCompressorFileStorage'
+STATICFILES_FINDERS += ('compressor.finders.CompressorFinder',)
 
 try:
     from local_settings import *
