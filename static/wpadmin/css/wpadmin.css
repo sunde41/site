@@ -165,7 +165,7 @@ body {
 }
 
 .wp-menu .wp-submenu .wp-submenu-wrap ul li.wp-has-add-url > a:first-child {
-    width: 110px;
+    width: 130px;
     float: left
 }
 
@@ -1981,7 +1981,7 @@ input[type="submit"] {
 }
 
 #content {
-    margin: 0 40px;
+    margin: 0 20px;
     padding: 10px 0 50px
 }
 
