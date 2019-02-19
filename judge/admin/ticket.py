@@ -1,12 +1,12 @@
 from django.contrib.admin import ModelAdmin
 from django.contrib.admin.options import StackedInline
 from django.forms import ModelForm
-from django.urls import reverse_lazy
 
 from judge.models import TicketMessage
 from judge.widgets import HeavySelect2Widget, HeavySelect2MultipleWidget, HeavyPreviewAdminPageDownWidget
 
 from ckeditor.widgets import CKEditorWidget
+
 
 class TicketMessageForm(ModelForm):
     class Meta:

@@ -13,7 +13,9 @@ from reversion.admin import VersionAdmin
 from judge.models import Contest, ContestProblem, Profile, Rating
 from judge.ratings import rate_contest
 from judge.widgets import HeavySelect2Widget, HeavySelect2MultipleWidget, AdminPagedownWidget, Select2MultipleWidget, \
-    HeavyPreviewAdminPageDownWidget, Select2Widget
+    Select2Widget
+
+from ckeditor.widgets import CKEditorWidget
 
 
 class HeavySelect2Widget(HeavySelect2Widget):
@@ -80,10 +82,8 @@ class ContestForm(ModelForm):
         widgets = {
             'organizers': HeavySelect2MultipleWidget(data_view='profile_select2'),
             'tags': Select2MultipleWidget,
+            'description' : CKEditorWidget()
         }
-
-        if HeavyPreviewAdminPageDownWidget is not None:
-            widgets['description'] = HeavyPreviewAdminPageDownWidget(preview=reverse_lazy('contest_preview'))
 
 
 class ContestAdmin(VersionAdmin):
