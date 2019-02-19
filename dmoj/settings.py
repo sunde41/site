@@ -8,14 +8,8 @@ from django_jinja.builtins import DEFAULT_EXTENSIONS
 from jinja2 import select_autoescape
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '5*9f5q57mqmlz2#f$x1h76&jxy#yortjl1v+l*6hd18$d*yx#0'
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 ALLOWED_HOSTS = ['150.95.151.157', 'codingtest.everycoding.net']
 
@@ -318,22 +312,11 @@ JUDGE_AMQP_PATH = None
 CKEDITOR_BASEPATH = "/static/ckeditor/"
 CKEDITOR_CONFIGS = {
     'default': {
-        'language': 'ko',
-        'toolbar': [
-            {'name': 'MAX', 'items': ['Maximize']},
-            {'name': 'insert',
-             'items': ['CodeSnippet', 'addImage', 'Table', 'Link', 'Unlink', 'Blockquote', 'HorizontalRule']},
-            {'name': 'basicstyles',
-             'items': ['Bold', 'Italic', 'Underline', 'Strike', 'TextColor', 'BGColor', '-', 'RemoveFormat']},
-            {'name': 'paragraph',
-             'items': ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter',
-                       'JustifyRight', 'JustifyBlock']}
-        ],
-        'language': 'ko',
+        'toolbar': 'full',
         'height': 300,
+        'width': 300,
     },
 }
-
 
 COMPRESS_OUTPUT_DIR = 'cache'
 COMPRESS_CSS_FILTERS = [
