@@ -464,21 +464,6 @@ msgstr "코멘트 제목"
 msgid "body of comment"
 msgstr "코멘트 본문"
 
-#: .\judge\models\comment.py:44
-msgid "hide the comment"
-msgstr "코멘트 숨기기"
-
-#: .\judge\models\comment.py:45
-msgid "parent"
-msgstr "부모"
-
-#: .\judge\models\comment.py:49
-msgid "comment"
-msgstr "코멘트"
-
-#: .\judge\models\comment.py:50
-msgid "comments"
-msgstr "코멘트"
 
 #: .\judge\models\comment.py:115 .\judge\models\problem.py:353
 #, python-format
