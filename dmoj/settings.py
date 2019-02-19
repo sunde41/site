@@ -21,7 +21,7 @@ ALLOWED_HOSTS = ['150.95.151.157', 'codingtest.everycoding.net']
 
 SITE_ID = 1
 SITE_NAME = 'KCCT'
-SITE_LONG_NAME = 'Korea Coding Competence Test'
+SITE_LONG_NAME = '고려대학교 코딩 능력 평가 시스템'
 SITE_ADMIN_EMAIL = 'sunde41@gmail.com'
 TERMS_OF_SERVICE_URL = '//dmoj.ca/tos'  # Use a flatpage.
 
