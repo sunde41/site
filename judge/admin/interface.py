@@ -49,10 +49,8 @@ class NoticePostForm(ModelForm):
     class Meta:
         widgets = {
             'authors': HeavySelect2MultipleWidget(data_view='profile_select2', attrs={'style': 'width: 100%'}),
+            'content' : CKEditorWidget()
         }
-        widgets['content'] = CKEditorWidget()
-        # if HeavyPreviewAdminPageDownWidget is not None:
-        #     widgets['content'] = HeavyPreviewAdminPageDownWidget(preview=reverse_lazy('notice_preview'))
 
 
 class NoticePostAdmin(VersionAdmin):

@@ -70,7 +70,7 @@
     </div>
     <div id="blog-container">
         <div class="blog-content sidebox">
-            <h3>{{ _('News') }} <i class="fa fa-terminal"></i></h3>
+            <h3>{{ _('공지') }} <i class="fa fa-terminal"></i></h3>
             <div class="sidebox-content">
                 {% for post in posts %}
                     <section class="{% if post.sticky %}sticky {% endif %}post">
@@ -91,7 +91,7 @@
                         </span>
                         <div class="summary content-description">
                             {% cache 86400 'post_summary' post.id %}
-                                {{ post.summary|default(post.content, true)|markdown('blog', 'svg', lazy_load=True)|reference|str|safe }}
+                                {{ post.summary|default(post.content, true)|safe }}
                             {% endcache %}
                         </div>
                     </section>
@@ -129,7 +129,7 @@
             {% endif %}
             {% if current_contests %}
                 <div class="blog-sidebox sidebox">
-                    <h3>{{ _('Ongoing contests') }} <i class="fa fa-trophy"></i></h3>
+                    <h3>{{ _('진행중인 코딩 능력 평가') }} <i class="fa fa-trophy"></i></h3>
                     <div class="sidebox-content">
                         {% for contest in current_contests %}
                             <div class="contest">
@@ -147,7 +147,7 @@
 
             {% if future_contests %}
                 <div class="blog-sidebox sidebox">
-                    <h3>{{ _('Upcoming contests') }} <i class="fa fa-trophy"></i></h3>
+                    <h3>{{ _('다음 코딩 능력 평가') }} <i class="fa fa-trophy"></i></h3>
                     <div class="sidebox-content">
                         {% for contest in future_contests %}
                             <div class="contest">
@@ -163,7 +163,7 @@
                 </div>
             {% endif %}
             <div class="blog-sidebox sidebox">
-                <h3>{{ _('New problems') }} <i class="fa fa-puzzle-piece"></i>
+                <h3>{{ _('새로 추가된 연습 문제') }} <i class="fa fa-puzzle-piece"></i>
                 </h3>
                 <div class="sidebox-content">
                     <ul class="problem-list">

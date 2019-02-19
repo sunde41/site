@@ -198,7 +198,6 @@ urlpatterns = [
             url(r'^problem$', preview.ProblemMarkdownPreviewView.as_view(), name='problem_preview'),
             url(r'^contest$', preview.ContestMarkdownPreviewView.as_view(), name='contest_preview'),
             url(r'^comment$', preview.CommentMarkdownPreviewView.as_view(), name='comment_preview'),
-            url(r'^notice$', preview.NoticeMarkdownPreviewView.as_view(), name='notice_preview'),
             url(r'^profile$', preview.ProfileMarkdownPreviewView.as_view(), name='profile_preview'),
             url(r'^solution$', preview.SolutionMarkdownPreviewView.as_view(), name='solution_preview'),
             url(r'^license$', preview.LicenseMarkdownPreviewView.as_view(), name='license_preview'),
