@@ -1728,11 +1728,11 @@ msgstr "제출 테스트 케이스"
 
 #: .\judge\models\ticket.py:10
 msgid "ticket title"
-msgstr "ticket 제목"
+msgstr "이의 신청 제목"
 
 #: .\judge\models\ticket.py:11
 msgid "ticket creator"
-msgstr "ticket creator"
+msgstr "이의 신청자"
 
 #: .\judge\models\ticket.py:12
 msgid "creation time"
@@ -1764,7 +1764,7 @@ msgstr "is ticket open?"
 
 #: .\judge\models\ticket.py:24
 msgid "ticket"
-msgstr "티켓"
+msgstr "이의 신청"
 
 #: .\judge\models\ticket.py:26
 msgid "poster"
@@ -1831,22 +1831,6 @@ msgstr "총"
 #, python-format
 msgid "Page %d of Posts"
 msgstr "게시물 %d 페이지"
-
-#: .\judge\views\comment.py:27
-msgid "Messing around, are we?"
-msgstr ""
-
-#: .\judge\views\comment.py:59
-msgid "You already voted."
-msgstr "이미 투표하셨습니다."
-
-#: .\judge\views\comment.py:116 .\judge\views\organization.py:282
-msgid "Edited from site"
-msgstr "사이트에서 편집"
-
-#: .\judge\views\comment.py:137
-msgid "Editing comment"
-msgstr ""
 
 #: .\judge\views\contests.py:48 .\judge\views\contests.py:178
 #: .\judge\views\contests.py:181 .\judge\views\contests.py:308
@@ -2820,33 +2804,6 @@ msgstr ""
 msgid "Update"
 msgstr ""
 
-#: .\templates\organization\home.html:8
-msgid "Leave organization"
-msgstr ""
-
-#: .\templates\organization\home.html:11
-msgid "Join organization"
-msgstr ""
-
-#: .\templates\organization\home.html:14
-msgid "Request membership"
-msgstr ""
-
-#: .\templates\organization\home.html:21
-msgid "Edit organization"
-msgstr ""
-
-#: .\templates\organization\home.html:25
-msgid "View requests"
-msgstr ""
-
-#: .\templates\organization\home.html:32
-msgid "Admin organization"
-msgstr ""
-
-#: .\templates\organization\home.html:37
-msgid "View members"
-msgstr ""
 
 #: .\templates\organization\list.html:23
 #: .\templates\status\language-list.html:33 .\templates\ticket\list.html:245
@@ -2868,18 +2825,6 @@ msgstr ""
 
 #: .\templates\organization\requests\detail.html:13
 msgid "User:"
-msgstr ""
-
-#: .\templates\organization\requests\detail.html:17
-msgid "Organization:"
-msgstr ""
-
-#: .\templates\organization\requests\detail.html:25
-msgid "Time:"
-msgstr ""
-
-#: .\templates\organization\requests\detail.html:29
-msgid "Reason:"
 msgstr ""
 
 #: .\templates\organization\requests\log.html:11
@@ -3037,7 +2982,7 @@ msgid "Read editorial"
 msgstr ""
 
 #: .\templates\problem\problem.html:120
-msgid "Manage tickets"
+msgid "이의 신청 관리"
 msgstr ""
 
 #: .\templates\problem\problem.html:124

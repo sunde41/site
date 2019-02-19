@@ -47,7 +47,8 @@ else:
                     'children': [
                         'judge.ProblemGroup',
                         'judge.ProblemType',
-                        'judge.License'
+                        'judge.License',
+                        'judge.Ticket'
                     ],
                 },
                 {
