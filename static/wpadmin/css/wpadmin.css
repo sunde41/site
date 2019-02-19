@@ -697,32 +697,6 @@ body.popup {
     font-size: 12px
 }
 
-#content .datetimeshortcuts a:last-child {
-    display: inline-block;
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1
-}
-
-#content .datetimeshortcuts a:last-child img {
-    display: none
-}
-
-#content .datetimeshortcuts a:last-child:after {
-    font-size: 14px;
-    position: relative;
-    top: 1px
-}
-
-#content .vDateField+.datetimeshortcuts a:last-child:after {
-    content: "\f073"
-}
-
-#content .vTimeField+.datetimeshortcuts a:last-child:after {
-    content: "\f017"
-}
-
 #content .datetime {
     min-width: 260px;
     float: left;
