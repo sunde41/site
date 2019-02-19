@@ -6,6 +6,11 @@
     line-height: unset !important;
 }
 
+.select2-container {
+    min-width: 50px !important;
+}
+
+
 .wmd-wrapper {
     padding-top: 2em;
 }

@@ -221,7 +221,3 @@ em, address {
 #content-right.submission {
     padding-top: 0;
 }
-
-.select2-container {
-    min-width: 50px !important;
-}
