@@ -20,8 +20,10 @@ from judge.views.select2 import UserSelect2View, ProblemSelect2View, \
 admin.autodiscover()
 from django.contrib.sites.models import Site
 from registration.models import RegistrationProfile
+from django.contrib.flatpages.models import FlatPage
 admin.site.unregister(Site)
 admin.site.unregister(RegistrationProfile)
+admin.site.unregister(FlatPage)
 ########################################################################################################################
 
 register_patterns = [

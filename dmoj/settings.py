@@ -47,6 +47,7 @@ else:
                     'children': [
                         'judge.ProblemGroup',
                         'judge.ProblemType',
+                        'judge.License'
                     ],
                 },
                 {
@@ -74,7 +75,6 @@ else:
                     ],
                 },
                 ('judge.NoticePost', 'fa-rss-square'),
-                ('flatpages.FlatPage', 'fa-file-text-o'),
                 ('judge.Solution', 'fa-pencil'),
             ],
             'dashboard': {

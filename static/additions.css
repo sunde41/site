@@ -221,3 +221,7 @@ em, address {
 #content-right.submission {
     padding-top: 0;
 }
+
+div.breadcrumbs {
+    padding: 10px 20px;
+}
