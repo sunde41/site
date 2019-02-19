@@ -609,11 +609,11 @@ msgstr "조직에 비공개"
 
 #: .\judge\models\contest.py:76
 msgid "hide problem tags"
-msgstr "문제 태그 숨기기"
+msgstr "문제 유형 숨기기"
 
 #: .\judge\models\contest.py:77
 msgid "Whether problem tags should be hidden by default."
-msgstr "문제 태그 공개 여부 기본값"
+msgstr "문제 유형 공개 여부 기본값"
 
 #: .\judge\models\contest.py:79
 msgid "run pretests only"
