@@ -2410,7 +2410,7 @@ msgstr ""
 
 #: .\templates\blog\list.html:106
 #, python-brace-format
-msgid "posted on {time}"
+msgid "{time}에 게시"
 msgstr ""
 
 #: .\templates\blog\list.html:130 .\templates\problem\problem.html:256
