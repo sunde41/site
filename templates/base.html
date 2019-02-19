@@ -142,22 +142,26 @@
             <li class="home-nav-element"><a href="/"><img class="logo" src="{{ static('logo.png') }}"></a></li>
             <li class="home-nav-element"><span class="nav-divider"></span></li>
             <li class="home-menu-item"><a href="/" class="nav-home">{{ _('Home') }}</a></li>
-            <li class="home-menu-item">
+            <li>
                 <a href="/contests/" class="nav-contest">
                     코딩 능력 평가
                 </a>
             </li>
-            <li class="home-menu-item">
+            <li>
                 <a href="/problems/" class="nav-problems">
                     연습 문제
                 </a>
             </li>
-            <li class="home-menu-item">
+            <li>
                 <a href="/about/" class="nav-about">
                     사용법
                 </a>
             </li>
         </ul>
+
+
+
+
 
 {#            {% for node in mptt_tree(nav_bar) recursive %}#}
 {#                <li>#}
