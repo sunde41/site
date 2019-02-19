@@ -23,7 +23,7 @@
         </div>
         <div class="body content-description">
             {% cache 86400 'post_content' post.id MATH_ENGINE %}
-                {{ post.content|markdown('notice', MATH_ENGINE)|reference|str|safe}}
+                {{ post.content|safe}}
             {% endcache %}
         </div>
     </div>

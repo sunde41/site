@@ -2280,29 +2280,6 @@ msgstr ""
 msgid "%(title)s - Ticket %(id)d"
 msgstr ""
 
-#: .\judge\views\ticket.py:258
-#, python-format
-msgid "Tickets - Page %(number)d of %(total)d"
-msgstr ""
-
-#: .\judge\views\ticket.py:307
-#, python-format
-msgid "New Ticket: %s"
-msgstr ""
-
-#: .\judge\views\ticket.py:308
-#, python-format
-msgid "#%(id)d, assigned to: %(users)s"
-msgstr ""
-
-#: .\judge\views\ticket.py:309
-msgid ", "
-msgstr ""
-
-#: .\judge\views\ticket.py:310
-msgid "no one"
-msgstr ""
-
 #: .\judge\views\user.py:70
 msgid "No such user"
 msgstr ""
