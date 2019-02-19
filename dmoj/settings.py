@@ -312,7 +312,13 @@ JUDGE_AMQP_PATH = None
 CKEDITOR_BASEPATH = "/static/ckeditor/"
 CKEDITOR_CONFIGS = {
     'default': {
-        'toolbar': 'full',
+        'language' : 'ko',
+        'toolbar': [
+       { 'name': 'MAX', 'items':['Maximize'] },
+       { 'name': 'insert', 'items':['CodeSnippet','addImage','Table','Link','Unlink','Blockquote','HorizontalRule'] },
+       { 'name': 'basicstyles', 'items': ['Bold', 'Italic','Underline','Strike', 'TextColor','BGColor', '-', 'RemoveFormat' ] },
+       { 'name': 'paragraph', 'items': [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-','JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock' ] }
+        ],
         'height': 300,
     },
 }
