@@ -320,7 +320,9 @@ CKEDITOR_CONFIGS = {
        { 'name': 'paragraph', 'items': [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-','JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock' ] }
         ],
         'height': 300,
-    },
+        'removeDialogTabs' : 'image:advanced;link:advanced',
+        'removeButtons' : 'addFile,Anchor,Image,Subscript,Superscript,Format',
+        },
 }
 
 COMPRESS_OUTPUT_DIR = 'cache'
