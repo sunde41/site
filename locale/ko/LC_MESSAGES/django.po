@@ -1728,11 +1728,11 @@ msgstr "제출 테스트 케이스"
 
 #: .\judge\models\ticket.py:10
 msgid "ticket title"
-msgstr "이의 신청 제목"
+msgstr "이의신청 제목"
 
 #: .\judge\models\ticket.py:11
 msgid "ticket creator"
-msgstr "이의 신청자"
+msgstr "이의신청자"
 
 #: .\judge\models\ticket.py:12
 msgid "creation time"
@@ -1764,7 +1764,7 @@ msgstr "is ticket open?"
 
 #: .\judge\models\ticket.py:24
 msgid "ticket"
-msgstr "이의 신청"
+msgstr "이의신청"
 
 #: .\judge\models\ticket.py:26
 msgid "poster"
@@ -2465,67 +2465,9 @@ msgid "My open tickets"
 msgstr ""
 
 #: .\templates\blog\list.html:246
-msgid "New tickets"
+msgid "새로운 이의신청"
 msgstr ""
 
-#: .\templates\comments\list.html:2
-msgid "Comments"
-msgstr ""
-
-#: .\templates\comments\list.html:18 .\templates\comments\list.html:27
-msgid "Please login to vote"
-msgstr ""
-
-#: .\templates\comments\list.html:40
-#, python-brace-format
-msgid "commented on {time}"
-msgstr ""
-
-#: .\templates\comments\list.html:49
-#, python-format
-msgid "edit %(edits)s"
-msgstr ""
-
-#: .\templates\comments\list.html:51 .\templates\comments\media-js.html:71
-msgid "edited"
-msgstr ""
-
-#: .\templates\comments\list.html:60
-msgid "Link"
-msgstr ""
-
-#: .\templates\comments\list.html:73 .\templates\comments\list.html:80
-msgid "Reply"
-msgstr ""
-
-#: .\templates\comments\list.html:86
-msgid "Hide"
-msgstr ""
-
-#: .\templates\comments\list.html:111
-msgid "There are no comments at the moment."
-msgstr ""
-
-#: .\templates\comments\list.html:117
-msgid "New comment"
-msgstr ""
-
-#: .\templates\comments\list.html:131
-msgid "Invalid comment body."
-msgstr ""
-
-#: .\templates\comments\list.html:139
-msgid "Post!"
-msgstr ""
-
-#: .\templates\comments\media-js.html:66
-#, python-brace-format
-msgid "edit {edits}"
-msgstr ""
-
-#: .\templates\comments\media-js.html:69
-msgid "original"
-msgstr ""
 
 #: .\templates\contest\access_code.html:26
 msgid "Invalid access code."
@@ -2982,7 +2924,7 @@ msgid "Read editorial"
 msgstr ""
 
 #: .\templates\problem\problem.html:120
-msgid "이의 신청 관리"
+msgid "이의신청 관리"
 msgstr ""
 
 #: .\templates\problem\problem.html:124
