@@ -28,9 +28,7 @@ from judge.utils.tickets import own_ticket_filter, filter_visible_tickets
 from judge.utils.views import TitleMixin, paginate_query_context
 from judge.widgets import HeavyPreviewPageDownWidget
 
-ticket_widget = (forms.Textarea() if HeavyPreviewPageDownWidget is None else
-                 HeavyPreviewPageDownWidget(preview=reverse_lazy('ticket_preview'),
-                                            preview_timeout=1000, hide_preview_button=True))
+ticket_widget = forms.Textarea()
 
 
 class TicketForm(forms.Form):

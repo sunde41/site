@@ -6,14 +6,14 @@ from django.urls import reverse_lazy
 from judge.models import TicketMessage
 from judge.widgets import HeavySelect2Widget, HeavySelect2MultipleWidget, HeavyPreviewAdminPageDownWidget
 
+from ckeditor.widgets import CKEditorWidget
 
 class TicketMessageForm(ModelForm):
     class Meta:
         widgets = {
             'user': HeavySelect2Widget(data_view='profile_select2', attrs={'style': 'width: 100%'}),
+            'body': CKEditorWidget()
         }
-        if HeavyPreviewAdminPageDownWidget is not None:
-            widgets['body'] = HeavyPreviewAdminPageDownWidget(preview=reverse_lazy('ticket_preview'))
 
 
 class TicketMessageInline(StackedInline):
