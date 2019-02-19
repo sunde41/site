@@ -84,7 +84,7 @@
                                     <span class="post-authors">{{ link_users(authors) }}</span>
                                 {%- endif -%}
                             {% endwith %}
-                            {{ relative_time(post.publish_on, abs=_('posted on {time}'), rel=_('posted {time}')) -}}
+                            {{ relative_time(post.publish_on, abs=_('{time}에 게시'), rel=_('{time}에 게시')) -}}
                         </span><span class="comment-data">
                             <a href="{{ url('notice_post', post.id, post.slug) }}#comments" class="comment-count-link">
                             </a>
@@ -137,7 +137,7 @@
                                     <a href="{{ url('contest_view', contest.key) }}">{{ contest.name }}</a>
                                 </div>
                                 <div class="time">
-                                    {{ _('Ends in %(countdown)s.', countdown=contest.time_before_end|as_countdown) }}
+                                    {{ _('%(countdown)s 후 종료', countdown=contest.time_before_end|as_countdown) }}
                                 </div>
                             </div>
                         {% endfor %}
@@ -155,7 +155,7 @@
                                     <a href="{{ url('contest_view', contest.key) }}">{{ contest.name }}</a>
                                 </div>
                                 <div class="time">
-                                    {{ _('Starting in %(countdown)s.', countdown=contest.time_before_start|as_countdown) }}
+                                    {{ _('%(countdown)s 에 시작', countdown=contest.time_before_start|as_countdown) }}
                                 </div>
                             </div>
                         {% endfor %}
