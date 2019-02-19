@@ -71,3 +71,8 @@ select#id_tags.django-select2 {
   position: sticky;
   top: 38px;
 }
+
+
+div.breadcrumbs {
+    padding: 10px 20px;
+}
