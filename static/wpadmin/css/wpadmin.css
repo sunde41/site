@@ -282,7 +282,7 @@ body.wp-with-left-menu #container {
 
 #adminmenu .wp-submenu {
     top: -1px;
-    left: 160px
+    left: 180px
 }
 
 #adminmenu .wp-menu-open > a:after {
@@ -1064,7 +1064,7 @@ body.popup {
 }
 
 .wp-with-left-menu #bottombar {
-    left: 160px
+    left: 180px
 }
 
 .wp-with-left-menu.wp-folded #bottombar {
