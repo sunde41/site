@@ -7,38 +7,8 @@ from mptt.admin import DraggableMPTTAdmin
 from reversion.admin import VersionAdmin
 
 from judge.dblock import LockModel
-from judge.models import NavigationBar
 from judge.widgets import HeavySelect2MultipleWidget, HeavyPreviewAdminPageDownWidget, HeavySelect2Widget
 from ckeditor.widgets import CKEditorWidget
-
-
-class NavigationBarAdmin(DraggableMPTTAdmin):
-    list_display = DraggableMPTTAdmin.list_display + ('key', 'linked_path')
-    fields = ('key', 'label', 'path', 'order', 'regex', 'parent')
-    list_editable = ()  # Bug in SortableModelAdmin: 500 without list_editable being set
-    mptt_level_indent = 20
-    sortable = 'order'
-
-    def __init__(self, *args, **kwargs):
-        super(NavigationBarAdmin, self).__init__(*args, **kwargs)
-        self.__save_model_calls = 0
-
-    def linked_path(self, obj):
-        return format_html(u'<a href="{0}" target="_blank">{0}</a>', obj.path)
-    linked_path.short_description = _('link path')
-
-    def save_model(self, request, obj, form, change):
-        self.__save_model_calls += 1
-        return super(NavigationBarAdmin, self).save_model(request, obj, form, change)
-
-    def changelist_view(self, request, extra_context=None):
-        self.__save_model_calls = 0
-        with NavigationBar.objects.disable_mptt_updates():
-            result = super(NavigationBarAdmin, self).changelist_view(request, extra_context)
-        if self.__save_model_calls:
-            with LockModel(write=(NavigationBar,)):
-                NavigationBar.objects.rebuild()
-        return result
 
 
 class NoticePostForm(ModelForm):

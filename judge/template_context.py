@@ -7,7 +7,7 @@ from django.core.cache import cache
 from django.utils.functional import SimpleLazyObject, new_method_proxy
 
 from judge.utils.caniuse import CanIUse, SUPPORT
-from .models import Profile, NavigationBar
+from .models import Profile
 
 
 class FixedSimpleLazyObject(SimpleLazyObject):
@@ -52,16 +52,10 @@ def comet_location(request):
             'EVENT_DAEMON_POLL_LOCATION': poll}
 
 
-def __nav_tab(path):
-    result = list(NavigationBar.objects.extra(where=['%s REGEXP BINARY regex'], params=[path])[:1])
-    return result[0].get_ancestors(include_self=True).values_list('key', flat=True) if result else []
-
 
 def general_info(request):
     path = request.get_full_path()
     return {
-        'nav_tab': FixedSimpleLazyObject(partial(__nav_tab, request.path)),
-        'nav_bar': NavigationBar.objects.all(),
         'LOGIN_RETURN_PATH': '' if path.startswith('/accounts/') else path,
         'perms': PermWrapper(request.user),
     }

@@ -73,13 +73,6 @@ else:
                         'judge.Profile',
                     ],
                 },
-                {
-                    'model': 'judge.NavigationBar',
-                    'icon': 'fa-bars',
-                    'children': [
-                        'judge.License',
-                    ],
-                },
                 ('judge.NoticePost', 'fa-rss-square'),
                 ('flatpages.FlatPage', 'fa-file-text-o'),
                 ('judge.Solution', 'fa-pencil'),
@@ -232,7 +225,6 @@ MARKDOWN_STYLES = {
     'comment': MARKDOWN_DEFAULT_STYLE,
     'self-description': MARKDOWN_USER_LARGE_STYLE,
     'problem': MARKDOWN_ADMIN_EDITABLE_STYLE,
-    'notice': MARKDOWN_ADMIN_EDITABLE_STYLE,
     'contest': MARKDOWN_ADMIN_EDITABLE_STYLE,
     'language': MARKDOWN_ADMIN_EDITABLE_STYLE,
     'license': MARKDOWN_ADMIN_EDITABLE_STYLE,
