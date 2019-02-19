@@ -43,31 +43,31 @@ nav ul li button {
     background: linear-gradient(rgba(110, 0, 39, 0.5), transparent);
 }
 
-/*nav ul li a.active, nav ul li button.active {*/
-    /*color: #fff;*/
-    /*background: #940034;*/
-/*}*/
+nav ul li a.active, nav ul li button.active {
+    color: #fff;
+    background: #940034;
+}
 
 
-/*nav ul li a:hover, nav ul li button:hover {*/
-    /*color: #82002e;*/
-    /*background: #fff;*/
-/*}*/
+nav ul li a:hover, nav ul li button:hover {
+    color: #82002e;
+    background: #fff;
+}
 
 nav ul li a:link, nav ul li button:link {
     color: #940034;
     background: #fff;
 }
 
-/*nav ul li a:link.active, nav ul li button:link.active {*/
-    /*color: #fff;*/
-    /*background: #940034;*/
-/*}*/
+nav ul li a:link.active, nav ul li button:link.active {
+    color: #fff;
+    background: #940034;
+}
 
-/*nav ul li a.active:hover, nav ul li button:link.active:hover {*/
-    /*color: #82002e;*/
-    /*background: #fff;*/
-/*}*/
+nav ul li a.active:hover, nav ul li button:link.active:hover {
+    color: #82002e;
+    background: #fff;
+}
 
 
 nav ul li a, nav ul li button {
