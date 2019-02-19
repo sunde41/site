@@ -11,7 +11,6 @@ from judge.models.problem_data import problem_data_storage, problem_directory_fi
 from judge.models.profile import Profile
 from judge.models.runtime import Language, RuntimeVersion, Judge
 from judge.models.submission import SUBMISSION_RESULT, Submission, SubmissionTestCase
-from judge.models.ticket import Ticket, TicketMessage
 
 revisions.register(Profile, exclude=['points', 'last_access', 'ip', 'rating'])
 revisions.register(Problem, follow=['language_limits'])

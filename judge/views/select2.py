@@ -101,13 +101,3 @@ class ContestUserSearchSelect2View(UserSearchSelect2View):
         
         return Profile.objects.filter(contest_history__contest=contest,
                                       user__username__icontains=self.term).distinct()
-
-
-class TicketUserSelect2View(UserSearchSelect2View):
-    def get_queryset(self):
-        return Profile.objects.filter(tickets__isnull=False).distinct()
-
-
-class AssigneeSelect2View(UserSearchSelect2View):
-    def get_queryset(self):
-        return Profile.objects.filter(assigned_tickets__isnull=False).distinct()

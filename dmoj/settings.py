@@ -48,7 +48,6 @@ else:
                         'judge.ProblemGroup',
                         'judge.ProblemType',
                         'judge.License',
-                        'judge.Ticket'
                     ],
                 },
                 {
@@ -231,7 +230,6 @@ MARKDOWN_STYLES = {
     'judge': MARKDOWN_ADMIN_EDITABLE_STYLE,
     'solution': MARKDOWN_ADMIN_EDITABLE_STYLE,
     'contest_tag': MARKDOWN_ADMIN_EDITABLE_STYLE,
-    'ticket': MARKDOWN_USER_LARGE_STYLE,
 }
 
 # Database

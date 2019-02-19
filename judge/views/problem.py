@@ -178,7 +178,6 @@ class ProblemDetail(LoginRequiredMixin, ProblemMixin, SolvedProblemMixin, Detail
         context['show_languages'] = self.object.allowed_languages.count() != Language.objects.count()
         context['completed_problem_ids'] = self.get_completed_problems()
         context['attempted_problems'] = self.get_attempted_problems()
-        context['num_open_tickets'] = self.object.tickets.filter(is_open=True).count()
         context['can_edit_problem'] = self.object.is_editable_by(user)
         try:
             context['editorial'] = Solution.objects.get(problem=self.object)

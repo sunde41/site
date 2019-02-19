@@ -9,12 +9,12 @@ from django.utils.translation import ugettext_lazy as _
 from judge.forms import CustomAuthenticationForm
 from judge.views import TitledTemplateView
 from judge.views import language, status, problem, license, register, user, notice, \
-    submission, widgets, contests, ranked_submission, stats, preview, ticket
+    submission, widgets, contests, ranked_submission, stats, preview
 from judge.views.problem_data import ProblemDataView, ProblemSubmissionDiff, \
     problem_data_file, problem_init_view
 from judge.views.register import RegistrationView, ActivationView
 from judge.views.select2 import UserSelect2View, ProblemSelect2View, \
-    ContestSelect2View, UserSearchSelect2View, ContestUserSearchSelect2View, TicketUserSelect2View, AssigneeSelect2View
+    ContestSelect2View, UserSearchSelect2View, ContestUserSearchSelect2View
 
 ########################################################################################################################
 admin.autodiscover()
@@ -115,9 +115,6 @@ urlpatterns = [
         url(r'^/test_data/init$', problem_init_view, name='problem_data_init'),
         url(r'^/test_data/diff$', ProblemSubmissionDiff.as_view(), name='problem_submission_diff'),
         url(r'^/data/(?P<path>.+)$', problem_data_file, name='problem_data_file'),
-
-        url(r'^/tickets$', ticket.ProblemTicketListView.as_view(), name='problem_ticket_list'),
-        url(r'^/tickets/new$', ticket.NewProblemTicketView.as_view(), name='new_problem_ticket'),
     ])),
 
     url(r'^submissions/', paged_list_view(submission.AllSubmissions, 'all_submissions')),
@@ -198,8 +195,6 @@ urlpatterns = [
             url(r'^user_search$', UserSearchSelect2View.as_view(), name='user_search_select2_ajax'),
             url(r'^contest_users/(?P<contest>\w+)$', ContestUserSearchSelect2View.as_view(),
                 name='contest_user_search_select2_ajax'),
-            url(r'^ticket_user$', TicketUserSelect2View.as_view(), name='ticket_user_select2_ajax'),
-            url(r'^ticket_assignee$', AssigneeSelect2View.as_view(), name='ticket_assignee_select2_ajax'),
         ])),
 
         url(r'^preview/', include([
@@ -220,18 +215,6 @@ urlpatterns = [
             url('^data/status/$', stats.status_data, name='stats_data_status'),
             url('^data/ac_rate/$', stats.ac_rate, name='language_stats_data_ac_rate'),
         ])),
-    ])),
-
-    url(r'^tickets/', include([
-        url(r'^$', ticket.TicketList.as_view(), name='ticket_list'),
-        url(r'^ajax$', ticket.TicketListDataAjax.as_view(), name='ticket_ajax'),
-    ])),
-
-    url(r'^ticket/(?P<pk>\d+)', include([
-        url(r'^$', ticket.TicketView.as_view(), name='ticket'),
-        url(r'^/open$', ticket.TicketStatusChangeView.as_view(open=True), name='ticket_open'),
-        url(r'^/close$', ticket.TicketStatusChangeView.as_view(open=False), name='ticket_close'),
-        url(r'^/notes$', ticket.TicketNotesEditView.as_view(), name='ticket_notes'),
     ])),
 
     url(r'^judge-select2/', include([

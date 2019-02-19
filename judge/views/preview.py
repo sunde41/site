@@ -28,14 +28,8 @@ class CommentMarkdownPreviewView(MarkdownPreviewView):
 class ProfileMarkdownPreviewView(MarkdownPreviewView):
     template_name = 'user/preview.html'
 
-class NoticeMarkdownPreviewView(MarkdownPreviewView):
-    template_name = 'notice/preview.html'
-
 class SolutionMarkdownPreviewView(MarkdownPreviewView):
     template_name = 'solution-preview.html'
 
 class LicenseMarkdownPreviewView(MarkdownPreviewView):
     template_name = 'license-preview.html'
-
-class TicketMarkdownPreviewView(MarkdownPreviewView):
-    template_name = 'ticket/preview.html'

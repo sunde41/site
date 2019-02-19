@@ -123,7 +123,6 @@ class Problem(models.Model):
     ac_rate = models.FloatField(verbose_name=_('solve rate'), default=0)
 
     objects = TranslatedProblemQuerySet.as_manager()
-    tickets = GenericRelation('Ticket')
 
     def __init__(self, *args, **kwargs):
         super(Problem, self).__init__(*args, **kwargs)

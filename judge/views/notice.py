@@ -8,11 +8,9 @@ from django.views.generic import ListView
 
 from judge.views.detail_view import CommentedDetailView
 from judge.models import NoticePost, Problem, Contest, Profile, Submission, Language, ProblemClarification
-from judge.models import Ticket
 from judge.utils.cachedict import CacheDict
 from judge.utils.diggpaginator import DiggPaginator
 from judge.utils.problems import user_completed_ids
-from judge.utils.tickets import filter_visible_tickets
 from judge.utils.views import TitleMixin
 
 
@@ -71,19 +69,9 @@ class PostList(ListView):
 
         if self.request.user.is_authenticated:
             profile = self.request.user.profile
-            context['own_open_tickets'] = (Ticket.objects.filter(user=profile, is_open=True).order_by('-id')
-                                           .prefetch_related('linked_item').select_related('user__user'))
         else:
             profile = None
-            context['own_open_tickets'] = []
 
-        # Superusers better be staffs, not the spell-casting kind either.
-        if self.request.user.is_staff:
-            tickets = (Ticket.objects.order_by('-id').filter(is_open=True).prefetch_related('linked_item')
-                             .select_related('user__user'))
-            context['open_tickets'] = filter_visible_tickets(tickets, self.request.user, profile)[:10]
-        else:
-            context['open_tickets'] = []
         return context
 
 
