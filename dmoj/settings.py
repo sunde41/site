@@ -334,9 +334,14 @@ CKEDITOR_CONFIGS = {
     },
 }
 
+
 try:
-    with open(os.path.join(os.path.dirname(__file__), 'local_settings.py')) as f:
-        exec
-        f in globals()
-except IOError:
+    from local_settings import *
+except ImportError:
     pass
+
+# try:
+#     with open(os.path.join(os.path.dirname(__file__), 'local_settings.py')) as f:
+#         exec f in globals()
+# except IOError:
+#     pass
