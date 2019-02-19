@@ -61,8 +61,8 @@ def general_info(request):
     }
 
 
-# def site(request):
-#     return {'site': get_current_site(request)}
+def site(request):
+    return {'site': get_current_site(request)}
 
 
 def site_name(request):
