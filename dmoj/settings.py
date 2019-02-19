@@ -316,6 +316,7 @@ AUTHENTICATION_BACKENDS = (
 )
 
 JUDGE_AMQP_PATH = None
+CKEDITOR_BASEPATH = "/static/ckeditor/"
 
 try:
     with open(os.path.join(os.path.dirname(__file__), 'local_settings.py')) as f:
