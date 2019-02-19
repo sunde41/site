@@ -397,7 +397,7 @@ msgstr "이 문제들은 이러한 문제 유형에 포함되어 있습니다."
 
 #: .\judge\apps.py:8
 msgid "Online Judge"
-msgstr "Online Judge"
+msgstr "고려대학교 코딩 능력 평가"
 
 #: .\judge\comments.py:40
 msgid "Comment title"
@@ -923,7 +923,7 @@ msgstr "부모 항목"
 
 #: .\judge\models\interface.py:65
 msgid "post title"
-msgstr "게시물 제목"
+msgstr "공지 제목"
 
 #: .\judge\models\interface.py:66 .\judge\models\problem.py:342
 msgid "authors"
@@ -943,15 +943,15 @@ msgstr "상단 고정"
 
 #: .\judge\models\interface.py:70
 msgid "publish after"
-msgstr "후 게시"
+msgstr "다음 시간 후 공지 게시"
 
 #: .\judge\models\interface.py:71
 msgid "post content"
-msgstr "게시물 내용"
+msgstr "공지 내용"
 
 #: .\judge\models\interface.py:72
 msgid "post summary"
-msgstr "게시물 요약"
+msgstr "공지 요약"
 
 #: .\judge\models\interface.py:73
 msgid "openGraph image"
