@@ -180,7 +180,7 @@ urlpatterns = [
     url(r'^runtimes/matrix/$', status.version_matrix, name='version_matrix'),
     url(r'^status/$', status.status_all, name='status_all'),
     url(r'^notice/', paged_list_view(notice.PostList, 'notice_post_list')),
-    url(r'^post/(?P<id>\d+).*)$', notice.PostView.as_view(), name='notice_post'),
+    url(r'^post/(?P<id>\d+)$', notice.PostView.as_view(), name='notice_post'),
     url(r'^widgets/', include([
         url(r'^rejudge$', widgets.rejudge_submission, name='submission_rejudge'),
         url(r'^single_submission$', submission.single_submission_query, name='submission_single_query'),
