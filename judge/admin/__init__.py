@@ -11,6 +11,9 @@ from judge.admin.ticket import TicketAdmin
 from judge.models import NoticePost, Contest, ContestParticipation, \
     ContestTag, Judge, Language, License, Problem, ProblemGroup, ProblemType, Profile, Submission, Ticket
 
+from django.contrib.sites.models import Site
+
+
 
 admin.site.register(NoticePost, NoticePostAdmin)
 admin.site.register(Contest, ContestAdmin)
@@ -25,3 +28,5 @@ admin.site.register(ProblemType, ProblemTypeAdmin)
 admin.site.register(Profile, ProfileAdmin)
 admin.site.register(Submission, SubmissionAdmin)
 admin.site.register(Ticket, TicketAdmin)
+
+admin.site.unregister(Site)
