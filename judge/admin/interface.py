@@ -25,10 +25,9 @@ class NoticePostForm(ModelForm):
 
 class NoticePostAdmin(VersionAdmin):
     fieldsets = (
-        (None, {'fields': ('title', 'slug', 'authors', 'visible', 'sticky', 'publish_on')}),
+        (None, {'fields': ('title', 'authors', 'visible', 'sticky', 'publish_on')}),
         (_('Content'), {'fields': ('content', )}),
     )
-    prepopulated_fields = {'slug': ('title',)}
     list_display = ('id', 'title', 'visible', 'sticky', 'publish_on')
     list_display_links = ('id', 'title')
     ordering = ('-publish_on',)

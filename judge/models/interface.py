@@ -23,7 +23,6 @@ def validate_regex(regex):
 class NoticePost(models.Model):
     title = models.CharField(verbose_name=_('post title'), max_length=100)
     authors = models.ManyToManyField(Profile, verbose_name=_('authors'), blank=True)
-    slug = models.SlugField(verbose_name=_('slug'))
     visible = models.BooleanField(verbose_name=_('public visibility'), default=False)
     sticky = models.BooleanField(verbose_name=_('sticky'), default=False)
     publish_on = models.DateTimeField(verbose_name=_('publish after'))
