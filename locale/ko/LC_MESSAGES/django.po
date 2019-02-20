@@ -2446,7 +2446,7 @@ msgstr ""
 #: .\templates\contest\calendar.html:6
 #, python-format
 msgid "Contests in %(month)s"
-msgstr ""
+msgstr "%(month)s의 코딩 능력 평가"
 
 #: .\templates\contest\calendar.html:13
 msgid "Sunday"
