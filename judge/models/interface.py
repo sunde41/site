@@ -30,7 +30,6 @@ class NoticePost(models.Model):
     publish_on = models.DateTimeField(verbose_name=_('publish after'))
     content = models.TextField(verbose_name=_('post content'))
 
-
     def __unicode__(self):
         return self.title
 
