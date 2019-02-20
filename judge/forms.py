@@ -24,9 +24,8 @@ def fix_unicode(string, unsafe=tuple(u'\u202a\u202b\u202d\u202e')):
 class ProfileForm(ModelForm):
     class Meta:
         model = Profile
-        fields = ['name', 'language', 'ace_theme']
+        fields = ['language', 'ace_theme']
         widgets = {
-            'name': TextInput(attrs={'style': 'width:100%;box-sizing:border-box'}),
             'language': Select2Widget(attrs={'style': 'width:200px'}),
             'ace_theme': Select2Widget(attrs={'style': 'width:200px'}),
         }
@@ -37,9 +36,6 @@ class ProfileForm(ModelForm):
     def __init__(self, *args, **kwargs):
         user = kwargs.pop('user', None)
         super(ProfileForm, self).__init__(*args, **kwargs)
-
-    def clean_name(self):
-        return fix_unicode(self.cleaned_data['name'] or '')
 
 
 class ProblemSubmitForm(ModelForm):
