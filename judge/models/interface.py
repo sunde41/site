@@ -7,8 +7,6 @@ from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
-from mptt.fields import TreeForeignKey
-from mptt.models import MPTTModel
 
 from judge.models.profile import Profile
 
