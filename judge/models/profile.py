@@ -69,16 +69,10 @@ class Profile(models.Model):
 
     @cached_property
     def display_name(self):
-        if self.name:
-            return self.name
         return self.user.username
 
     @cached_property
     def long_display_name(self):
-        if self.name:
-            return pgettext('user display name', '%(username)s') % {
-                'username': self.user.username,
-            }
         return self.user.username
 
     def remove_contest(self):
