@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from django.core.urlresolvers import reverse
 from django.db.models import IntegerField
 from django.db.models.expressions import RawSQL

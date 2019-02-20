@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from itertools import repeat, chain
 from operator import itemgetter
 

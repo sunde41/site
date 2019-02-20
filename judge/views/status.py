@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from collections import defaultdict
 from distutils.version import LooseVersion
 from functools import partial

@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from django.http import HttpResponseBadRequest
 from django.views.generic.base import TemplateResponseMixin, ContextMixin, View
 
