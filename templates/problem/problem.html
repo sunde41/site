@@ -237,6 +237,11 @@
             </div>
         </div>
     {% endif %}
+    {% if has_solved_problem %}
+    <hr style="padding-bottom: 0.3em">
+    <div><a class="unselectable button full" href="{{ url('ranked_submissions', problem.code) }}">{{ _('Best submissions') }}</a></div>
+    {% endif %}
+
 {% endblock %}
 
 {% block description %}
