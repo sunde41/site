@@ -2180,7 +2180,7 @@ msgstr ""
 
 #: .\judge\views\user.py:133
 msgid "M j, Y, G:i"
-msgstr "Y년 M j일, G:i"
+msgstr "Y년 M j일, G시 i분"
 
 #: .\judge\views\user.py:215
 msgid "Updated on site"
@@ -3451,3 +3451,7 @@ msgstr "공지"
 
 msgid "organizers"
 msgstr "코딩 능력 평가 관리자"
+
+
+msgid "%(duration)s long"
+msgstr "%(duration)s 동안"

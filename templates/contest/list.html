@@ -79,8 +79,7 @@
 {% macro time_left(contest) %}
     <div class="time time-left">
         {% if contest.time_limit %}
-            {{ contest.start_time|date(_("M j, Y, G:i")) }} -
-            {{ contest.end_time|date(_("M j, Y, G:i")) }}
+            {{ contest.start_time|date(_("M j, Y, G:i")) }} - {{ contest.end_time|date(_("M j, Y, G:i")) }}
         {% else %}
             {{ contest.start_time|date(_("M j, Y, G:i")) }}
         {% endif %}
