@@ -206,7 +206,7 @@ msgstr "시간대"
 
 #: .\judge\admin\profile.py:80
 msgid "date joined"
-msgstr "가입한 날짜"
+msgstr "등록한 날짜"
 
 #: .\judge\admin\profile.py:87
 #, python-format
@@ -1928,111 +1928,6 @@ msgstr "손상된 페이지 %s"
 msgid "Runtimes"
 msgstr "런타임"
 
-#: .\judge\views\organization.py:43 .\judge\views\organization.py:46
-msgid "No such organization"
-msgstr "존재하지 않는 조직"
-
-#: .\judge\views\organization.py:44
-#, python-format
-msgid "Could not find an organization with the key \"%s\"."
-msgstr "%s 조직을 찾을 수 없습니다."
-
-#: .\judge\views\organization.py:47
-msgid "Could not find such organization."
-msgstr "그러한 조직을 찾을 수 없습니다."
-
-#: .\judge\views\organization.py:62 .\judge\views\register.py:35
-#: .\templates\organization\list.html:15 .\templates\user\user-list-tabs.html:5
-msgid "Organizations"
-msgstr "조직"
-
-#: .\judge\views\organization.py:83
-#, python-format
-msgid "%s Members"
-msgstr "%s 멤버"
-
-#: .\judge\views\organization.py:113 .\judge\views\organization.py:115
-msgid "Joining organization"
-msgstr "조직 가입"
-
-#: .\judge\views\organization.py:113
-msgid "You are already in the organization."
-msgstr "이미 조직에 가입되어 있습니다."
-
-#: .\judge\views\organization.py:115
-msgid "This organization is not open."
-msgstr "이 조직은 공개되어 있지 않습니다."
-
-#: .\judge\views\organization.py:124
-msgid "Leaving organization"
-msgstr "조직 탈퇴"
-
-#: .\judge\views\organization.py:124
-#, python-format
-msgid "You are not in \"%s\"."
-msgstr "%s에 있지 않습니다."
-
-#: .\judge\views\organization.py:148
-#, python-format
-msgid "Request to join %s"
-msgstr "%s 가입 신청"
-
-#: .\judge\views\organization.py:164
-msgid "Join request detail"
-msgstr "가입 신청 세부 사항"
-
-#: .\judge\views\organization.py:193
-#, python-format
-msgid "Managing join requests for %s"
-msgstr "%s 가입 신청 가입"
-
-#: .\judge\views\organization.py:224
-#, python-format
-msgid "Your organization can only receive %d more members. You cannot approve %d users."
-msgstr "당신의 조직은 %d명의 회원만 더 가입이 가능합니다. %d명의 사용자 가입 승인이 불가합니다."
-
-#: .\judge\views\organization.py:236
-#, python-format
-msgid "Approved %d user."
-msgid_plural "Approved %d users."
-msgstr[0] "%d명 사용자 승인"
-
-#: .\judge\views\organization.py:237
-#, python-format
-msgid "Rejected %d user."
-msgid_plural "Rejected %d users."
-msgstr[0] "%d명 거부"
-
-#: .\judge\views\organization.py:267
-#, python-format
-msgid "Editing %s"
-msgstr "%s 편집중"
-
-#: .\judge\views\organization.py:290 .\judge\views\organization.py:298
-msgid "Can't edit organization"
-msgstr "조직 편집이 불가합니다."
-
-#: .\judge\views\organization.py:291
-msgid "You are not allowed to edit this organization."
-msgstr "조직을 편집할 권한이 없습니다."
-
-#: .\judge\views\organization.py:299
-msgid "You are not allowed to kick people from this organization."
-msgstr "조직 사용자를 탈퇴시킬 권한이 없습니다."
-
-#: .\judge\views\organization.py:304 .\judge\views\organization.py:308
-msgid "Can't kick user"
-msgstr "이 사용자를 탈퇴시킬 수 없습니다."
-
-#: .\judge\views\organization.py:305
-msgid "The user you are trying to kick does not exist!"
-msgstr "탈퇴시키려는 사용자가 존재하지 않습니다."
-
-#: .\judge\views\organization.py:309
-#, python-format
-msgid "The user you are trying to kick is not in organization: %s."
-msgstr ""
-
 #: .\judge\views\problem.py:72
 msgid "No such problem"
 msgstr "존재하지 않는 문제"
@@ -2177,7 +2072,7 @@ msgstr "스팸으로 인해 이 이메일 제공업체는 허용되지 않습니
 
 #: .\judge\views\register.py:58 .\judge\views\register.py:97
 msgid "Registration"
-msgstr "회원가입"
+msgstr "회원 등록"
 
 #: .\judge\views\register.py:108
 msgid "Authentication failure"
@@ -2349,7 +2244,7 @@ msgstr "로그아웃"
 
 #: .\templates\base.html:235
 msgid "Register"
-msgstr "가입"
+msgstr "등록"
 
 #: .\templates\base.html:247
 msgid "spectating"
@@ -3118,7 +3013,7 @@ msgstr ""
 
 #: .\templates\registration\registration_form.html:179
 msgid "Default language"
-msgstr ""
+msgstr "답변 제출시 사용할 기본 언어 (My Page에서 변경 가능)"
 
 #: .\templates\registration\registration_form.html:182
 #: .\templates\user\edit-profile.html:156
@@ -3136,11 +3031,11 @@ msgstr ""
 
 #: .\templates\registration\registration_form.html:203
 msgid "Terms & Conditions"
-msgstr ""
+msgstr "개인정보처리방침"
 
 #: .\templates\registration\registration_form.html:206
 msgid "Register!"
-msgstr ""
+msgstr "등록!"
 
 #: .\templates\stats\language.html:44
 msgid "Submission Statistics"
