@@ -6,7 +6,18 @@
     {% include "contest/contest-list-tabs.html" %}
 {% endblock %}
 
+
+
+
 {% block body %}
+    <div style="font-size: 1.6em; margin-top: 0.3em">
+            {% if prev_month %}
+                <a href="{{ url('contest_calendar', prev_month.year, prev_month.month) }}">&laquo; {{ _('이전') }}</a>
+            {% endif %}
+            {% if next_month %}
+                <a href="{{ url('contest_calendar', next_month.year, next_month.month) }}">{{ _('다음') }} &raquo;</a>
+            {% endif %}
+        </div>
     <table id="contest-calendar">
         <tr>
             <th>{{ _('Sunday') }}</th>
