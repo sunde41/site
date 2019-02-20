@@ -28,10 +28,9 @@ class EncryptedNullCharField(EncryptedCharField):
 class Profile(models.Model):
     user = models.OneToOneField(User, verbose_name=_('user associated'))
     name = models.CharField(max_length=50, verbose_name=_('display name'), null=True, blank=True)
-    about = models.TextField(verbose_name=_('self-description'), null=True, blank=True)
     language = models.ForeignKey('Language', verbose_name=_('preferred language'))
     timezone = models.CharField(max_length=50, verbose_name=_('location'), choices=TIMEZONE,
-                                default=getattr(settings, 'DEFAULT_USER_TIME_ZONE', 'America/Toronto'))
+                                default=getattr(settings, 'DEFAULT_USER_TIME_ZONE', 'Asia/Seoul'))
     points = models.FloatField(default=0, db_index=True)
     performance_points = models.FloatField(default=0, db_index=True)
     problem_count = models.IntegerField(default=0, db_index=True)

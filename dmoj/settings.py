@@ -14,12 +14,12 @@ DEBUG = False
 ALLOWED_HOSTS = ['150.95.151.157', 'codingtest.everycoding.net']
 
 SITE_ID = 1
-SITE_NAME = 'KCCT'
+SITE_NAME = '고려대학교 코딩 능력 평가 시스템'
 SITE_LONG_NAME = '고려대학교 코딩 능력 평가 시스템'
 SITE_ADMIN_EMAIL = 'sunde41@gmail.com'
-SERVER_EMAIL = '고려대학교 코딩 능력 평가 관리자 <sunde41@gmail.com>'
+SERVER_EMAIL = '고려대학교 코딩 능력 평가 시스템 관리자 <sunde41@gmail.com>'
 ADMINS = (
-    ('고려대학교 코딩 능력 평가 관리자', 'sunde41@gmail.com'),
+    ('고려대학교 코딩 능력 평가 시스템 관리자', 'sunde41@gmail.com'),
 )
 
 TERMS_OF_SERVICE_URL = 'http://korea.ac.kr/mbshome/mbs/university/subview.do?id=university_090300000000'  # Use a flatpage.
@@ -234,7 +234,6 @@ MARKDOWN_USER_LARGE_STYLE = {
 
 MARKDOWN_STYLES = {
     'comment': MARKDOWN_DEFAULT_STYLE,
-    'self-description': MARKDOWN_USER_LARGE_STYLE,
     'problem': MARKDOWN_ADMIN_EDITABLE_STYLE,
     'contest': MARKDOWN_ADMIN_EDITABLE_STYLE,
     'language': MARKDOWN_ADMIN_EDITABLE_STYLE,
