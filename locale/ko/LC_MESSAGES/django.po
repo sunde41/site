@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-21 17:54-0400\n"
 "PO-Revision-Date: 2018-08-21 22:12\n"
-"Last-Translator: Icyene <vulcainus@gmail.com>\n"
+"Last-Translator: sunde41 <sunde41@gmail.com>\n"
 "Language-Team: Korean\n"
 "Language: ko_KR\n"
 "MIME-Version: 1.0\n"
@@ -2525,11 +2525,11 @@ msgstr ""
 #: .\templates\contest\contest-tabs.html:48
 #: .\templates\contest\contest-tabs.html:51
 msgid "Join contest"
-msgstr ""
+msgstr "코딩 능력 평가 시작"
 
 #: .\templates\contest\contest-tabs.html:57
 msgid "Login to participate"
-msgstr ""
+msgstr "코딩 능력 평가를 위한 로그인"
 
 #: .\templates\contest\contest.html:37
 msgid "Participating virtually."
@@ -2554,7 +2554,7 @@ msgid "<b>%(length)s</b> long starting on <b>%(start_time)s</b>"
 msgstr ""
 
 #: .\templates\contest\contest.html:85
-msgid "AC Rate"
+msgid "정답률"
 msgstr ""
 
 #: .\templates\contest\contest.html:86 .\templates\contest\list.html:98
