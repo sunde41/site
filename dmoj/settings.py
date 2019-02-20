@@ -22,7 +22,7 @@ ADMINS = (
     ('고려대학교 코딩 능력 평가 관리자', 'sunde41@gmail.com'),
 )
 
-TERMS_OF_SERVICE_URL = '//dmoj.ca/tos'  # Use a flatpage.
+TERMS_OF_SERVICE_URL = 'http://korea.ac.kr/mbshome/mbs/university/subview.do?id=university_090300000000'  # Use a flatpage.
 
 PYGMENT_THEME = 'pygment-github.css'
 PROBLEM_DATA_ROOT = '/root/problems'
