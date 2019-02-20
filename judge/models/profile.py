@@ -29,6 +29,7 @@ class EncryptedNullCharField(EncryptedCharField):
 
 class Profile(models.Model):
     user = models.OneToOneField(User, verbose_name=_('user associated'))
+    name = models.CharField(max_length=50, verbose_name=_('display name'), null=True, blank=True)
     language = models.ForeignKey('Language', verbose_name=_('preferred language'))
     timezone = models.CharField(max_length=50, verbose_name=_('location'), choices=TIMEZONE,
                                 default=getattr(settings, 'DEFAULT_USER_TIME_ZONE', 'Asia/Seoul'))
@@ -69,10 +70,16 @@ class Profile(models.Model):
 
     @cached_property
     def display_name(self):
+        if self.name:
+            return self.name
         return self.user.username
 
     @cached_property
     def long_display_name(self):
+        if self.name:
+            return pgettext('user display name', '%(username)s (%(display)s)') % {
+                'username': self.user.username, 'display': self.name
+            }
         return self.user.username
 
     def remove_contest(self):
