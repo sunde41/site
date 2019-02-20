@@ -139,7 +139,7 @@ msgstr "분류"
 #: .\templates\problem\list.html:232 .\templates\user\base-users-table.html:10
 #: .\templates\user\user-problems.html:63
 msgid "Points"
-msgstr "포인트"
+msgstr "점수"
 
 #: .\judge\admin\problem.py:126
 msgid "Limits"
