@@ -3577,3 +3577,8 @@ msgstr "공지"
 msgid "organizers"
 msgstr "코딩 능력 평가 관리자"
 
+msgid "time limit"
+msgstr "시간 제한"
+
+msgid "memory limit"
+msgstr "메모리 제한"
