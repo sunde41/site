@@ -226,3 +226,7 @@ em, address {
 #banner {
     padding: 100px 0;
 }
+
+.button, button, input[type=submit] {
+    background: #940034 none repeat scroll 0 0/auto padding-box border-box;
+}
