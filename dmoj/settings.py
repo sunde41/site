@@ -23,6 +23,8 @@ ADMINS = (
 )
 
 TERMS_OF_SERVICE_URL = 'http://korea.ac.kr/mbshome/mbs/university/subview.do?id=university_090300000000'  # Use a flatpage.
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
 
 PYGMENT_THEME = 'pygment-github.css'
 PROBLEM_DATA_ROOT = '/root/problems'
