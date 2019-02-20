@@ -165,6 +165,7 @@ class ProblemDetail(LoginRequiredMixin, ProblemMixin, SolvedProblemMixin, Detail
         authed = user.is_authenticated
         context['has_submissions'] = authed and Submission.objects.filter(user=user.profile,
                                                                           problem=self.object).exists()
+        context['has_solved_problem'] = self.object.id in self.get_completed_problems()
         contest_problem = (None if not authed or user.profile.current_contest is None else
                            get_contest_problem(self.object, user.profile))
         context['contest_problem'] = contest_problem
