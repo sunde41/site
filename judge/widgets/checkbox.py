@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from django import forms
 from django.core.exceptions import FieldError
 from django.template.loader import get_template

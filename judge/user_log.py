@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from judge.models import Profile
 from django.utils.timezone import now
 

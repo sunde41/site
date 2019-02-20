@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from operator import itemgetter, attrgetter
 
 from django import template

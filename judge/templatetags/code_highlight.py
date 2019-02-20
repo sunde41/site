@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from django import template
 
 from judge.highlight_code import highlight_code
