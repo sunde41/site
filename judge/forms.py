@@ -12,7 +12,7 @@ from django.urls import reverse_lazy
 from django.utils.translation import ugettext_lazy as _
 
 from django_ace import AceWidget
-from judge.models import Profile, Submission, PrivateMessage, Language
+from judge.models import Profile, Submission, Language
 from judge.widgets import MathJaxPagedownWidget, HeavyPreviewPageDownWidget, PagedownWidget, \
     Select2Widget, Select2MultipleWidget
 
@@ -62,15 +62,6 @@ class ProblemSubmitForm(ModelForm):
     class Meta:
         model = Submission
         fields = ['problem', 'source', 'language']
-
-
-class NewMessageForm(ModelForm):
-    class Meta:
-        model = PrivateMessage
-        fields = ['title', 'content']
-        widgets = {}
-        if PagedownWidget is not None:
-            widgets['content'] = MathJaxPagedownWidget()
 
 
 class CustomAuthenticationForm(AuthenticationForm):

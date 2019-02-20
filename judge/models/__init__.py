@@ -3,7 +3,6 @@ from reversion import revisions
 from judge.models.choices import TIMEZONE, ACE_THEMES
 from judge.models.contest import Contest, ContestTag, ContestParticipation, ContestProblem, ContestSubmission, Rating
 from judge.models.interface import validate_regex, NoticePost
-from judge.models.message import PrivateMessage, PrivateMessageThread
 from judge.models.problem import ProblemGroup, ProblemType, Problem, ProblemClarification, ProblemTranslation, \
     TranslatedProblemQuerySet, TranslatedProblemForeignKeyQuerySet,LanguageLimit, Solution
 from judge.models.problem_data import problem_data_storage, problem_directory_file, ProblemData, ProblemTestCase, \
