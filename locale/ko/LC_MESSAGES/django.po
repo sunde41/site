@@ -3018,11 +3018,11 @@ msgstr ""
 
 #: .\templates\registration\login.html:64
 msgid "Login!"
-msgstr ""
+msgstr "로그인!"
 
 #: .\templates\registration\login.html:67
 msgid "Forgot your password?"
-msgstr ""
+msgstr "비밀번호를 잊어버리셨습니까?"
 
 #: .\templates\registration\login.html:70
 msgid "Or log in with..."

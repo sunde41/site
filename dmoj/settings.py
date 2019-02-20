@@ -331,6 +331,8 @@ STATICFILES_FINDERS += ('compressor.finders.CompressorFinder',)
 ENABLE_FTS = False
 BAD_MAIL_PROVIDERS = set()
 
+LOGOUT_REDIRECT_URL = '/'
+
 try:
     from local_settings import *
 except ImportError:
