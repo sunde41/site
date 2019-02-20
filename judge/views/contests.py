@@ -34,6 +34,7 @@ from judge.utils.ranker import ranker
 from judge.utils.views import TitleMixin, generic_message
 from judge.views.detail_view import CommentedDetailView
 
+
 __all__ = ['ContestList', 'ContestDetail', 'contest_ranking', 'ContestJoin', 'ContestLeave', 'ContestCalendar',
            'contest_ranking_ajax', 'participation_list', 'own_participation_list', 'get_contest_ranking_list',
            'base_contest_ranking_list']
