@@ -225,3 +225,7 @@ em, address {
 #banner {
     padding: 100px 0;
 }
+
+.contest-points {
+    padding: 0 10px;
+}
