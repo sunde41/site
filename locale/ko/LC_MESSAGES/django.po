@@ -2899,11 +2899,11 @@ msgstr ""
 
 #: .\templates\problem\problem.html:141
 msgid "Points:"
-msgstr ""
+msgstr "점수"
 
 #: .\templates\problem\problem.html:144 .\templates\problem\problem.html:146
 msgid "(partial)"
-msgstr ""
+msgstr "(부분 점수)"
 
 #: .\templates\problem\problem.html:151
 msgid "Time limit:"
@@ -2921,7 +2921,7 @@ msgstr[0] ""
 #: .\templates\problem\problem.html:194
 msgid "Problem type"
 msgid_plural "Problem types"
-msgstr[0] ""
+msgstr[0] "문제 유형"
 
 #: .\templates\problem\problem.html:208
 msgid "Allowed languages"

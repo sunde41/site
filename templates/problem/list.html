@@ -156,7 +156,7 @@
 
 {% block title_row %}
     {% set tab = 'list' %}
-    {% set title = '문제' if request.in_contest else '연습 문제' %}
+    {% set title = '연습 문제' %}
     {% include "problem/problem-list-tabs.html" %}
 {% endblock %}
 
@@ -197,7 +197,7 @@
                             <th class="solved"><i class="fa fa-check"></i></th>
                         {% endif %}
                         <th class="problem">{{ _('문제') }}</th>
-                        <th class="points">{{ _('점수') }}</th>
+                        <th class="points">{{ _('Points') }}</th>
                     {% else %}
                         {% if request.user.is_authenticated %}
                             <th class="solved">
