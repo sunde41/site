@@ -2478,11 +2478,11 @@ msgstr ""
 
 #: .\templates\contest\contest-list-tabs.html:7
 msgid "Prev"
-msgstr ""
+msgstr "이전"
 
 #: .\templates\contest\contest-list-tabs.html:10
 msgid "Next"
-msgstr ""
+msgstr "다음"
 
 #: .\templates\contest\contest-list-tabs.html:18
 #: .\templates\problem\problem-list-tabs.html:5
