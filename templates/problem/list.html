@@ -154,9 +154,11 @@
 
 {% block title_ruler %}{% endblock %}
 
+{% block title %}{{ '문제' if request.in_contest else '연습 문제' }} - 고려대학교 코딩 능력 평가 시스템{% endblock %}
+
 {% block title_row %}
     {% set tab = 'list' %}
-    {% set title = '연습 문제' %}
+    {% set title = '문제' if request.in_contest else '연습 문제' %}
     {% include "problem/problem-list-tabs.html" %}
 {% endblock %}
 
