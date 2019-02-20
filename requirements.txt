@@ -5,7 +5,6 @@ django-mptt>=0.8.4,<0.9
 django-registration-redux>=1.11,<2
 django-reversion
 django-sortedm2m
-django-impersonate
 -e git://github.com/DMOJ/dmoj-wpadmin.git#egg=dmoj-wpadmin
 lxml
 Pygments
