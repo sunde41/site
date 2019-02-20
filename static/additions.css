@@ -188,7 +188,8 @@ h2.sub-title {
 .contest-list th,
 #judge-status th,
 #judge-versions th,
-#runtime-info th {
+#runtime-info th,
+#problem-table {
     padding: 0;
 }
 
