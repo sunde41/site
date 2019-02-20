@@ -29,7 +29,7 @@ class EncryptedNullCharField(EncryptedCharField):
 
 class Profile(models.Model):
     user = models.OneToOneField(User, verbose_name=_('user associated'))
-    name = models.CharField(max_length=50, verbose_name=_('display name'), null=True, blank=True)
+    name = models.CharField(max_length=50, verbose_name=_('student number'), null=True, blank=True)
     language = models.ForeignKey('Language', verbose_name=_('preferred language'))
     timezone = models.CharField(max_length=50, verbose_name=_('location'), choices=TIMEZONE,
                                 default=getattr(settings, 'DEFAULT_USER_TIME_ZONE', 'Asia/Seoul'))
