@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from reversion import revisions
 
 from judge.models.choices import TIMEZONE, ACE_THEMES

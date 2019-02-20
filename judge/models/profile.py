@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from operator import mul
 
 from django.conf import settings

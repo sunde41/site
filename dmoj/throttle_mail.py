@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import traceback
 
 from django.core.cache import cache

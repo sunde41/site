@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from calendar import Calendar, SUNDAY
 from collections import namedtuple, defaultdict
 from functools import partial

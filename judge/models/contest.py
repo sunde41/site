@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from operator import itemgetter
 
 from django.core.exceptions import ValidationError
