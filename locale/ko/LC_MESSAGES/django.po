@@ -2875,7 +2875,7 @@ msgstr ""
 
 #: .\templates\problem\problem.html:112
 msgid "Best submissions"
-msgstr ""
+msgstr "다른 풀이 보기"
 
 #: .\templates\problem\problem.html:115
 msgid "Read editorial"
