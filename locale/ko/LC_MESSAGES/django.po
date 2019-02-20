@@ -2180,7 +2180,7 @@ msgstr ""
 
 #: .\judge\views\user.py:133
 msgid "M j, Y, G:i"
-msgstr ""
+msgstr "Y년 M j일, G:i"
 
 #: .\judge\views\user.py:215
 msgid "Updated on site"
