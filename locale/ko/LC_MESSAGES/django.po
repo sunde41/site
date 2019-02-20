@@ -2562,10 +2562,10 @@ msgstr ""
 
 #: .\templates\contest\list.html:27 .\templates\contest\media-js.html:9
 msgid "Are you sure you want to join?"
-msgstr ""
+msgstr "코딩 능력 평가를 시작하시겠습니까?"
 
 #: .\templates\contest\list.html:28
-msgid "Joining a contest for the first time starts your timer, after which it becomes unstoppable."
+msgid "코딩 능력 평가를 시작하면, 일시 중단 포함, 어떠한 상황에서도, 평가 시간이 포함되니 유의하시기 바랍니다."
 msgstr ""
 
 #: .\templates\contest\list.html:93
