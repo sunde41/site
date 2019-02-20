@@ -171,7 +171,7 @@ class ContestMixin(object):
                                        _('Could not find such contest.'))
 
 
-class ContestDetail(ContestMixin, TitleMixin, CommentedDetailView):
+class ContestDetail(LoginRequiredMixin, ContestMixin, TitleMixin, CommentedDetailView):
     template_name = 'contest/contest.html'
 
     def get_comment_page(self):
