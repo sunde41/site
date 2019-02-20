@@ -366,13 +366,11 @@ def base_contest_ranking_list(contest, problems, queryset, for_user=None):
             if (part, prob) in data and data[part, prob][1] is not None else None
             for prob, points, is_pretested in problems])
 
-    return map(make_ranking_profile, queryset.select_related('user__user', 'rating')
-               .defer('user__about'))
+    return map(make_ranking_profile, queryset.select_related('user__user', 'rating'))
 
 
 def contest_ranking_list(contest, problems):
-    return base_contest_ranking_list(contest, problems, contest.users.filter(virtual=0)
-                                                                     .order_by('-score', 'cumtime'))
+    return base_contest_ranking_list(contest, problems, contest.users.filter(virtual=0).order_by('-score', 'cumtime'))
 
 
 def get_participation_ranking_profile(contest, participation, problems):
