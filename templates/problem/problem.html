@@ -182,7 +182,7 @@
     {% if not contest_problem %}
         <div id="problem-types">
             {% with types=problem.types_list %}
-                <div class="toggled">
+                <div class="toggle open unselectable">
                     <i class="fa fa-chevron-right fa-fw"></i>{% trans trimmed count=problem.types_list|length %}
                     Problem type
                     {% pluralize count %}
