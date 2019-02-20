@@ -3575,4 +3575,3 @@ msgstr "공지"
 
 msgid "organizers"
 msgstr "코딩 능력 평가 관리자"
-msgstr "코딩 능력 평가 관리자"
