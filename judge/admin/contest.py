@@ -12,7 +12,7 @@ from reversion.admin import VersionAdmin
 
 from judge.models import Contest, ContestProblem, Profile, Rating
 from judge.ratings import rate_contest
-from judge.widgets import HeavySelect2Widget, HeavySelect2MultipleWidget, AdminPagedownWidget, Select2MultipleWidget, \
+from judge.widgets import HeavySelect2Widget, HeavySelect2MultipleWidget, Select2MultipleWidget, \
     Select2Widget
 
 from ckeditor.widgets import CKEditorWidget

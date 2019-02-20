@@ -4,7 +4,7 @@ from django.utils.html import format_html
 from django.utils.translation import ugettext_lazy as _, ugettext, ungettext
 from reversion.admin import VersionAdmin
 from judge.models import Profile
-from judge.widgets import Select2Widget, AdminPagedownWidget
+from judge.widgets import Select2Widget
 
 
 class ProfileForm(ModelForm):
