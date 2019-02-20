@@ -31,7 +31,7 @@ msgstr "로그인"
 
 #: .\dmoj\urls.py:92 .\templates\base.html:185
 msgid "Home"
-msgstr "메인"
+msgstr "Home"
 
 
 #: .\judge\admin\contest.py:27
@@ -366,7 +366,7 @@ msgstr "{count}개보다 많은 공개 조직에 소속될 수 없습니다."
 #: .\templates\registration\registration_form.html:135
 #: .\templates\user\base-users-table.html:5
 msgid "Username"
-msgstr "사용자 이름"
+msgstr "학번"
 
 #: .\judge\forms.py:110 .\templates\registration\registration_form.html:147
 #: .\templates\registration\registration_form.html:161
@@ -2993,18 +2993,10 @@ msgstr ""
 
 #: .\templates\registration\registration_form.html:162
 msgid "(again, for confirmation)"
-msgstr ""
-
-#: .\templates\registration\registration_form.html:169
-msgid "(select your closest major city)"
-msgstr ""
+msgstr "입력한 비밀번호를 다시 입력하세요."
 
 #: .\templates\registration\registration_form.html:173
 msgid "or"
-msgstr ""
-
-#: .\templates\registration\registration_form.html:174
-msgid "pick from map"
 msgstr ""
 
 #: .\templates\registration\registration_form.html:179
