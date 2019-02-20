@@ -2907,11 +2907,11 @@ msgstr ""
 
 #: .\templates\problem\problem.html:151
 msgid "Time limit:"
-msgstr ""
+msgstr "시간 제한"
 
 #: .\templates\problem\problem.html:163
 msgid "Memory limit:"
-msgstr ""
+msgstr "메모리 제한"
 
 #: .\templates\problem\problem.html:179
 msgid "Author:"
@@ -3573,12 +3573,6 @@ msgstr "공지"
 msgid "notice post"
 msgstr "공지"
 
-
 msgid "organizers"
 msgstr "코딩 능력 평가 관리자"
-
-msgid "time limit"
-msgstr "시간 제한"
-
-msgid "memory limit"
-msgstr "메모리 제한"
+msgstr "코딩 능력 평가 관리자"
