@@ -3445,15 +3445,11 @@ msgstr ""
 
 #: .\templates\user\edit-profile.html:148
 msgid "Change your password"
-msgstr ""
-
-#: .\templates\user\edit-profile.html:164
-msgid "User-script"
-msgstr ""
+msgstr "비밀번호 변경"
 
 #: .\templates\user\edit-profile.html:168
 msgid "Update profile"
-msgstr ""
+msgstr "정보 수정"
 
 #: .\templates\user\pp-row.html:22
 #, python-format
