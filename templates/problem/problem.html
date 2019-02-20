@@ -103,11 +103,6 @@
         </a>
     {% endif %}
 
-    {% if has_solved_problem %}
-    <hr style="padding-bottom: 0.3em">
-    <div><a href="{{ url('ranked_submissions', problem.code) }}">{{ _('Best submissions') }}</a></div>
-    {% endif %}
-
     {% if editorial and editorial.is_public %}
         <hr>
         <div><a href="{{ url('problem_editorial', problem.code) }}">{{ _('Read editorial') }}</a></div>
@@ -187,7 +182,7 @@
     {% if not contest_problem %}
         <div id="problem-types">
             {% with types=problem.types_list %}
-                <div class="toggle closed unselectable">
+                <div class="toggled">
                     <i class="fa fa-chevron-right fa-fw"></i>{% trans trimmed count=problem.types_list|length %}
                     Problem type
                     {% pluralize count %}
