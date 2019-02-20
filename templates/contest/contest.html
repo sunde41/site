@@ -39,12 +39,12 @@
                 {% else %}
                     {%- if participating -%}
                         {% if participation.ended %}
-                            {{- _('Your time is up! Contest ends in %(countdown)s.', countdown=contest.time_before_end|as_countdown) -}}
+                            {{- _('Your time is up! 코딩 능력 평가는 %(countdown)s후에 종료됩니다.', countdown=contest.time_before_end|as_countdown) -}}
                         {% else %}
-                            {{- _('You have %(countdown)s remaining.', countdown=participation.time_remaining|as_countdown) -}}
+                            {{- _('%(countdown)s 남았습니다.', countdown=participation.time_remaining|as_countdown) -}}
                         {% endif %}
                     {%- else -%}
-                        {{ _('코딩 능력 평가 종료 in %(countdown)s.', countdown=contest.time_before_end|as_countdown) }}
+                        {{ _('코딩 능력 평가는 %(countdown)s후에 종료됩니다.', countdown=contest.time_before_end|as_countdown) }}
                     {%- endif -%}
                 {% endif %}
             {%- endif -%}
