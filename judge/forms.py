@@ -24,7 +24,7 @@ def fix_unicode(string, unsafe=tuple(u'\u202a\u202b\u202d\u202e')):
 class ProfileForm(ModelForm):
     class Meta:
         model = Profile
-        fields = ['name', 'about', 'language', 'ace_theme']
+        fields = ['name', 'language', 'ace_theme']
         widgets = {
             'name': TextInput(attrs={'style': 'width:100%;box-sizing:border-box'}),
             'language': Select2Widget(attrs={'style': 'width:200px'}),
@@ -32,12 +32,6 @@ class ProfileForm(ModelForm):
         }
 
         has_math_config = bool(getattr(settings, 'MATHOID_URL', False))
-
-        if HeavyPreviewPageDownWidget is not None:
-            widgets['about'] = HeavyPreviewPageDownWidget(
-                preview=reverse_lazy('profile_preview'),
-                attrs={'style': 'max-width:700px;min-width:700px;width:700px'}
-            )
 
 
     def __init__(self, *args, **kwargs):

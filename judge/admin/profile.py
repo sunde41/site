@@ -21,8 +21,6 @@ class ProfileForm(ModelForm):
             'ace_theme': Select2Widget,
             'current_contest': Select2Widget,
         }
-        if AdminPagedownWidget is not None:
-            widgets['about'] = AdminPagedownWidget
 
 
 class TimezoneFilter(admin.SimpleListFilter):
@@ -39,7 +37,7 @@ class TimezoneFilter(admin.SimpleListFilter):
 
 
 class ProfileAdmin(VersionAdmin):
-    fields = ('user', 'name', 'display_rank', 'about', 'language', 'ace_theme',
+    fields = ('user', 'name', 'display_rank', 'language', 'ace_theme',
               'last_access', 'ip', 'notes', 'current_contest')
     readonly_fields = ('user',)
     list_display = ('admin_user_admin', 'email', 'timezone_full',

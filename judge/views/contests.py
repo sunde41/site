@@ -166,11 +166,6 @@ class ContestMixin(object):
             else:
                 return generic_message(request, _('No such contest'),
                                        _('Could not find such contest.'))
-        except PrivateContestError as e:
-            return render(request, 'contest/private.html', {
-                'orgs': e.orgs, 'title': _('Access to contest "%s" denied') % escape(e.name)
-            }, status=403)
-
 
 
 class ContestDetail(ContestMixin, TitleMixin, CommentedDetailView):
