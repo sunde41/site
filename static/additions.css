@@ -189,7 +189,7 @@ h2.sub-title {
 #judge-status th,
 #judge-versions th,
 #runtime-info th,
-#problem-table {
+#problem-table th {
     padding: 0;
 }
 
