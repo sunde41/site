@@ -11,7 +11,8 @@ from reversion.admin import VersionAdmin
 
 from django_ace import AceWidget
 from judge.models import Judge, Problem
-from judge.widgets import AdminPagedownWidget, HeavySelect2MultipleWidget
+from judge.widgets import HeavySelect2MultipleWidget
+from ckeditor.widgets import CKEditorWidget
 
 
 class LanguageForm(ModelForm):
@@ -23,8 +24,7 @@ class LanguageForm(ModelForm):
         widget=HeavySelect2MultipleWidget(data_view='problem_select2'))
 
     class Meta:
-        if AdminPagedownWidget is not None:
-            widgets = {'description': AdminPagedownWidget}
+        widgets = {'description': CKEditorWidget()}
 
 
 class LanguageAdmin(VersionAdmin):
@@ -73,8 +73,7 @@ class GenerateKeyTextInput(TextInput):
 class JudgeAdminForm(ModelForm):
     class Meta:
         widgets = {'auth_key': GenerateKeyTextInput}
-        if AdminPagedownWidget is not None:
-            widgets['description'] = AdminPagedownWidget
+        widgets['description'] = CKEditorWidget()
 
 
 class JudgeAdmin(VersionAdmin):
@@ -116,7 +115,6 @@ class JudgeAdmin(VersionAdmin):
             return not obj.online
         return result
 
-    if AdminPagedownWidget is not None:
-        formfield_overrides = {
-            TextField: {'widget': AdminPagedownWidget},
+    formfield_overrides = {
+            TextField: {'widget': CKEditorWidget()},
         }

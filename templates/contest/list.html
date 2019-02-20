@@ -107,7 +107,10 @@
                                     {{ time_left(contest) }}
                                 {% endif %}
                             </div>
-                        </td>
+                        <div class="content-description">
+                                {{ contest.description|markdown('contest', MATH_ENGINE)|reference|str|safe }}
+                        </div>
+                            </td>
                         {% if not request.in_contest %}
                             <td style="width:15%">
                                 {% if request.user.profile in contest.organizers.all() %}
