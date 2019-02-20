@@ -170,9 +170,6 @@ class ProblemDetail(LoginRequiredMixin, ProblemMixin, SolvedProblemMixin, Detail
                            get_contest_problem(self.object, user.profile))
         context['contest_problem'] = contest_problem
         if contest_problem:
-            clarifications = self.object.clarifications
-            context['has_clarifications'] = clarifications.count() > 0
-            context['clarifications'] = clarifications.order_by('-date')
             context['submission_limit'] = contest_problem.max_submissions
             if contest_problem.max_submissions:
                 context['submissions_left'] = max(contest_problem.max_submissions - get_contest_submission_count(self.object.code, user.profile), 0)

@@ -2398,13 +2398,6 @@ msgstr ""
 msgid "{time}에 게시"
 msgstr ""
 
-#: .\templates\blog\list.html:130 .\templates\problem\problem.html:256
-msgid "Clarifications"
-msgstr ""
-
-#: .\templates\blog\list.html:146 .\templates\problem\problem.html:267
-msgid "No clarifications have been made at this time."
-msgstr ""
 
 #: .\templates\blog\list.html:154
 msgid "Ongoing contests"

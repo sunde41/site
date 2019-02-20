@@ -10,7 +10,7 @@ from django.utils.html import format_html
 from django.utils.translation import ugettext, ungettext, ugettext_lazy as _
 from reversion.admin import VersionAdmin
 
-from judge.models import Profile, LanguageLimit, Problem, ProblemClarification
+from judge.models import Profile, LanguageLimit, Problem
 from judge.models import Solution
 from judge.widgets import HeavySelect2MultipleWidget, Select2MultipleWidget, Select2Widget, \
     HeavyPreviewAdminPageDownWidget, HeavyPreviewPageDownWidget, CheckboxSelectMultipleWithSelectAll
@@ -64,19 +64,6 @@ class LanguageLimitInline(admin.TabularInline):
     form = LanguageLimitInlineForm
 
 
-class ProblemClarificationForm(ModelForm):
-    class Meta:
-        if HeavyPreviewPageDownWidget is not None:
-            widgets = {'description': HeavyPreviewPageDownWidget(preview=reverse_lazy('comment_preview'))}
-
-
-class ProblemClarificationInline(admin.StackedInline):
-    model = ProblemClarification
-    fields = ('description',)
-    form = ProblemClarificationForm
-    extra = 0
-
-
 class ProblemSolutionForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super(ProblemSolutionForm, self).__init__(*args, **kwargs)
@@ -114,7 +101,7 @@ class ProblemAdmin(VersionAdmin):
     list_display = ['code', 'name', 'show_authors', 'points', 'is_public', 'show_public']
     ordering = ['code']
     search_fields = ('code', 'name', 'authors__user__username', 'curators__user__username')
-    inlines = [LanguageLimitInline, ProblemClarificationInline, ProblemSolutionInline]
+    inlines = [LanguageLimitInline, ProblemSolutionInline]
     list_max_show_all = 1000
     actions_on_top = True
     actions_on_bottom = True

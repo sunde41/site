@@ -9,7 +9,7 @@ from django.utils.translation import ugettext as _
 from django.views.generic import ListView
 
 from judge.views.detail_view import CommentedDetailView
-from judge.models import NoticePost, Problem, Contest, Profile, Submission, Language, ProblemClarification
+from judge.models import NoticePost, Problem, Contest, Profile, Submission, Language
 from judge.utils.cachedict import CacheDict
 from judge.utils.diggpaginator import DiggPaginator
 from judge.utils.problems import user_completed_ids
@@ -38,15 +38,6 @@ class PostList(ListView):
         context['first_page_href'] = reverse('home')
         context['page_prefix'] = reverse('notice_post_list')
         context['new_problems'] = Problem.objects.filter(is_public=True).order_by('-date', '-id')[:7]
-
-        context['has_clarifications'] = False
-        if self.request.user.is_authenticated:
-            participation = self.request.user.profile.current_contest
-            if participation:
-                clarifications = ProblemClarification.objects.filter(problem__in=participation.contest.problems.all())
-                context['has_clarifications'] = clarifications.count() > 0
-                context['clarifications'] = clarifications.order_by('-date')
-
         context['user_count'] = lazy(Profile.objects.count, int, long)
         context['problem_count'] = lazy(Problem.objects.filter(is_public=True).count, int, long)
         context['submission_count'] = lazy(Submission.objects.count, int, long)

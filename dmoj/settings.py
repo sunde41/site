@@ -210,7 +210,6 @@ LOCALE_PATHS = [
 ]
 
 LANGUAGES = [
-    ('en', _('English')),
     ('ko', _('Korean')),
 ]
 

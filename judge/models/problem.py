@@ -20,7 +20,7 @@ from judge.models.runtime import Language
 from judge.user_translations import ugettext as user_ugettext
 from judge.utils.raw_sql import unique_together_left_join, RawSQLColumn
 
-__all__ = ['ProblemGroup', 'ProblemType', 'Problem', 'ProblemClarification',
+__all__ = ['ProblemGroup', 'ProblemType', 'Problem',
            'TranslatedProblemQuerySet', 'TranslatedProblemForeignKeyQuerySet']
 
 
@@ -202,10 +202,6 @@ class Problem(models.Model):
     def i18n_name(self, value):
         self._i18n_name = value
 
-    @property
-    def clarifications(self):
-        return ProblemClarification.objects.filter(problem=self)
-
     def update_stats(self):
         self.user_count = self.submission_set.filter(points__gte=self.points, result='AC').values('user').distinct().count()
         submissions = self.submission_set.count()
@@ -290,12 +286,6 @@ class ProblemTranslation(models.Model):
         unique_together = ('problem', 'language')
         verbose_name = _('problem translation')
         verbose_name_plural = _('problem translations')
-
-
-class ProblemClarification(models.Model):
-    problem = models.ForeignKey(Problem, verbose_name=_('clarified problem'))
-    description = models.TextField(verbose_name=_('clarification body'))
-    date = models.DateTimeField(verbose_name=_('clarification timestamp'), auto_now_add=True)
 
 
 class LanguageLimit(models.Model):
