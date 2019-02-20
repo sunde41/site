@@ -196,13 +196,9 @@
                         {% if request.user.is_authenticated %}
                             <th class="solved"><i class="fa fa-check"></i></th>
                         {% endif %}
-                        <th class="problem">{{ _('Problem') }}</th>
+                        <th class="problem">{{ _('문제') }}</th>
                         <th class="category">{{ _('Category') }}</th>
-                        {% if show_types %}
-                            <th>{{ _('유형') }}</th>
-                        {% endif %}
-                        <th class="points">{{ _('Points') }}</th>
-                        <th class="users">{{ _('Users') }}</th>
+                        <th class="points">{{ _('점수') }}</th>
                     {% else %}
                         {% if request.user.is_authenticated %}
                             <th class="solved">
@@ -211,7 +207,7 @@
                             </th>
                         {% endif %}
                         <th class="problem">
-                            <a href="{{ sort_links.name }}">{{ _('Problem') }}{{ sort_order.name }}</a>
+                            <a href="{{ sort_links.name }}">{{ _('연습 문제') }}{{ sort_order.name }}</a>
                         </th>
                         <th class="category">
                             <a href="{{ sort_links.group }}">{{ _('Category') }}{{ sort_order.group }}</a>
@@ -226,9 +222,6 @@
                         </th>
                         <th class="ac-rate">
                             <a href="{{ sort_links.ac_rate }}">{{ _('정답률 %%') }}{{ sort_order.ac_rate }}</a>
-                        </th>
-                        <th class="users">
-                            <a href="{{ sort_links.user_count }}">{{ _('Users') }}{{ sort_order.user_count }}</a>
                         </th>
                     {% endif %}
                 </tr>
@@ -282,15 +275,6 @@
                         {% if not request.in_contest %}
                             <td class="ac-rate">{{ problem.ac_rate|floatformat(1) }}%</td>
                         {% endif %}
-                        <td class="users">
-                            <a href="{{ url('ranked_submissions', problem.code) }}">
-                                {% if not request.in_contest or not hide_contest_scoreboard %}
-                                    {{ problem.user_count }}
-                                {% else %}
-                                    ???
-                                {% endif %}
-                            </a>
-                        </td>
                     </tr>
                 {% endfor %}
                 </tbody>
