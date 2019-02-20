@@ -103,10 +103,11 @@
         </a>
     {% endif %}
 
-    <hr style="padding-bottom: 0.3em">
     {% if has_solved_problem %}
+    <hr style="padding-bottom: 0.3em">
     <div><a href="{{ url('ranked_submissions', problem.code) }}">{{ _('Best submissions') }}</a></div>
     {% endif %}
+
     {% if editorial and editorial.is_public %}
         <hr>
         <div><a href="{{ url('problem_editorial', problem.code) }}">{{ _('Read editorial') }}</a></div>
