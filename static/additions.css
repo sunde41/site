@@ -229,3 +229,7 @@ em, address {
 .contest-points {
     padding: 0 10px;
 }
+
+#problem-table th.contest-points {
+    padding: 0 10px;
+}
