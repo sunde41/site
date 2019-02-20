@@ -2353,7 +2353,7 @@ msgstr "가입"
 
 #: .\templates\base.html:247
 msgid "spectating"
-msgstr "관전"
+msgstr "참관"
 
 #: .\templates\base.html:260
 msgid "This site works best with JavaScript enabled."

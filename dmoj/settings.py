@@ -17,6 +17,11 @@ SITE_ID = 1
 SITE_NAME = 'KCCT'
 SITE_LONG_NAME = '고려대학교 코딩 능력 평가 시스템'
 SITE_ADMIN_EMAIL = 'sunde41@gmail.com'
+SERVER_EMAIL = '고려대학교 코딩 능력 평가 관리자 <sunde41@gmail.com>'
+ADMINS = (
+    ('고려대학교 코딩 능력 평가 관리자', 'sunde41@gmail.com'),
+)
+
 TERMS_OF_SERVICE_URL = '//dmoj.ca/tos'  # Use a flatpage.
 
 PYGMENT_THEME = 'pygment-github.css'
@@ -192,6 +197,12 @@ TEMPLATES = [
     }
 ]
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache'
+    }
+}
+
 LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'locale'),
 ]
@@ -240,8 +251,6 @@ DATABASES = {
     }
 }
 
-ENABLE_FTS = False
-
 # Bridged configuration
 BRIDGED_JUDGE_ADDRESS = [('localhost', 9999)]
 BRIDGED_DJANGO_ADDRESS = [('localhost', 9998)]
@@ -281,9 +290,6 @@ STATICFILES_FINDERS = (
 STATIC_ROOT = 'static'
 STATIC_URL = '/static/'
 
-# Define a cache
-CACHES = {}
-
 # Authentication
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
@@ -321,6 +327,9 @@ COMPRESS_CSS_FILTERS = [
 COMPRESS_JS_FILTERS = ['compressor.filters.jsmin.JSMinFilter']
 COMPRESS_STORAGE = 'compressor.storage.GzipCompressorFileStorage'
 STATICFILES_FINDERS += ('compressor.finders.CompressorFinder',)
+
+ENABLE_FTS = False
+BAD_MAIL_PROVIDERS = set()
 
 try:
     from local_settings import *

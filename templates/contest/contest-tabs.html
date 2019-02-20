@@ -1,16 +1,16 @@
 {% extends "tabs-base.html" %}
 
 {% block tabs %}
-    {{ make_tab('detail', 'fa-info-circle', url('contest_view', contest.key), _('Info')) }}
+    {{ make_tab('detail', 'fa-info-circle', url('contest_view', contest.key), _('개요')) }}
 
     {% if contest.start_time <= now or perms.judge.see_private_contest %}
         {% if contest.show_scoreboard or contest.can_see_scoreboard(request) %}
-            {{ make_tab('ranking', 'fa-bar-chart', url('contest_ranking', contest.key), _('Rankings')) }}
+            {{ make_tab('ranking', 'fa-bar-chart', url('contest_ranking', contest.key), _('순위')) }}
         {% else %}
             {{ make_tab('ranking', 'fa-bar-chart', None, _('Hidden Rankings')) }}
         {% endif %}
         {% if contest.show_scoreboard and request.user.is_authenticated %}
-            {{ make_tab('participation', 'fa-users', url('contest_participation_own', contest.key), _('Participation')) }}
+            {{ make_tab('participation', 'fa-users', url('contest_participation_own', contest.key), _('참가자')) }}
         {% endif %}
     {% endif %}
     {% if perms.judge.change_contest or is_organizer %}
