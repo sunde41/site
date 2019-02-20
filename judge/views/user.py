@@ -273,4 +273,4 @@ class UserLogoutView(TitleMixin, TemplateView):
 
     def post(self, request, *args, **kwargs):
         auth_logout(request)
-        return HttpResponseRedirect(request.get_full_path())
+        return HttpResponseRedirect(reverse('home'))
