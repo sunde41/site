@@ -143,6 +143,9 @@ class Problem(models.Model):
         if self.testers.filter(id=user.profile.id).exists():
             return True
 
+        if self.is_public:
+            return True
+
         # If user is currently in a contest containing that problem.
         current = user.profile.current_contest_id
         if current is None:

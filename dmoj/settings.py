@@ -268,7 +268,7 @@ EVENT_DAEMON_SUBMISSION_KEY = '6Sdmkx^%pk@GsifDfXcwX*Y7LRF%RGT8vmFpSxFBT$fwS7trc
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
-LANGUAGE_CODE = 'ko-KR'
+LANGUAGE_CODE = 'ko'
 DEFAULT_USER_TIME_ZONE = 'Asia/Seoul'
 USE_I18N = True
 USE_L10N = True
