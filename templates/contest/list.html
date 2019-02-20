@@ -104,7 +104,6 @@
                 <thead>
                 <tr>
                     <th style="width:90%">{{ _('Contest') }}</th>
-                    <th>{{ _('Users') }}</th>
                     {% if not request.in_contest %}
                         <th style="width:15%"></th>
                     {% endif %}
@@ -126,13 +125,6 @@
                                     {{ time_left(contest) }}
                                 {% endif %}
                             </div>
-                        </td>
-                        <td>
-                            {% if contest.show_scoreboard or contest.can_see_scoreboard(request) %}
-                                <a href="{{ url('contest_ranking', contest.key) }}">{{ contest.user_count }}</a>
-                            {% else %}
-                                {{ contest.user_count }}
-                            {% endif %}
                         </td>
                         {% if not request.in_contest %}
                             <td>
