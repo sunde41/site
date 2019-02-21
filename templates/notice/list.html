@@ -114,7 +114,7 @@
                                     <a href="{{ url('contest_view', contest.key) }}">{{ contest.name }}</a>
                                 </div>
                                 <div class="time">
-                                    {{ _('%(countdown)s 에 시작', countdown=contest.time_before_start|as_countdown) }}
+                                    {{ _('%(countdown)s 후에 시작됩니다.', countdown=contest.time_before_start|as_countdown) }}
                                 </div>
                             </div>
                         {% endfor %}
