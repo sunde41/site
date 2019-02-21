@@ -47,7 +47,7 @@ def nice_repr(timedelta, display='long', sep=', '):
         if days:
             return '%d day%s %02d:%02d:%02d' % (days, 's'[days == 1:], hours, minutes, seconds)
         else:
-            return '%02d:%02d:%02d' % (hours, minutes, seconds)
+            return u'%02d시 %02d분 %02d초' % (hours, minutes, seconds)
     elif display == 'localized':
         days += weeks * 7
         if days:
@@ -55,7 +55,7 @@ def nice_repr(timedelta, display='long', sep=', '):
                 .replace('%d', str(days)).replace('%h', '%02d' % hours).replace('%m', '%02d' % minutes) \
                 .replace('%s', '%02d' % seconds)
         else:
-            return pgettext('time format without day', '%h:%m:%s') \
+            return pgettext('time format without day', u'%h시 %m분 %s초') \
                 .replace('%h', '%02d' % hours).replace('%m', '%02d' % minutes).replace('%s', '%02d' % seconds)
     elif display == 'localized-no-seconds':
         days += weeks * 7
