@@ -21,7 +21,6 @@
 
 {% block body %}
     <div id="banner">
-                <div class="date"> {{- contest.start_time|utc|date('Y-m-d\TH:i:s') }} </div>
             {%- if participating and participation.virtual and not participation.ended -%}
                 {% if participation.spectate %}
                     {{- _('참관중, contest ends in %(countdown)s.', countdown=contest.time_before_end|as_countdown) -}}

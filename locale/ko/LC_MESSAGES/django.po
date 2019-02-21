@@ -1039,7 +1039,7 @@ msgstr "부분 점수 허용"
 
 #: .\judge\models\problem.py:114
 msgid "allowed languages"
-msgstr "허용된 언어"
+msgstr "사용할 수 있는 언어"
 
 #: .\judge\models\problem.py:116
 msgid "manually managed"
@@ -2813,7 +2813,7 @@ msgstr[0] "문제 유형"
 
 #: .\templates\problem\problem.html:208
 msgid "Allowed languages"
-msgstr ""
+msgstr "사용할 수 있는 언어"
 
 #: .\templates\problem\problem.html:216
 #, python-format
