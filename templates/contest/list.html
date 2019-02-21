@@ -2,6 +2,10 @@
 
 {% block media %}
     <style>
+        @font-face{
+         font-family:'digital-clock';
+         src: url('../static/digital.ttf');
+        }
         .time-left {
             text-align: left;
             color: #777;
@@ -79,9 +83,9 @@
 {% macro time_left(contest) %}
     <div class="time time-left">
         {% if contest.time_limit %}
-            {{ contest.start_time|date(_("Y년 m월 j일 (D) H시 i분")) }}부터 {{ contest.end_time|date(_("Y년 m월 j일 (D) H시 i분")) }}까지 {{ _('%(time_limit)s 동안', time_limit=contest.time_limit|timedelta('localized-no-seconds')) }}
+            <span style="font-family:digital-clock;">{{ contest.start_time|date(_("Y년 m월 j일 (D) H시 i분")) }}</span>부터 <span style="font-family:digital-clock;">{{ contest.end_time|date(_("Y년 m월 j일 (D) H시 i분")) }}까지 {{ _('%(time_limit)s', time_limit=contest.time_limit|timedelta('localized-no-seconds')) }}</span> 동안
         {% else %}
-            {{ contest.start_time|date(_("Y년 m월 j일 (D) H시 i분")) }}부터 {{ _('%(duration)s 동안', duration=contest.contest_window_length|timedelta('localized-no-seconds')) }}
+            <span style="font-family:digital-clock;">{{ contest.start_time|date(_("Y년 m월 j일 (D) H시 i분")) }}</span>부터 <span style="font-family:digital-clock;">{{ _('%(duration)s', duration=contest.contest_window_length|timedelta('localized-no-seconds')) }}</span> 동안
         {% endif %}
     </div>
 {% endmacro %}
@@ -151,7 +155,7 @@
                                 {% if contest.start_time %}
                                     <br>
                                     {% if contest.time_before_start %}
-                                        <span class="time">{{ _('%(countdown)s후에 시작', countdown=contest.time_before_start|as_countdown) }}</span>
+                                        <span class="time">{{ _('%(countdown)s 후에 시작됩니다', countdown=contest.time_before_start|as_countdown) }}</span>
                                     {% endif %}
                                     {{ time_left(contest) }}
                                 {% endif %}
