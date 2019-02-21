@@ -220,7 +220,7 @@ urlpatterns = [
     ])),
 ]
 
-favicon_paths = ['apple-touch-icon-180x180.png', 'apple-touch-icon-114x114.png',]
+favicon_paths = ['favicon.ico',]
 
 
 from django.templatetags.static import static
