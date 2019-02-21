@@ -86,9 +86,9 @@
 {% macro time_left(contest) %}
     <div class="time time-left">
         {% if contest.time_limit %}
-            {{ contest.start_time|date(_("<span class='timefont'>Y</span>년 <span class='timefont'>m</span>월 <span class='timefont'>j</span>일 (D)<span class='timefont'> H</span>시 <span class='timefont'>i</span>분"))|safe }}부터 <span style="font-family:digital-clock;">{{ contest.end_time|date(_("<span class='timefont'>Y</span>년 <span class='timefont'>m</span>월 <span class='timefont'>j</span>일 (D)<span class='timefont'> H</span>시 <span class='timefont'>i</span>분"))|safe }}까지 {{ _('%(time_limit)s', time_limit=contest.time_limit|timedelta('localized-no-seconds')) }}</span> 동안
+            <span style="font-family:digital-clock;">{{ contest.start_time|date(_("Y년 m월 j일 (D) H시 i분")) }}</span>부터 <span style="font-family:digital-clock;">{{ contest.end_time|date(_("Y년 m월 j일 (D) H시 i분")) }}까지 {{ _('%(time_limit)s', time_limit=contest.time_limit|timedelta('localized-no-seconds')) }}</span> 동안
         {% else %}
-            {{ contest.start_time|date(_("<span class='timefont'>Y</span>년 <span class='timefont'>m</span>월 <span class='timefont'>j</span>일 (D)<span class='timefont'> H</span>시 <span class='timefont'>i</span>분"))|safe }}부터 <span style="font-family:digital-clock;">{{ _('%(duration)s', duration=contest.contest_window_length|timedelta('localized-no-seconds')) }}</span> 동안
+            <span style="font-family:digital-clock;">{{ contest.start_time|date(_("Y년 m월 j일 (D) H시 i분")) }}</span>부터 <span style="font-family:digital-clock;">{{ _('%(duration)s', duration=contest.contest_window_length|timedelta('localized-no-seconds')) }}</span> 동안
         {% endif %}
     </div>
 {% endmacro %}
