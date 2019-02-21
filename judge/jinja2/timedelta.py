@@ -69,9 +69,9 @@ def nice_repr(timedelta, display='long', sep=', '):
     elif display == 'concise':
         days += weeks * 7
         if days:
-            return '%dd %02d:%02d:%02d' % (days, hours, minutes, seconds)
+            return u'%dd일 %02d시 %02d분 %02d초' % (days, hours, minutes, seconds)
         else:
-            return '%02d:%02d:%02d' % (hours, minutes, seconds)
+            return u'%02d시 %02d분 %02d초' % (hours, minutes, seconds)
     elif display == 'noday':
         days += weeks * 7
         hours += days * 24
