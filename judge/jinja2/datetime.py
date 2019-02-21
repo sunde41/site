@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import functools
 
 from django.template.defaultfilters import date, time

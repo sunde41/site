@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from django.utils import six
 
 from judge.ratings import rating_class, rating_name, rating_progress

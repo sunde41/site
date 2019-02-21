@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from django.template import (Template as DjangoTemplate, TemplateSyntaxError as DjangoTemplateSyntaxError,
                              VariableDoesNotExist, Context)
 
