@@ -354,7 +354,7 @@ def base_contest_ranking_list(contest, problems, queryset, for_user=None):
     data = {(part, prob): (code, best, last and from_database_time(last)) for part, prob, code, best, last in cursor}
     cursor.close()
 
-    problems = map(attrgetter('id', 'points', 'is_pretested'), problems)
+    problems = map(attrgetter('id', 'points', 'is_pretested'), problems)   # deter?
 
     def make_ranking_profile(participation):
         part = participation.id
