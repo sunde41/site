@@ -65,7 +65,7 @@ def nice_repr(timedelta, display='long', sep=', '):
                     .replace('%d', str(days)).replace('%h', '%02d' % hours).replace('%m', '%02d' % minutes)
             return ungettext('%d day', '%d days', days) % days
         else:
-            return pgettext('hours and minutes', '%h시 %m분').replace('%h', '%02d' % hours).replace('%m', '%02d' % minutes)
+            return pgettext(u'hours and minutes', '%h시 %m분').replace('%h', '%02d' % hours).replace('%m', '%02d' % minutes)
     elif display == 'concise':
         days += weeks * 7
         if days:
