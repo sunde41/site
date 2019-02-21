@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from functools import partial
 from operator import itemgetter
 

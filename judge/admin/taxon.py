@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from django.contrib import admin
 from django.forms import ModelForm, ModelMultipleChoiceField
 from django.utils.translation import ugettext_lazy as _

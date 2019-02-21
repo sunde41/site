@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from django.contrib import admin
 
 from judge.admin.contest import ContestTagAdmin, ContestAdmin, ContestParticipationAdmin
