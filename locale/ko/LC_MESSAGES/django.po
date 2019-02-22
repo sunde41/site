@@ -1173,14 +1173,6 @@ msgstr "이 조직을 편집할 수 있는 사람"
 msgid "creation date"
 msgstr "만든 날짜"
 
-#: .\judge\models\profile.py:35
-msgid "is open organization?"
-msgstr "공개 조직인가?"
-
-#: .\judge\models\profile.py:36
-msgid "Allow joining organization"
-msgstr "조직 가입 허용"
-
 #: .\judge\models\profile.py:37
 msgid "maximum size"
 msgstr "최대 크기"
@@ -2346,10 +2338,6 @@ msgstr ""
 msgid "Are you sure you want to join?"
 msgstr "코딩 능력 평가를 시작하시겠습니까?"
 
-#: .\templates\contest\list.html:28
-msgid "코딩 능력 평가를 시작하면, 일시 중단 포함, 어떠한 상황에서도, 평가 시간이 포함되니 유의하시기 바랍니다."
-msgstr ""
-
 #: .\templates\contest\list.html:93
 msgid "Ongoing Contests"
 msgstr ""
@@ -2387,9 +2375,6 @@ msgstr ""
 msgid "You cannot come back to a virtual participation. You will have to start a new one."
 msgstr ""
 
-#: .\templates\contest\media-js.html:10
-msgid "코딩 능력 평가를 시작한 후에는, 사이트를 이탈할 경우를 포함한 어떠한 경우에도 시간이 소비됩니다. 참고하시길 바랍니다."
-msgstr ""
 
 #: .\templates\contest\private.html:4
 msgid "Only the following organizations may access this contest:"
@@ -3208,3 +3193,12 @@ msgstr "코딩 능력 평가 관리자"
 
 msgid "%(duration)s long"
 msgstr "%(duration)s 동안"
+
+
+msgid "Joining a contest for the first time starts your timer, after which it becomes unstoppable."
+msgstr "코딩 능력 평가를 시작한 후에는, 어떠한 경우에도 시간이 소비됩니다. 유의하시길 바랍니다."
+
+msgid "Joining a contest starts your timer, after which it becomes unstoppable."
+msgstr "코딩 능력 평가를 시작한 후에는, 어떠한 경우에도 시간이 소비됩니다. 유의하시길 바랍니다."
+
+
