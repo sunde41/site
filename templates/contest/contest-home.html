@@ -89,16 +89,6 @@
                                             {% endif %}
                                         </div>
                                     </td>
-                                    {% if not request.in_contest %}
-                                        <td style="width:15%">
-                                            <form action="{{ url('contest_join', contest.key) }}" method="post">
-                                                {% csrf_token %}
-                                                <input type="submit"
-                                                       class="unselectable button full participate-button join-warning"
-                                                       value="{{ _('시작') }}">
-                                            </form>
-                                        </td>
-                                    {% endif %}
                                 </tr>
                             {% endfor %}
                             </tbody>
@@ -106,8 +96,8 @@
                     </div>
                     <br>
                 {% endif %}
+                <h3 class="backcolor">{{ _('Upcoming Contests') }}</h3>
                 {% if future_contests %}
-                    <h3 class="backcolor">{{ _('Upcoming Contests') }}</h3>
                     <div class="sidebox-content">
                         <table id="contest-future-table" class="contest-list table striped">
                             <tbody>{% for contest in future_contests %}
