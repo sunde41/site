@@ -12,6 +12,7 @@
         .post:first-child {
             margin-top: 0.6em;
         }
+
         .sidebox h3.backcolor {
             background: #3b3b3b;
         }
@@ -19,31 +20,6 @@
     </style>
 {% endblock %}
 
-{% block js_media %}
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('.time-remaining').each(function () {
-                count_down($(this));
-            });
-
-            $('.blog-sidebar').hide();
-            $('#blog-tab').find('a').click(function (e) {
-                e.preventDefault();
-                $('#blog-tab').addClass('active');
-                $('#event-tab').removeClass('active');
-                $('.blog-content').show();
-                $('.blog-sidebar').hide();
-            });
-            $('#event-tab').find('a').click(function (e) {
-                e.preventDefault();
-                $('#event-tab').addClass('active');
-                $('#blog-tab').removeClass('active');
-                $('.blog-content').hide();
-                $('.blog-sidebar').show();
-            });
-        });
-    </script>
-{% endblock %}
 
 {% macro contest_head(contest) %}
     {% spaceless %}
@@ -115,21 +91,12 @@
                                     </td>
                                     {% if not request.in_contest %}
                                         <td style="width:15%">
-                                            {% if request.user.profile in contest.organizers.all() %}
-                                                <form action="{{ url('contest_join', contest.key) }}" method="post">
-                                                    {% csrf_token %}
-                                                    <input type="submit"
-                                                           class="unselectable button full participate-button"
-                                                           value="{{ _('관찰') }}">
-                                                </form>
-                                            {% else %}
-                                                <form action="{{ url('contest_join', contest.key) }}" method="post">
-                                                    {% csrf_token %}
-                                                    <input type="submit"
-                                                           class="unselectable button full participate-button join-warning"
-                                                           value="{{ _('시작') }}">
-                                                </form>
-                                            {% endif %}
+                                            <form action="{{ url('contest_join', contest.key) }}" method="post">
+                                                {% csrf_token %}
+                                                <input type="submit"
+                                                       class="unselectable button full participate-button join-warning"
+                                                       value="{{ _('시작') }}">
+                                            </form>
                                         </td>
                                     {% endif %}
                                 </tr>
@@ -219,7 +186,7 @@
                             <a href="{{ url('notice_post', post.id) }}#comments" class="comment-count-link">
                             </a>
                         </span>
-                        <hr>
+                            <hr>
                             <div class="summary content-description">
                                 {% cache 86400 'post_summary' post.id %}
                                     {{ post.summary|default(post.content, true)|safe }}

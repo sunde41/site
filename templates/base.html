@@ -139,7 +139,6 @@
         <a id="navicon" href="javascript:void(0)"><i class="fa fa-bars"></i></a>
         <ul id="nav-list">
         {% if not request.in_contest %}
-
             <li class="home-nav-element"><a href="/"><img class="logo" src="{{ static('logo.png') }}"></a></li>
             <li class="home-nav-element"><span class="nav-divider"></span></li>
             <li class="home-menu-item"><a href="/" class="nav-home">{{ _('Home') }}</a></li>
@@ -159,7 +158,7 @@
             <li class="home-menu-item"><a href="/problems/" class="nav-home">{{ _('Home') }}</a></li>
             <li>
                 <a href="/problems/" class="nav-problems">
-                    코딩 능력 평가
+                    코딩 능력 평가 문제
                 </a>
             </li>
         {% endif %}
