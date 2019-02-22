@@ -163,5 +163,24 @@
                 {% endif %}
             </div>
         </div>
+        <div class="blog-sidebar">
+            {% if current_contests %}
+                <div class="blog-sidebox sidebox">
+                    <h3>{{ _('진행중인 코딩 능력 평가') }} <i class="fa fa-trophy"></i></h3>
+                    <div class="sidebox-content">
+                        {% for contest in current_contests %}
+                            <div class="contest">
+                                <div class="contest-list-title">
+                                    <a href="{{ url('contest_view', contest.key) }}">{{ contest.name }}</a>
+                                </div>
+                                <div class="time">
+                                    {{ _('%(countdown)s 후 종료', countdown=contest.time_before_end|as_countdown) }}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+        </div>
     </div>
 {% endblock %}
