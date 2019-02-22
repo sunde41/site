@@ -115,8 +115,8 @@ class ContestHome(TitleMixin, ContestListMixin, ListView):
         context['past_contests'] = past
         context['future_contests'] = future
         context['now'] = timezone.now()
-        # context['posts'] = NoticePost.objects.all()
         return context
+        # context['posts'] = NoticePost.objects.all()
 
 
 class PrivateContestError(Exception):
