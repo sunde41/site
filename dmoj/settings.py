@@ -22,7 +22,7 @@ ADMINS = (
     ('고려대학교 코딩 능력 평가 시스템 관리자', 'sunde41@gmail.com'),
 )
 
-TERMS_OF_SERVICE_URL = 'http://korea.ac.kr/mbshome/mbs/university/subview.do?id=university_090300000000'  # Use a flatpage.
+TERMS_OF_SERVICE_URL = 'http://korea.ac.kr/mbshome/mbs/university/subview.do?id=university_090300000000'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 
@@ -94,7 +94,6 @@ INSTALLED_APPS += (
     'judge',
     'django.contrib.auth',
     'django.contrib.contenttypes',
-    'django.contrib.flatpages',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
@@ -122,7 +121,6 @@ MIDDLEWARE = (
     'judge.user_log.LogUserAccessMiddleware',
     'judge.timezone.TimezoneMiddleware',
     'judge.middleware.ContestMiddleware',
-    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 )
 
 ACCOUNT_ACTIVATION_DAYS = 7
