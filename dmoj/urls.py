@@ -93,7 +93,7 @@ def paged_list_view(view, name):
 
 
 urlpatterns = [
-    url(r'^$', contests.ContestList.as_view(title=_('Home')), name='home'),
+    url(r'^$', contests.ContestHome.as_view(title=_('Home')), name='home'),
     url(r'^500/$', exception),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^i18n/', include('django.conf.urls.i18n')),
