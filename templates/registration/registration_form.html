@@ -131,7 +131,7 @@
         <form id="edit-form" action="" method="post" class="form-area">
             {% csrf_token %}
 
-            <div class="block-header">{{ _('학번') }}</div>
+            <div class="block-header">{{ _('Display name') }}</div>
             <span class="fullwidth{% if form.username.errors %}-error{% endif %}">{{ form.username }}</span>
             {% if form.username.errors %}
                 <div class="form-field-error">{{ form.username.errors }}</div>

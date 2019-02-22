@@ -17,10 +17,6 @@ msgstr ""
 "X-Crowdin-File: django.po\n"
 
 
-#: .\dmoj\settings.py:248
-msgid "English"
-msgstr "영어"
-
 #: .\dmoj\settings.py:253
 msgid "Korean"
 msgstr "한국어"
@@ -31,7 +27,7 @@ msgstr "로그인"
 
 #: .\dmoj\urls.py:92 .\templates\base.html:185
 msgid "Home"
-msgstr "Home"
+msgstr "홈"
 
 
 #: .\judge\admin\contest.py:27
@@ -125,10 +121,6 @@ msgstr "사이트에서 보기"
 #: .\judge\admin\problem.py:28
 msgid "Describe the changes you made (optional)"
 msgstr "변경 사항을 설명하세요. (선택사항)"
-
-#: .\judge\admin\problem.py:123
-msgid "Social Media"
-msgstr "SNS"
 
 #: .\judge\admin\problem.py:124
 msgid "Taxonomy"
@@ -311,7 +303,7 @@ msgstr "%.2f MB"
 
 #: .\judge\admin\submission.py:213
 msgid "Memory"
-msgstr "Memory"
+msgstr "메모리"
 
 #: .\judge\admin\taxon.py:11 .\judge\admin\taxon.py:34
 msgid "Included problems"
@@ -329,38 +321,6 @@ msgstr "이 문제들은 이러한 문제 유형에 포함되어 있습니다."
 msgid "Online Judge"
 msgstr "고려대학교 코딩 능력 평가 시스템"
 
-#: .\judge\comments.py:40
-msgid "Comment title"
-msgstr "코멘트 제목"
-
-#: .\judge\comments.py:41
-msgid "Comment body"
-msgstr "코멘트 본문"
-
-#: .\judge\comments.py:47 .\judge\views\ticket.py:50
-msgid "Your part is silent, little toad."
-msgstr "침묵하세요."
-
-#: .\judge\comments.py:50 .\templates\comments\list.html:122
-msgid "You need to have solved at least one problem before your voice can be heard."
-msgstr "최소 1개 이상의 문제를 해결해야 합니다."
-
-#: .\judge\comments.py:75
-msgid "Posted comment"
-msgstr "게시된 코멘트"
-
-#: .\judge\forms.py:25
-msgid "Subscribe to contest updates"
-msgstr "코딩 능력 평가 업데이트를 구독하세요."
-
-#: .\judge\forms.py:26
-msgid "Enable experimental features"
-msgstr "베타 기능 활성화"
-
-#: .\judge\forms.py:51
-#, python-brace-format
-msgid "You may not be part of more than {count} public organizations."
-msgstr "{count}개보다 많은 공개 조직에 소속될 수 없습니다."
 
 #: .\judge\forms.py:109 .\judge\views\register.py:26
 #: .\templates\registration\registration_form.html:135
@@ -392,18 +352,18 @@ msgstr ""
 msgctxt "time format with day"
 msgid "%d day %h:%m:%s"
 msgid_plural "%d days %h:%m:%s"
-msgstr[0] "%d 일 %h:%m:%s"
+msgstr[0] "%d일 %h시 %m분 %s초"
 
 #: .\judge\jinja2\timedelta.py:56
 msgctxt "time format without day"
 msgid "%h:%m:%s"
-msgstr "%h:%m:%s"
+msgstr "%h시 %m분 %s초"
 
 #: .\judge\jinja2\timedelta.py:62
 msgctxt "time format no seconds with day"
 msgid "%d day %h:%m"
 msgid_plural "%d days %h:%m"
-msgstr[0] "%d 일 %h:%m"
+msgstr[0] "%d일 %h시 %m분"
 
 #: .\judge\jinja2\timedelta.py:64
 #, python-format
@@ -414,55 +374,7 @@ msgstr[0] "%d일"
 #: .\judge\jinja2\timedelta.py:66
 msgctxt "hours and minutes"
 msgid "%h:%m"
-msgstr "%h:%m"
-
-#: .\judge\models\choices.py:60
-msgid "Leave as LaTeX"
-msgstr "Leave as LaTeX"
-
-#: .\judge\models\choices.py:61
-msgid "SVG with PNG fallback"
-msgstr "SVG with PNG fallback"
-
-#: .\judge\models\choices.py:62
-msgid "MathML only"
-msgstr "MathML Only"
-
-#: .\judge\models\choices.py:63
-msgid "MathJax with SVG/PNG fallback"
-msgstr "MathJax with SVG/PNG fallback"
-
-#: .\judge\models\choices.py:64
-msgid "Detect best quality"
-msgstr ""
-
-#: .\judge\models\comment.py:36
-msgid "commenter"
-msgstr "코멘터"
-
-#: .\judge\models\comment.py:37
-msgid "posted time"
-msgstr "게시 시각"
-
-#: .\judge\models\comment.py:38
-msgid "associated Page"
-msgstr "관련된 페이지"
-
-#: .\judge\models\comment.py:40
-msgid "Page code must be ^[pc]:[a-z0-9]+$|^b:\\d+$"
-msgstr "Page code must be ^[pc]:[a-z0-9]+$|^b:\\d+$"
-
-#: .\judge\models\comment.py:41
-msgid "votes"
-msgstr "표"
-
-#: .\judge\models\comment.py:42
-msgid "title of comment"
-msgstr "코멘트 제목"
-
-#: .\judge\models\comment.py:43
-msgid "body of comment"
-msgstr "코멘트 본문"
+msgstr "%h시 %m분"
 
 
 #: .\judge\models\comment.py:115 .\judge\models\problem.py:353
@@ -470,13 +382,6 @@ msgstr "코멘트 본문"
 msgid "Editorial for %s"
 msgstr ""
 
-#: .\judge\models\comment.py:146
-msgid "comment vote"
-msgstr "코멘트 투표"
-
-#: .\judge\models\comment.py:147
-msgid "comment votes"
-msgstr "코멘트 투표"
 
 #: .\judge\models\contest.py:20
 msgid "Invalid colour."
@@ -608,25 +513,11 @@ msgstr "pretests만 실행"
 msgid "Whether judges should grade pretests only, versus all testcases. Commonly set during a contest, then unset prior to rejudging user submissions when the contest ends."
 msgstr "judge가 pretests만 채점할지, 모든 테스트 데이터를 채점할지 여부. 일반적으로 코딩 능력 평가 종료전까지 설정 후 코딩 능력 평가 종료 후 해제하여 모든 테스트 케이스 채점 진행"
 
-#: .\judge\models\contest.py:84 .\judge\models\profile.py:64
-msgid "organizations"
-msgstr "조직"
-
-#: .\judge\models\contest.py:85
-msgid "If private, only these organizations may see the contest"
-msgstr "비공개로 설정 시, 이 조직만 코딩 능력 평가를 볼 수 있습니다."
-
-#: .\judge\models\contest.py:86 .\judge\models\problem.py:123
-msgid "OpenGraph image"
-msgstr "OpenGraph 이미지"
 
 #: .\judge\models\contest.py:88
 msgid "the amount of live participants"
 msgstr "현재 접속되어 있는 참가자 수"
 
-#: .\judge\models\contest.py:89
-msgid "contest summary"
-msgstr "코딩 능력 평가 요약"
 
 #: .\judge\models\contest.py:90 .\judge\models\problem.py:125
 msgid "Plain-text, shown in meta description tag, e.g. for social media."
@@ -1313,11 +1204,7 @@ msgstr "연결된 사용자"
 
 #: .\judge\models\profile.py:69
 msgid "display name"
-msgstr "표시 이름"
-
-#: .\judge\models\profile.py:70
-msgid "self-description"
-msgstr "자기소개"
+msgstr "학번"
 
 #: .\judge\models\profile.py:71
 msgid "location"
@@ -2408,7 +2295,7 @@ msgstr ""
 
 #: .\templates\contest\contest-tabs.html:45
 msgid "Spectate contest"
-msgstr ""
+msgstr "참관"
 
 #: .\templates\contest\contest-tabs.html:48
 #: .\templates\contest\contest-tabs.html:51
@@ -2474,7 +2361,7 @@ msgstr ""
 
 #: .\templates\contest\list.html:132
 msgid "Spectate"
-msgstr ""
+msgstr "참관"
 
 #: .\templates\contest\list.html:136
 msgid "Join"
@@ -3291,11 +3178,7 @@ msgstr ""
 
 #: .\templates\user\edit-profile.html:91
 msgid "Display name"
-msgstr ""
-
-#: .\templates\user\edit-profile.html:95
-msgid "Self-description"
-msgstr ""
+msgstr "학번"
 
 #: .\templates\user\edit-profile.html:103
 msgid "Select your closest major city"
@@ -3303,7 +3186,7 @@ msgstr ""
 
 #: .\templates\user\edit-profile.html:112
 msgid "Editor theme"
-msgstr ""
+msgstr "에디터 테마"
 
 #: .\templates\user\edit-profile.html:117
 msgid "Math engine"
@@ -3419,7 +3302,7 @@ msgstr ""
 
 #: .\templates\user\user-problems.html:104
 msgid "Score"
-msgstr ""
+msgstr "점수"
 
 #: .\templates\user\user-problems.html:115
 #, python-format
