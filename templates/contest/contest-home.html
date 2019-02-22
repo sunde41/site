@@ -143,14 +143,9 @@
                     <br>
                 {% endif %}
                 {% if future_contests %}
-                    <h3 class="backcolor">{{ _('다음 코딩 능력 평가') }}</h3>
+                    <h3 class="backcolor">{{ _('차후 계획된 코딩 능력 평가') }}</h3>
                     <div class="sidebox-content">
                         <table id="contest-future-table" class="contest-list table striped">
-                            <thead>
-                            <tr>
-                                <th>{{ _('코딩 능력 평가') }}</th>
-                            </tr>
-                            </thead>
                             <tbody>{% for contest in future_contests %}
                                 <tr>
                                     <td>
@@ -227,6 +222,7 @@
                             <a href="{{ url('notice_post', post.id) }}#comments" class="comment-count-link">
                             </a>
                         </span>
+                        <hr>
                             <div class="summary content-description">
                                 {% cache 86400 'post_summary' post.id %}
                                     {{ post.summary|default(post.content, true)|safe }}
