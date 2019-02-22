@@ -112,9 +112,6 @@
                                                 {{ time_left(contest) }}
                                             {% endif %}
                                         </div>
-                                        <div class="content-description">
-                                            {{ contest.description|safe }}
-                                        </div>
                                     </td>
                                     {% if not request.in_contest %}
                                         <td style="width:15%">
@@ -222,12 +219,6 @@
                             <a href="{{ url('notice_post', post.id) }}#comments" class="comment-count-link">
                             </a>
                         </span>
-                        <hr>
-                            <div class="summary content-description">
-                                {% cache 86400 'post_summary' post.id %}
-                                    {{ post.summary|default(post.content, true)|safe }}
-                                {% endcache %}
-                            </div>
                         </section>
                     {% endfor %}
                 </div>
