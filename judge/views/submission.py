@@ -136,12 +136,6 @@ class SubmissionTestCaseQuery(SubmissionStatus):
         return super(SubmissionTestCaseQuery, self).get(request, *args, **kwargs)
 
 
-class SubmissionSourceRaw(SubmissionSource):
-    def get(self, request, *args, **kwargs):
-        submission = self.get_object()
-        return HttpResponse(submission.source, content_type='text/plain')
-
-
 @require_POST
 def abort_submission(request, submission):
     submission = get_object_or_404(Submission, id=int(submission))

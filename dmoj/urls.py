@@ -118,7 +118,6 @@ urlpatterns = [
     url(r'^submissions/', paged_list_view(submission.AllSubmissions, 'all_submissions')),
     url(r'^submissions/user/(?P<user>\w+)/', paged_list_view(submission.AllUserSubmissions, 'all_user_submissions')),
     url(r'^src/(?P<submission>\d+)$', submission.SubmissionSource.as_view(), name='submission_source'),
-    url(r'^src/(?P<submission>\d+)/raw$', submission.SubmissionSourceRaw.as_view(), name='submission_source_raw'),
     url(r'^submission/(?P<submission>\d+)', include([
         url(r'^$', submission.SubmissionStatus.as_view(), name='submission_status'),
         url(r'^/abort$', submission.abort_submission, name='submission_abort'),
@@ -175,7 +174,6 @@ urlpatterns = [
         url(r'^rejudge$', widgets.rejudge_submission, name='submission_rejudge'),
         url(r'^single_submission$', submission.single_submission_query, name='submission_single_query'),
         url(r'^submission_testcases$', submission.SubmissionTestCaseQuery.as_view(), name='submission_testcases_query'),
-        url(r'^detect_timezone$', widgets.DetectTimezone.as_view(), name='detect_timezone'),
         url(r'^status-table$', status.status_table, name='status_table'),
         url(r'^template$', problem.LanguageTemplateAjax.as_view(), name='language_template_ajax'),
         url(r'^select2/', include([
