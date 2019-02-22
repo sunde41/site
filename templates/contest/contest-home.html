@@ -139,8 +139,8 @@
                     <br>
                 {% endif %}
                 {% if future_contests %}
-                    <h3>{{ _('다음 코딩 능력 평가') }}</h3>
-                    <div class="sidebox-content">
+                <h3>{{ _('다음 코딩 능력 평가') }}</h3>
+                <div class="sidebox-content">
                     <table id="contest-future-table" class="contest-list table striped">
                         <thead>
                         <tr>
@@ -165,11 +165,7 @@
                         {% endfor %}
                         </tbody>
                     </table>
-                    </div>
-                {% else %}
-                    <i>{{ _('현재, 다음 코딩 능력 평가 계획이 잡혀있지 않습니다.') }}</i>
-                    <br>
-                {% endif %}
+                </div>
             </div>
         </div>
         <div class="blog-sidebar">
@@ -178,9 +174,9 @@
                 <div class="sidebox-content">
                     {% for post in posts %}
                         <section class="{% if post.sticky %}sticky {% endif %}post">
-                            <h2 class="title">
+                            <h4 class="title">
                                 <a href="{{ url('notice_post', post.id) }}">{{ post.title }}</a>
-                            </h2>
+                            </h4>
                             <span class="time">
                             {%- if post.sticky %}<i title="Sticky" class="fa fa-star fa-fw"></i>{% endif -%}
                                 {% with authors=post.authors.all() %}
