@@ -233,3 +233,7 @@ em, address {
 #problem-table th.contest-points {
     padding: 0 10px;
 }
+
+.sidebox-content {
+    padding: 10px 10px 5px 10px;
+}

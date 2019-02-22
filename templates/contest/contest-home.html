@@ -141,32 +141,74 @@
                 {% if future_contests %}
                     <h3>{{ _('다음 코딩 능력 평가') }}</h3>
                     <div class="sidebox-content">
-                    <table id="contest-future-table" class="contest-list table striped">
+                        <table id="contest-future-table" class="contest-list table striped">
+                            <thead>
+                            <tr>
+                                <th>{{ _('코딩 능력 평가') }}</th>
+                            </tr>
+                            </thead>
+                            <tbody>{% for contest in future_contests %}
+                                <tr>
+                                    <td>
+                                        <div class="contest-block">
+                                            {{ contest_head(contest) }}
+                                            {% if contest.start_time %}
+                                                <br>
+                                                {% if contest.time_before_start %}
+                                                    <span class="time">{{ _('%(countdown)s 후에 시작됩니다', countdown=contest.time_before_start|as_countdown) }}</span>
+                                                {% endif %}
+                                                {{ time_left(contest) }}
+                                            {% endif %}
+                                        </div>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                {% endif %}
+                <h3>{{ _('과거 진행했던 코딩 능력 평가') }}</h3>
+                <div class="sidebox-content">
+                    <table class="contest-list table striped">
                         <thead>
                         <tr>
-                            <th>{{ _('코딩 능력 평가') }}</th>
+                            <th style="width:90%">{{ _('Contest') }}</th>
+                            <th>{{ _('Users') }}</th>
+                            {% if not request.in_contest %}
+                                <th style="width:15%"></th>
+                            {% endif %}
                         </tr>
                         </thead>
-                        <tbody>{% for contest in future_contests %}
+                        <tbody>
+                        {% for contest in past_contests %}
                             <tr>
                                 <td>
                                     <div class="contest-block">
                                         {{ contest_head(contest) }}
-                                        {% if contest.start_time %}
-                                            <br>
-                                            {% if contest.time_before_start %}
-                                                <span class="time">{{ _('%(countdown)s 후에 시작됩니다', countdown=contest.time_before_start|as_countdown) }}</span>
-                                            {% endif %}
-                                            {{ time_left(contest) }}
-                                        {% endif %}
+                                        {{ time_left(contest) }}
                                     </div>
                                 </td>
+                                <td>
+                                    {% if contest.show_scoreboard or perms.judge.see_private_contest %}
+                                        <a href="{{ url('contest_ranking', contest.key) }}">{{ contest.user_count }}</a>
+                                    {% else %}
+                                        {{ contest.user_count }}
+                                    {% endif %}
+                                </td>
+                                {% if not request.in_contest %}
+                                    <td>
+                                        <form action="{{ url('contest_join', contest.key) }}" method="post">
+                                            {% csrf_token %}
+                                            <input type="submit" class="unselectable button full participate-button"
+                                                   value="{{ _('Virtual join') }}">
+                                        </form>
+                                    </td>
+                                {% endif %}
                             </tr>
                         {% endfor %}
                         </tbody>
                     </table>
-                    </div>
-                {% endif %}
+                </div>
             </div>
         </div>
         <div class="blog-sidebar">
