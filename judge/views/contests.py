@@ -26,7 +26,7 @@ from django.utils.translation import ugettext as _, ugettext_lazy
 from django.views.generic import ListView, TemplateView,  View
 from django.views.generic.detail import BaseDetailView, DetailView
 from judge import event_poster as event
-from judge.models import Contest, ContestParticipation, ContestTag, Profile
+from judge.models import Contest, ContestParticipation, ContestTag, Profile, NoticePost
 from judge.models import Problem
 from judge.timezone import from_database_time
 from judge.utils.opengraph import generate_opengraph
@@ -87,6 +87,35 @@ class ContestList(TitleMixin, ContestListMixin, ListView):
         context['past_contests'] = past
         context['future_contests'] = future
         context['now'] = timezone.now()
+        return context
+
+
+class ContestHome(TitleMixin, ContestListMixin, ListView):
+    model = Contest
+    template_name = 'contest/contest-home.html'
+    title = ugettext_lazy('Contests')
+
+    def get_queryset(self):
+        return super(ContestList, self).get_queryset() \
+            .order_by('-start_time', 'key').prefetch_related('tags')
+
+    def get_context_data(self, **kwargs):
+        context = super(ContestList, self).get_context_data(**kwargs)
+        now = timezone.now()
+        past, present, future = [], [], []
+        for contest in self.get_queryset():
+            if contest.end_time < now:
+                past.append(contest)
+            elif contest.start_time > now:
+                future.append(contest)
+            else:
+                present.append(contest)
+        future.sort(key=attrgetter('start_time'))
+        context['current_contests'] = present
+        context['past_contests'] = past
+        context['future_contests'] = future
+        context['now'] = timezone.now()
+        context['posts'] = NoticePost.objects.filter(visible=True, publish_on__lte=timezone.now()).order_by('-sticky', '-publish_on').prefetch_related('authors__user')
         return context
 
 

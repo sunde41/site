@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+{% block title_row %}{% endblock %}
+{% block title_ruler %}{% endblock %}
+
+{% block media %}
+    {% include "notice/media-css.html" %}
+    <style>
+        .post {
+            margin: 0 1.4em;
+        }
+
+        .post:first-child {
+            margin-top: 0.6em;
+        }
+    </style>
+{% endblock %}
+
+{% block js_media %}
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.time-remaining').each(function () {
+                count_down($(this));
+            });
+
+            $('.blog-sidebar').hide();
+            $('#blog-tab').find('a').click(function (e) {
+                e.preventDefault();
+                $('#blog-tab').addClass('active');
+                $('#event-tab').removeClass('active');
+                $('.blog-content').show();
+                $('.blog-sidebar').hide();
+            });
+            $('#event-tab').find('a').click(function (e) {
+                e.preventDefault();
+                $('#event-tab').addClass('active');
+                $('#blog-tab').removeClass('active');
+                $('.blog-content').hide();
+                $('.blog-sidebar').show();
+            });
+        });
+    </script>
+{% endblock %}
+
+{% block body %}
+    {% block before_posts %}{% endblock %}
+    <div id="blog-container">
+        <div class="blog-content sidebox">
+            <div class="content-description">
+                {% if current_contests %}
+                    <h4>{{ _('현재 진행중') }}</h4>
+                    <table class="contest-list table striped" id="contest-now-table">
+                        <tbody>
+                        {% for contest in current_contests %}
+                            <tr>
+                                <td style="width:90%">
+                                    <div class="contest-block">
+                                        {{ contest_head(contest) }}
+                                        {% if contest.start_time %}
+                                            <br>
+                                            {% if contest.time_before_end %}
+                                                <span class="time">{{ _('%(countdown)s 후에 종료됩니다.', countdown=contest.time_before_end|as_countdown) }}</span>
+                                            {% elif contest.free_start and contest.start_time %}
+                                                <span class="time">{{ _('%(time)s 에 시작됩니다.', time=contest.start_time|date(_("Y년 m월 j일 (D), H시 i분"))) }}</span>
+                                            {% endif %}
+                                            {{ time_left(contest) }}
+                                        {% endif %}
+                                    </div>
+                                    <div class="content-description">
+                                        {{ contest.description|safe }}
+                                    </div>
+                                </td>
+                                {% if not request.in_contest %}
+                                    <td style="width:15%">
+                                        {% if request.user.profile in contest.organizers.all() %}
+                                            <form action="{{ url('contest_join', contest.key) }}" method="post">
+                                                {% csrf_token %}
+                                                <input type="submit" class="unselectable button full participate-button"
+                                                       value="{{ _('참관') }}">
+                                            </form>
+                                        {% else %}
+                                            <form action="{{ url('contest_join', contest.key) }}" method="post">
+                                                {% csrf_token %}
+                                                <input type="submit"
+                                                       class="unselectable button full participate-button join-warning"
+                                                       value="{{ _('시작') }}">
+                                            </form>
+                                        {% endif %}
+                                    </td>
+                                {% endif %}
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    <br>
+                {% endif %}
+                {% if future_contests %}
+                    <h4>{{ _('다음 코딩 능력 평가') }}</h4>
+                    <table id="contest-future-table" class="contest-list table striped">
+                        <thead>
+                        <tr>
+                            <th>{{ _('코딩 능력 평가') }}</th>
+                        </tr>
+                        </thead>
+                        <tbody>{% for contest in future_contests %}
+                            <tr>
+                                <td>
+                                    <div class="contest-block">
+                                        {{ contest_head(contest) }}
+                                        {% if contest.start_time %}
+                                            <br>
+                                            {% if contest.time_before_start %}
+                                                <span class="time">{{ _('%(countdown)s 후에 시작됩니다', countdown=contest.time_before_start|as_countdown) }}</span>
+                                            {% endif %}
+                                            {{ time_left(contest) }}
+                                        {% endif %}
+                                    </div>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                {% else %}
+                    <i>{{ _('현재, 다음 코딩 능력 평가 계획이 잡혀있지 않습니다.') }}</i>
+                    <br>
+                {% endif %}
+            </div>
+        </div>
+        <div class="blog-sidebar">
+            <div class="blog-sidebox sidebox">
+                <h3>{{ _('공지') }} <i class="fa fa-terminal"></i></h3>
+                <div class="sidebox-content">
+                    {% for post in posts %}
+                        <section class="{% if post.sticky %}sticky {% endif %}post">
+                            <h2 class="title">
+                                <a href="{{ url('notice_post', post.id) }}">{{ post.title }}</a>
+                            </h2>
+                            <span class="time">
+                            {%- if post.sticky %}<i title="Sticky" class="fa fa-star fa-fw"></i>{% endif -%}
+                                {% with authors=post.authors.all() %}
+                                    {%- if authors -%}
+                                        <span class="post-authors">{{ link_users(authors) }}</span>
+                                    {%- endif -%}
+                                {% endwith %}
+                                {{ relative_time(post.publish_on, abs=_('{time}에 게시'), rel=_('{time}에 게시')) -}}
+                        </span><span class="comment-data">
+                            <a href="{{ url('notice_post', post.id) }}#comments" class="comment-count-link">
+                            </a>
+                        </span>
+                            <div class="summary content-description">
+                                {% cache 86400 'post_summary' post.id %}
+                                    {{ post.summary|default(post.content, true)|safe }}
+                                {% endcache %}
+                            </div>
+                        </section>
+                    {% endfor %}
+                </div>
+                {% if page_obj.num_pages > 1 %}
+                    <div style="margin-bottom:10px;margin-top:10px">{% include "list-pages.html" %}</div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% block after_posts %}{% endblock %}
+{% endblock %}
