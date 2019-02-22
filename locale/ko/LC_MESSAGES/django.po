@@ -914,11 +914,11 @@ msgstr "messages in the thread"
 
 #: .\judge\models\problem.py:26
 msgid "problem category ID"
-msgstr "문제 범주 ID"
+msgstr "문제 분류 ID"
 
 #: .\judge\models\problem.py:27
 msgid "problem category name"
-msgstr "문제 범주 이름"
+msgstr "문제 분류 이름"
 
 #: .\judge\models\problem.py:34
 msgid "problem type"
@@ -930,19 +930,19 @@ msgstr "문제 유형"
 
 #: .\judge\models\problem.py:39
 msgid "problem group ID"
-msgstr "문제 그룹 ID"
+msgstr "문제 분류 ID"
 
 #: .\judge\models\problem.py:40
 msgid "problem group name"
-msgstr "문제 그룹"
+msgstr "문제 분류"
 
 #: .\judge\models\problem.py:47 .\judge\models\problem.py:108
 msgid "problem group"
-msgstr "문제 그룹"
+msgstr "문제 분류"
 
 #: .\judge\models\problem.py:48
 msgid "problem groups"
-msgstr "문제 그룹"
+msgstr "문제 분류"
 
 #: .\judge\models\problem.py:52
 msgid "key"
@@ -1015,7 +1015,7 @@ msgstr "이 사용자들은 문제를 수정할 수 있지만, 저자로 표시�
 
 #: .\judge\models\problem.py:104
 msgid "testers"
-msgstr "testers"
+msgstr "테스터"
 
 #: .\judge\models\problem.py:106
 msgid "These users will be able to view a private problem, but not edit it."
@@ -1136,11 +1136,11 @@ msgstr ""
 
 #: .\judge\models\problem.py:359
 msgid "solution"
-msgstr "솔루션"
+msgstr "해답"
 
 #: .\judge\models\problem.py:360
 msgid "solutions"
-msgstr "솔루션"
+msgstr "해답"
 
 #: .\judge\models\problem_data.py:23
 msgid "Standard"
@@ -2727,7 +2727,7 @@ msgstr ""
 #: .\templates\problem\search-form.html:30
 #: .\templates\user\user-problems.html:62
 msgid "Category"
-msgstr ""
+msgstr "분류"
 
 #: .\templates\problem\list.html:209 .\templates\problem\list.html:228
 msgid "Types"
@@ -2740,11 +2740,6 @@ msgstr ""
 
 #: .\templates\problem\problem.html:76
 msgid "View as PDF"
-msgstr ""
-
-#: .\templates\problem\problem.html:86 .\templates\problem\problem.html:96
-#: .\templates\problem\problem.html:101
-msgid "Submit solution"
 msgstr ""
 
 #: .\templates\problem\problem.html:89
@@ -2873,7 +2868,7 @@ msgstr ""
 
 #: .\templates\problem\statistics-table.html:1 .\templates\stats\base.html:11
 msgid "Statistics"
-msgstr ""
+msgstr "통계"
 
 #: .\templates\problem\submit.html:193
 #, python-format
