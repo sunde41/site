@@ -115,7 +115,7 @@ class ContestHome(TitleMixin, ContestListMixin, ListView):
         context['past_contests'] = past
         context['future_contests'] = future
         context['now'] = timezone.now()
-        context['posts'] = NoticePost.objects.all()
+        # context['posts'] = NoticePost.objects.all()
         return context
 
 
