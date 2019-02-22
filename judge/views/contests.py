@@ -115,9 +115,7 @@ class ContestHome(TitleMixin, ContestListMixin, ListView):
         context['past_contests'] = past
         context['future_contests'] = future
         context['now'] = timezone.now()
-        context['posts'] = NoticePost.objects.filter(visible=True, publish_on__lte=timezone.now()).order_by('-sticky',
-                                                                                                            '-publish_on').prefetch_related(
-            'authors__user')
+        context['posts'] = NoticePost.objects.all()
         return context
 
 
