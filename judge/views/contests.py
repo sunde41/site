@@ -95,11 +95,11 @@ class ContestHome(TitleMixin, ContestListMixin, ListView):
     template_name = 'contest/contest-home.html'
 
     def get_queryset(self):
-        return super(ContestList, self).get_queryset() \
+        return super(ContestHome, self).get_queryset() \
             .order_by('-start_time', 'key').prefetch_related('tags')
 
     def get_context_data(self, **kwargs):
-        context = super(ContestList, self).get_context_data(**kwargs)
+        context = super(ContestHome, self).get_context_data(**kwargs)
         now = timezone.now()
         past, present, future = [], [], []
         for contest in self.get_queryset():
