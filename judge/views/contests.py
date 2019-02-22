@@ -92,11 +92,12 @@ class ContestList(TitleMixin, ContestListMixin, ListView):
 
 class ContestHome(TitleMixin, ContestListMixin, ListView):
     model = Contest
-    template_name = 'contest/contest-home.html'
+    template_name = 'contest/list.html'
     title = ugettext_lazy('Contests')
 
     def get_queryset(self):
-        return super(ContestList, self).get_queryset().order_by('-start_time', 'key').prefetch_related('tags')
+        return super(ContestList, self).get_queryset() \
+            .order_by('-start_time', 'key').prefetch_related('tags')
 
     def get_context_data(self, **kwargs):
         context = super(ContestList, self).get_context_data(**kwargs)
@@ -114,7 +115,9 @@ class ContestHome(TitleMixin, ContestListMixin, ListView):
         context['past_contests'] = past
         context['future_contests'] = future
         context['now'] = timezone.now()
-        context['posts'] = NoticePost.objects.filter(visible=True, publish_on__lte=timezone.now()).order_by('-sticky', '-publish_on').prefetch_related('authors__user')
+        context['posts'] = NoticePost.objects.filter(visible=True, publish_on__lte=timezone.now()).order_by('-sticky',
+                                                                                                            '-publish_on').prefetch_related(
+            'authors__user')
         return context
 
 
