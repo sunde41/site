@@ -16,10 +16,6 @@ class JudgeAppConfig(AppConfig):
         # noinspection PyUnresolvedReferences
         from . import signals, jinja2
 
-        from django.contrib import admin
-
-        from reversion.admin import VersionAdmin
-
         from judge.models import Language, Profile
         from django.contrib.auth.models import User
 

@@ -1971,7 +1971,7 @@ msgstr "언어 통계"
 
 #: .\judge\views\status.py:24 .\templates\submission\list.html:222
 msgid "Status"
-msgstr "현재 상태"
+msgstr "제출 결과"
 
 #: .\judge\views\status.py:109
 msgid "Version matrix"
@@ -2604,7 +2604,7 @@ msgstr ""
 
 #: .\templates\problem\list.html:62
 msgid "Filter by type..."
-msgstr ""
+msgstr "문제 유형으로 필터링"
 
 #: .\templates\problem\list.html:179
 msgid "Hot problems"
@@ -2976,19 +2976,19 @@ msgstr ""
 
 #: .\templates\submission\list.html:60
 msgid "Filter by status..."
-msgstr ""
+msgstr "제출 결과로 필터링"
 
 #: .\templates\submission\list.html:62
 msgid "Filter by language..."
-msgstr ""
+msgstr "풀이 언어로 필터링"
 
 #: .\templates\submission\list.html:218
 msgid "Filter submissions"
-msgstr ""
+msgstr "제출 필터링"
 
 #: .\templates\submission\list.html:260
 msgid "You were disconnected. Refresh to show latest updates."
-msgstr ""
+msgstr "일시적으로 연결이 중단되었습니다. 새로 고침을 하세요"
 
 #: .\templates\submission\row.html:39
 #, python-format
