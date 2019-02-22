@@ -133,28 +133,6 @@ class ProblemSolution(SolvedProblemMixin, ProblemMixin, TitleMixin, DetailView):
         return context
 
 
-class ProblemRaw(ProblemMixin, TitleMixin, TemplateResponseMixin, SingleObjectMixin, View):
-    context_object_name = 'problem'
-    template_name = 'problem/raw.html'
-
-    def get_title(self):
-        return self.object.name
-
-    def get_context_data(self, **kwargs):
-        context = super(ProblemRaw, self).get_context_data(**kwargs)
-        context['problem_name'] = self.object.name
-        context['url'] = self.request.build_absolute_uri()
-        context['description'] = self.object.description
-        return context
-
-    def get(self, request, *args, **kwargs):
-        self.object = self.get_object()
-        with translation.override(settings.LANGUAGE_CODE):
-            return self.render_to_response(self.get_context_data(
-                object=self.object,
-            ))
-
-
 class ProblemDetail(LoginRequiredMixin, ProblemMixin, SolvedProblemMixin, DetailView):
     context_object_name = 'problem'
     template_name = 'problem/problem.html'
