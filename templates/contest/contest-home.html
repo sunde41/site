@@ -125,37 +125,6 @@
                 {% endif %}
             </div>
         </div>
-        <div class="blog-sidebar">
-            <div class="blog-sidebox sidebox">
-                <h3>{{ _('공지') }} <i class="fa fa-terminal"></i></h3>
-                <div class="sidebox-content">
-                    {% for post in posts %}
-                        <section class="{% if post.sticky %}sticky {% endif %}post">
-                            <h2 class="title">
-                                <a href="{{ url('notice_post', post.id) }}">{{ post.title }}</a>
-                            </h2>
-                            <span class="time">
-                            {%- if post.sticky %}<i title="Sticky" class="fa fa-star fa-fw"></i>{% endif -%}
-                                {% with authors=post.authors.all() %}
-                                    {%- if authors -%}
-                                        <span class="post-authors">{{ link_users(authors) }}</span>
-                                    {%- endif -%}
-                                {% endwith %}
-                                {{ relative_time(post.publish_on, abs=_('{time}에 게시'), rel=_('{time}에 게시')) -}}
-                        </span><span class="comment-data">
-                            <a href="{{ url('notice_post', post.id) }}#comments" class="comment-count-link">
-                            </a>
-                        </span>
-                            <div class="summary content-description">
-                                {% cache 86400 'post_summary' post.id %}
-                                    {{ post.summary|default(post.content, true)|safe }}
-                                {% endcache %}
-                            </div>
-                        </section>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
     </div>
     {% block after_posts %}{% endblock %}
 {% endblock %}
