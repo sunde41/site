@@ -79,11 +79,11 @@
         {% if contest.time_limit %}
             <span class="timefont">{{ contest.start_time|date(_("Y년 m월 j일 (D) H시 i분")) }}</span>부터
             <span class="timefont">{{ contest.end_time|date(_("Y년 m월 j일 (D) H시 i분")) }}까지 {{ _('%(time_limit)s', time_limit=contest.time_limit|timedelta('localized-no-seconds')) }}</span>
-            동안
+            동안 진행됩니다.
         {% else %}
             <span class="timefont">{{ contest.start_time|date(_("Y년 m월 j일 (D) H시 i분")) }}</span>부터
             <span class="timefont">{{ _('%(duration)s', duration=contest.contest_window_length|timedelta('localized-no-seconds')) }}</span>
-            동안
+            동안 진행됩니다.
         {% endif %}
     </div>
 {% endmacro %}

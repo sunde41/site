@@ -88,7 +88,7 @@
         {% if contest.time_limit %}
             <span class="timefont">{{ contest.start_time|date(_("Y년 m월 j일 (D) H시 i분")) }}</span>부터 <span class="timefont">{{ contest.end_time|date(_("Y년 m월 j일 (D) H시 i분")) }}까지 {{ _('%(time_limit)s', time_limit=contest.time_limit|timedelta('localized-no-seconds')) }}</span> 동안
         {% else %}
-            <span class="timefont">{{ contest.start_time|date(_("Y년 m월 j일 (D) H시 i분")) }}</span>부터 <span class="timefont">{{ _('%(duration)s', duration=contest.contest_window_length|timedelta('localized-no-seconds')) }}</span> 동안
+            <span class="timefont">{{ contest.start_time|date(_("Y년 m월 j일 (D) H시 i분")) }}</span>부터 <span class="timefont">{{ _('%(duration)s', duration=contest.contest_window_length|timedelta('localized-no-seconds')) }}</span> 동안 진행됩니다.
         {% endif %}
     </div>
 {% endmacro %}
@@ -145,11 +145,6 @@
         <h4>{{ _('Upcoming Contests') }}</h4>
         {% if future_contests %}
             <table id="contest-future-table" class="contest-list table striped">
-                <thead>
-                <tr>
-                    <th>{{ _('코딩 능력 평가') }}</th>
-                </tr>
-                </thead>
                 <tbody>{% for contest in future_contests %}
                     <tr>
                         <td>
@@ -169,8 +164,7 @@
                 </tbody>
             </table>
         {% else %}
-            <i>{{ _('현재, 다음 코딩 능력 평가 계획이 잡혀있지 않습니다.') }}</i>
-            <br>
+            <span class="no-contest">{{ _('현재, 다음 코딩 능력 평가 계획이 잡혀있지 않습니다.') }}</span>
         {% endif %}
 
     </div>

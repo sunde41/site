@@ -23,7 +23,7 @@
     <div id="banner">
             {%- if participating and participation.virtual and not participation.ended -%}
                 {% if participation.spectate %}
-                    {{- _('참관중, contest ends in %(countdown)s.', countdown=contest.time_before_end|as_countdown) -}}
+                    {{- _('관찰중, contest ends in %(countdown)s.', countdown=contest.time_before_end|as_countdown) -}}
                 {% elif participation.end_time %}
                     {{- _('가상 참여, %(countdown)s 남았습니다..', countdown=participation.time_remaining|as_countdown) -}}
                 {% else %}
@@ -50,11 +50,11 @@
         <div id="time">
             {% if contest.time_limit %}
                 {% trans trimmed start_time=contest.start_time|date(_("Y년 m월 j일 (D) H시 i분")), end_time=contest.end_time|date(_("Y년 m월 j일 (D) H시 i분")), time_limit=contest.time_limit|timedelta('localized-no-seconds') %}
-                    <b>{{ start_time }}</b>부터 <b>{{ end_time }}까지 <b>{{ time_limit }}</b> 동안</b>
+                    <b>{{ start_time }}</b>부터 <b>{{ end_time }}까지 <b>{{ time_limit }}</b> 동안 진행됩니다.</b>
                 {% endtrans %}
             {% else %}
                 {% trans trimmed length=contest.contest_window_length|timedelta("localized-no-seconds"), start_time=contest.start_time|date(_("Y년 m월 j일 (D) H시 i분")) %}
-                    <b>{{ start_time }}</b>부터 <b>{{ length }}</b>동안
+                    <b>{{ start_time }}</b>부터 <b>{{ length }}</b>동안 진행됩니다.
                 {% endtrans %}
             {% endif %}
         </div>
