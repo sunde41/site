@@ -170,15 +170,6 @@
                 <h3>{{ _('과거 진행했던 코딩 능력 평가') }}</h3>
                 <div class="sidebox-content">
                     <table class="contest-list table striped">
-                        <thead>
-                        <tr>
-                            <th style="width:90%">{{ _('Contest') }}</th>
-                            <th>{{ _('Users') }}</th>
-                            {% if not request.in_contest %}
-                                <th style="width:15%"></th>
-                            {% endif %}
-                        </tr>
-                        </thead>
                         <tbody>
                         {% for contest in past_contests %}
                             <tr>
