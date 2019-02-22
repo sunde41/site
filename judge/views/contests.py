@@ -35,7 +35,7 @@ from judge.utils.views import TitleMixin, generic_message
 from judge.views.detail_view import CommentedDetailView
 
 
-__all__ = ['ContestList', 'ContestDetail', 'contest_ranking', 'ContestJoin', 'ContestLeave',
+__all__ = ['ContestHome','ContestList', 'ContestDetail', 'contest_ranking', 'ContestJoin', 'ContestLeave',
            'contest_ranking_ajax', 'participation_list', 'own_participation_list', 'get_contest_ranking_list',
            'base_contest_ranking_list']
 
@@ -92,8 +92,7 @@ class ContestList(TitleMixin, ContestListMixin, ListView):
 
 class ContestHome(TitleMixin, ContestListMixin, ListView):
     model = Contest
-    template_name = 'contest/list.html'
-    title = ugettext_lazy('Contests')
+    template_name = 'contest/contest-home.html'
 
     def get_queryset(self):
         return super(ContestList, self).get_queryset() \
