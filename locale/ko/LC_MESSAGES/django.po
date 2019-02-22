@@ -2388,7 +2388,7 @@ msgid "You cannot come back to a virtual participation. You will have to start a
 msgstr ""
 
 #: .\templates\contest\media-js.html:10
-msgid "Joining a contest starts your timer, after which it becomes unstoppable."
+msgid "코딩 능력 평가를 시작한 후에는, 사이트를 이탈할 경우를 포함한 어떠한 경우에도 시간이 소비됩니다. 참고하시길 바랍니다."
 msgstr ""
 
 #: .\templates\contest\private.html:4
@@ -2412,67 +2412,6 @@ msgstr ""
 msgid "Source:"
 msgstr ""
 
-#: .\templates\newsletter\common.html:6
-#: .\templates\newsletter\subscription_unsubscribe_activated.html:3
-#: .\templates\newsletter\subscription_unsubscribe_activated.html:6
-#: .\templates\newsletter\subscription_update_activated.html:3
-#: .\templates\newsletter\subscription_update_activated.html:6
-msgid "Newsletter"
-msgstr ""
-
-#: .\templates\newsletter\subscription_unsubscribe_activated.html:3
-#: .\templates\newsletter\subscription_unsubscribe_activated.html:6
-#: .\templates\newsletter\subscription_update_activated.html:3
-#: .\templates\newsletter\subscription_update_activated.html:6
-msgid "activate"
-msgstr ""
-
-#: .\templates\newsletter\subscription_unsubscribe_activated.html:8
-msgid "You have successfully been unsubscribed."
-msgstr ""
-
-#: .\templates\newsletter\subscription_unsubscribe_email_sent.html:3
-#: .\templates\newsletter\subscription_unsubscribe_email_sent.html:6
-#: .\templates\newsletter\subscription_unsubscribe_user.html:3
-#: .\templates\newsletter\subscription_unsubscribe_user.html:6
-msgid "Newsletter unsubscribe"
-msgstr ""
-
-#: .\templates\newsletter\subscription_unsubscribe_email_sent.html:8
-msgid "Your unsubscription request has successfully been received. An email has been sent to you with a link you need to follow in order to confirm your unsubscription."
-msgstr ""
-
-#: .\templates\newsletter\subscription_unsubscribe_user.html:17
-msgid "Do you want to unsubscribe from this newsletter?"
-msgstr ""
-
-#: .\templates\newsletter\subscription_unsubscribe_user.html:21
-msgid "Unsubscribe"
-msgstr ""
-
-#: .\templates\newsletter\subscription_update.html:3
-#: .\templates\newsletter\subscription_update.html:6
-#: .\templates\newsletter\subscription_update_email_sent.html:3
-#: .\templates\newsletter\subscription_update_email_sent.html:6
-msgid "Newsletter update"
-msgstr ""
-
-#: .\templates\newsletter\subscription_update.html:9
-msgid "Due to a technical error we were not able to submit your confirmation email. This could be because your email address is invalid."
-msgstr ""
-
-#: .\templates\newsletter\subscription_update.html:14
-msgid "Update subscription"
-msgstr ""
-
-#: .\templates\newsletter\subscription_update_activated.html:8
-msgid "Your subscription has successfully been updated."
-msgstr ""
-
-#: .\templates\newsletter\subscription_update_email_sent.html:8
-msgid "Your update request was successfully received and an activation email has been sent to you. In that email you will find a link which you need to follow in order to update your subscription."
-msgstr ""
-
 #: .\templates\organization\edit.html:46
 #: .\templates\organization\requests\pending.html:41
 #: .\templates\ticket\edit-notes.html:4
@@ -2490,64 +2429,10 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: .\templates\organization\list.html:25
-msgid "Members"
-msgstr ""
-
-#: .\templates\organization\new.html:10 .\templates\ticket\new.html:36
-msgid "Create"
-msgstr ""
-
-#: .\templates\organization\requests\detail.html:13
-msgid "User:"
-msgstr ""
-
-#: .\templates\organization\requests\log.html:11
-#: .\templates\organization\requests\pending.html:21
-msgid "State"
-msgstr ""
-
-#: .\templates\organization\requests\log.html:12
-#: .\templates\organization\requests\pending.html:22
-msgid "Reason"
-msgstr ""
-
-#: .\templates\organization\requests\log.html:28
-#: .\templates\organization\requests\pending.html:44
-msgid "There are no requests to approve."
-msgstr ""
 
 #: .\templates\organization\requests\pending.html:24
 #: .\templates\problem\data.html:401
 msgid "Delete?"
-msgstr ""
-
-#: .\templates\organization\requests\request.html:18
-msgid "Your reason for joining:"
-msgstr ""
-
-#: .\templates\organization\requests\request.html:20
-msgid "Request"
-msgstr ""
-
-#: .\templates\organization\requests\tabs.html:4
-msgid "Pending"
-msgstr ""
-
-#: .\templates\organization\requests\tabs.html:7
-msgid "Log"
-msgstr ""
-
-#: .\templates\organization\requests\tabs.html:10
-msgid "Approved"
-msgstr ""
-
-#: .\templates\organization\requests\tabs.html:13
-msgid "Rejected"
-msgstr ""
-
-#: .\templates\organization\users-table.html:15
-msgid "Kick"
 msgstr ""
 
 #: .\templates\problem\data.html:353
