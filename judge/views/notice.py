@@ -37,12 +37,6 @@ class PostList(ListView):
         context['title'] = self.title or _('Page %d of Posts') % context['page_obj'].number
         context['first_page_href'] = reverse('home')
         context['page_prefix'] = reverse('notice_post_list')
-        context['new_problems'] = Problem.objects.filter(is_public=True).order_by('-date', '-id')[:7]
-        context['user_count'] = lazy(Profile.objects.count, int, long)
-        context['problem_count'] = lazy(Problem.objects.filter(is_public=True).count, int, long)
-        context['submission_count'] = lazy(Submission.objects.count, int, long)
-        context['language_count'] = lazy(Language.objects.count, int, long)
-
         now = timezone.now()
 
         # Dashboard stuff
