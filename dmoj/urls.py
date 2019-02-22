@@ -104,6 +104,7 @@ urlpatterns = [
         url(r'^/submit$', problem.problem_submit, name='problem_submit'),
         url(r'^/resubmit/(?P<submission>\d+)$', problem.problem_submit, name='problem_submit'),
         url(r'^/rank/', paged_list_view(ranked_submission.RankedSubmissions, 'ranked_submissions')),
+        url(r'^/submissions/(?P<user>\w+)/', paged_list_view(submission.UserProblemSubmissions, 'user_submissions')),
         url(r'^/$', lambda _, problem: HttpResponsePermanentRedirect(reverse('problem_detail', args=[problem]))),
         url(r'^/test_data$', ProblemDataView.as_view(), name='problem_data'),
         url(r'^/test_data/init$', problem_init_view, name='problem_data_init'),
