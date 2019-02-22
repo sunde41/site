@@ -2,7 +2,6 @@
 
 {% block tabs %}
     {{ make_tab('detail', 'fa-info-circle', url('contest_view', contest.key), _('개요')) }}
-
     {% if perms.judge.see_private_contest or is_organizer %}
         {% if contest.show_scoreboard or contest.can_see_scoreboard(request) %}
             {{ make_tab('ranking', 'fa-bar-chart', url('contest_ranking', contest.key), _('순위')) }}
@@ -15,7 +14,6 @@
         {{ make_tab('edit', 'fa-edit', url('admin:judge_contest_change', contest.id), _('Edit')) }}
     {% endif %}
 
-    {% if request.user.is_authenticated %}
     {% if contest.can_join or participating %}
         {% if not contest.ended %}
             {% if in_contest %}
