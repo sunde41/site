@@ -58,9 +58,7 @@
 
 {% macro contest_head(contest) %}
     {% spaceless %}
-        <a href="{{ url('contest_view', contest.key) }}" class="contest-list-title">
-            {{- contest.name -}}
-        </a>
+        {{- contest.name -}}
         <span class="contest-tags">
             {% if not contest.is_public %}
                 <span style="background-color: #000000; color: #ffffff" class="contest-tag">
@@ -133,7 +131,7 @@
                                         {% csrf_token %}
                                         <input type="submit"
                                                class="unselectable button full participate-button join-warning"
-                                               value="{{ _('참가') }}">
+                                               value="{{ _('시작') }}">
                                     </form>
                                 {% endif %}
                             </td>
