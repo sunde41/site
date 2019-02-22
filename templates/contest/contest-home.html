@@ -127,7 +127,7 @@
                                                     {% csrf_token %}
                                                     <input type="submit"
                                                            class="unselectable button full participate-button join-warning"
-                                                           value="{{ _('참가') }}">
+                                                           value="{{ _('시작') }}">
                                                 </form>
                                             {% endif %}
                                         </td>
@@ -219,6 +219,12 @@
                             <a href="{{ url('notice_post', post.id) }}#comments" class="comment-count-link">
                             </a>
                         </span>
+                        <hr>
+                            <div class="summary content-description">
+                                {% cache 86400 'post_summary' post.id %}
+                                    {{ post.summary|default(post.content, true)|safe }}
+                                {% endcache %}
+                            </div>
                         </section>
                     {% endfor %}
                 </div>
