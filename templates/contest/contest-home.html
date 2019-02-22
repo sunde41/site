@@ -120,7 +120,7 @@
                                                     {% csrf_token %}
                                                     <input type="submit"
                                                            class="unselectable button full participate-button"
-                                                           value="{{ _('참관') }}">
+                                                           value="{{ _('관찰') }}">
                                                 </form>
                                             {% else %}
                                                 <form action="{{ url('contest_join', contest.key) }}" method="post">
@@ -140,7 +140,7 @@
                     <br>
                 {% endif %}
                 {% if future_contests %}
-                    <h3 class="backcolor">{{ _('차후 계획된 코딩 능력 평가') }}</h3>
+                    <h3 class="backcolor">{{ _('Upcoming Contests') }}</h3>
                     <div class="sidebox-content">
                         <table id="contest-future-table" class="contest-list table striped">
                             <tbody>{% for contest in future_contests %}

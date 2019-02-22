@@ -2135,7 +2135,7 @@ msgstr "등록"
 
 #: .\templates\base.html:247
 msgid "spectating"
-msgstr "참관"
+msgstr "관찰중"
 
 #: .\templates\base.html:260
 msgid "This site works best with JavaScript enabled."
@@ -2187,7 +2187,7 @@ msgstr ""
 
 #: .\templates\blog\list.html:172
 msgid "Upcoming contests"
-msgstr ""
+msgstr "차후 계획된 코딩 능력 평가"
 
 #: .\templates\blog\list.html:189
 msgid "Comment stream"
@@ -2295,7 +2295,7 @@ msgstr ""
 
 #: .\templates\contest\contest-tabs.html:45
 msgid "Spectate contest"
-msgstr "참관"
+msgstr "코딩 능력 평가 관찰"
 
 #: .\templates\contest\contest-tabs.html:48
 #: .\templates\contest\contest-tabs.html:51
@@ -2361,15 +2361,15 @@ msgstr ""
 
 #: .\templates\contest\list.html:132
 msgid "Spectate"
-msgstr "참관"
+msgstr "관찰"
 
 #: .\templates\contest\list.html:136
 msgid "Join"
-msgstr ""
+msgstr "시작"
 
 #: .\templates\contest\list.html:148
 msgid "Upcoming Contests"
-msgstr ""
+msgstr "차후 계획된 코딩 능력 평가"
 
 #: .\templates\contest\list.html:175
 msgid "There are no scheduled contests at this time."
@@ -2884,16 +2884,6 @@ msgstr ""
 #: .\templates\registration\registration_form.html:179
 msgid "Default language"
 msgstr "답변 제출시 사용할 기본 언어 (My Page에서 변경 가능)"
-
-#: .\templates\registration\registration_form.html:182
-#: .\templates\user\edit-profile.html:156
-msgid "Affiliated organizations"
-msgstr ""
-
-#: .\templates\registration\registration_form.html:188
-#: .\templates\user\edit-profile.html:126
-msgid "Notify me about upcoming contests"
-msgstr ""
 
 #: .\templates\registration\registration_form.html:202
 msgid "By registering, you agree to our"
