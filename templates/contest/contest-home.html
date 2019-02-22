@@ -89,7 +89,7 @@
         <div class="blog-content sidebox">
             <div class="content-description">
                 {% if current_contests %}
-                    <h4>{{ _('현재 진행중') }}</h4>
+                    <h3>{{ _('현재 진행중') }}</h3>
                     <table class="contest-list table striped" id="contest-now-table">
                         <tbody>
                         {% for contest in current_contests %}
@@ -136,7 +136,7 @@
                     <br>
                 {% endif %}
                 {% if future_contests %}
-                    <h4>{{ _('다음 코딩 능력 평가') }}</h4>
+                    <h3>{{ _('다음 코딩 능력 평가') }}</h3>
                     <table id="contest-future-table" class="contest-list table striped">
                         <thead>
                         <tr>
@@ -169,7 +169,7 @@
         </div>
         <div class="blog-sidebar">
             <div class="blog-sidebox sidebox">
-                <h3>{{ _('공지') }} <i class="fa fa-terminal"></i></h3>
+                <h4>{{ _('공지') }} <i class="fa fa-terminal"></i></h4>
                 <div class="sidebox-content">
                     {% for post in posts %}
                         <section class="{% if post.sticky %}sticky {% endif %}post">
