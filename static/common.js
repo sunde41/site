@@ -207,7 +207,7 @@ function count_down(label) {
             label.text(npgettext('time format with day', '%d일 %h시 %m분 %s초', '%d일 %h시 %m분 %s초', d)
                 .replace('%d', d).replace('%h', format(h)).replace('%m', format(m)).replace('%s', format(s)));
         else
-            label.text(pgettext('time format without day', '%h시 %m일 %s초' +
+            label.text(pgettext('time format without day', '%h시 %m분 %s초' +
                 '')
                 .replace('%h', format(h)).replace('%m', format(m)).replace('%s', format(s)));
     }, 1000);
