@@ -210,8 +210,6 @@
                 <div id="contest-time-remaining" data-secs="{{ request.participation.time_remaining|seconds }}">
                     {{ request.participation.time_remaining|timedelta("localized") }}
                 </div>
-            {% else %}
-                {{ _('virtual') }}
             {% endif %}
         </a>
     </div>
