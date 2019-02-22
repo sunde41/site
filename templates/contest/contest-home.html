@@ -12,6 +12,10 @@
         .post:first-child {
             margin-top: 0.6em;
         }
+        .backcolor {
+            background: #3b3b3b;
+        }
+
     </style>
 {% endblock %}
 
@@ -139,7 +143,7 @@
                     <br>
                 {% endif %}
                 {% if future_contests %}
-                    <h3>{{ _('다음 코딩 능력 평가') }}</h3>
+                    <h3 class="backcolor">{{ _('다음 코딩 능력 평가') }}</h3>
                     <div class="sidebox-content">
                         <table id="contest-future-table" class="contest-list table striped">
                             <thead>
@@ -167,7 +171,7 @@
                         </table>
                     </div>
                 {% endif %}
-                <h3>{{ _('과거 진행했던 코딩 능력 평가') }}</h3>
+                <h3 class="backcolor">{{ _('과거 진행했던 코딩 능력 평가') }}</h3>
                 <div class="sidebox-content">
                     <table class="contest-list table striped">
                         <tbody>
@@ -204,7 +208,7 @@
         </div>
         <div class="blog-sidebar">
             <div class="blog-sidebox sidebox">
-                <h3>{{ _('공지') }} <i class="fa fa-terminal"></i></h3>
+                <h3 class="backcolor">{{ _('공지') }} <i class="fa fa-terminal"></i></h3>
                 <div class="sidebox-content">
                     {% for post in posts %}
                         <section class="{% if post.sticky %}sticky {% endif %}post">
