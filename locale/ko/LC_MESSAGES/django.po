@@ -2275,7 +2275,7 @@ msgstr ""
 #: .\templates\contest\contest-tabs.html:26
 #: .\templates\contest\contest-tabs.html:40
 msgid "Leave contest"
-msgstr ""
+msgstr "중단"
 
 #: .\templates\contest\contest-tabs.html:30 .\templates\contest\list.html:209
 msgid "Virtual join"
@@ -2283,7 +2283,7 @@ msgstr ""
 
 #: .\templates\contest\contest-tabs.html:38
 msgid "Stop spectating"
-msgstr ""
+msgstr "중단"
 
 #: .\templates\contest\contest-tabs.html:45
 msgid "Spectate contest"

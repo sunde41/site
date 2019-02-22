@@ -158,7 +158,9 @@
             <li class="home-menu-item"><a href="/problems/" class="nav-home">{{ _('Home') }}</a></li>
             <li>
                 <a href="/problems/" class="nav-problems">
-                    코딩 능력 평가 문제
+                    코딩 능력 평가 문제 (<span id="contest-time-remaining" data-secs="{{ request.participation.time_remaining|seconds }}">
+                    {{ request.participation.time_remaining|timedelta("localized") }}
+                    </span>)
                 </a>
             </li>
         {% endif %}
