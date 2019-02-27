@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 
-from django.conf import settings
 from django.conf.urls import include, url
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.core.urlresolvers import reverse
+from django.http import HttpResponse
 from django.http import HttpResponsePermanentRedirect
 from django.utils.translation import ugettext_lazy as _
 
@@ -200,6 +200,8 @@ urlpatterns = [
         url(r'^problem/$', ProblemSelect2View.as_view(), name='problem_select2'),
         url(r'^contest/$', ContestSelect2View.as_view(), name='contest_select2'),
     ])),
+    url(r'^robots.txt', lambda x: HttpResponse("User-Agent: *\nDisallow:/", content_type="text/plain"), name="robots_file"),
+
 ]
 
 favicon_paths = ['apple-touch-icon-180x180.png', 'favicon-32x32.png', 'favicon-16x16.png',]
