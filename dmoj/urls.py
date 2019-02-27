@@ -200,8 +200,6 @@ urlpatterns = [
         url(r'^problem/$', ProblemSelect2View.as_view(), name='problem_select2'),
         url(r'^contest/$', ContestSelect2View.as_view(), name='contest_select2'),
     ])),
-    url(r'^robots.txt', lambda x: HttpResponse("User-Agent: *\nDisallow:/", content_type="text/plain"), name="robots_file"),
-
 ]
 
 favicon_paths = ['apple-touch-icon-180x180.png', 'favicon-32x32.png', 'favicon-16x16.png',]
