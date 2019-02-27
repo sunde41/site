@@ -30,8 +30,8 @@
     <link rel="canonical"
           href="{{ SCHEME }}://{{ CANONICAL|default(site.domain) }}{{ request.get_full_path() }}">
     {% block media %}{% endblock %}
-    {% compress js %}
         <script src="{{ JQUERY_JS }}"></script>
+    {% compress js %}
         <script>{{ inlinei18n(LANGUAGE_CODE)|safe }}</script>
         <script src="{{ static('libs/jquery-cookie.js') }}"></script>
         <script src="{{ static('libs/jquery-taphold.js') }}"></script>
