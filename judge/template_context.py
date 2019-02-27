@@ -25,6 +25,9 @@ def get_resource(request):
         scheme = 'http'
     return {
         'PYGMENT_THEME': getattr(settings, 'PYGMENT_THEME', None),
+        'INLINE_JQUERY': getattr(settings, 'INLINE_JQUERY', True),
+        'INLINE_FONTAWESOME': getattr(settings, 'INLINE_FONTAWESOME', True),
+        'JQUERY_JS': getattr(settings, 'JQUERY_JS', '//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'),
         'SCHEME': scheme,
         'CANONICAL': getattr(settings, 'CANONICAL', ''),
     }
