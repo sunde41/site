@@ -2320,15 +2320,11 @@ msgstr ""
 msgid "<b>%(length)s</b> long starting on <b>%(start_time)s</b>"
 msgstr ""
 
-#: .\templates\contest\contest.html:85
-msgid "정답률"
-msgstr ""
-
 #: .\templates\contest\contest.html:86 .\templates\contest\list.html:98
 #: .\templates\contest\list.html:185 .\templates\problem\list.html:212
 #: .\templates\problem\list.html:238
 msgid "Users"
-msgstr ""
+msgstr "참가자"
 
 #: .\templates\contest\contest.html:99
 msgid "Editorial"
@@ -2782,6 +2778,10 @@ msgstr ""
 #: .\templates\stats\language.html:62
 msgid "Language AC Rate"
 msgstr ""
+
+msgid "AC Rate"
+msgstr "정답률"
+
 
 #: .\templates\status\judge-status-table.html:2
 msgid "Judge"
