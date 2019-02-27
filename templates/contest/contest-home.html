@@ -134,22 +134,6 @@
                                             {{ time_left(contest) }}
                                         </div>
                                     </td>
-                                    <td>
-                                        {% if contest.show_scoreboard or perms.judge.see_private_contest %}
-                                            <a href="{{ url('contest_ranking', contest.key) }}">{{ contest.user_count }}</a>
-                                        {% else %}
-                                            {{ contest.user_count }}
-                                        {% endif %}
-                                    </td>
-                                    {% if not request.in_contest %}
-                                        <td>
-                                            <form action="{{ url('contest_join', contest.key) }}" method="post">
-                                                {% csrf_token %}
-                                                <input type="submit" class="unselectable button full participate-button"
-                                                       value="{{ _('Virtual join') }}">
-                                            </form>
-                                        </td>
-                                    {% endif %}
                                 </tr>
                             {% endfor %}
                             </tbody>
